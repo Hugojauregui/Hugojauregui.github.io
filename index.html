@@ -5,28 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pase de Invitado</title>
     <style>
+        /* Estilo general */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f9;
+            background: linear-gradient(135deg, #e09, #ffdde1);
             color: #333;
+            margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
+        /* Contenedor del pase */
         .pase {
-            border: 2px solid #333;
+            border: 2px solid #fff;
             padding: 20px;
-            margin: 20px auto;
-            width: 300px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: left;
+            position: relative;
+            animation: fadeIn 1.2s ease-in-out;
         }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Título del evento */
         .evento {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+            color: #e63946;
         }
+
+        /* Detalles */
         .detalle {
             margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .detalle strong {
+            color: #e63946;
+        }
+
+        /* Pie decorativo */
+        .pase::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 5px;
+            background: linear-gradient(90deg, #e63946, #f4a261, #2a9d8f);
+            border-radius: 10px;
+        }
+
+        /* Botón para descargar */
+        .boton {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .boton:hover {
+            background-color: #d62828;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -38,7 +104,9 @@
         <div class="detalle"><strong>Fecha:</strong> 20 de diciembre de 2024</div>
         <div class="detalle"><strong>Hora:</strong> 7:00 PM</div>
         <div class="detalle"><strong>Lugar:</strong> Salón Las Rosas</div>
+        <a href="#" class="boton" onclick="window.print()">Descargar Pase</a>
     </div>
+
     <script>
         // Obtén el ID del invitado desde la URL
         const params = new URLSearchParams(window.location.search);
@@ -59,6 +127,5 @@
             document.body.innerHTML = "<h1>Invitado no encontrado</h1>";
         }
     </script>
-    
 </body>
 </html>
