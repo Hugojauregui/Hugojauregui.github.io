@@ -63,19 +63,6 @@
             color: #e63946;
         }
 
-        /* Pie decorativo */
-        .pase::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 5px;
-            background: linear-gradient(90deg, #e63946, #f4a261, #2a9d8f);
-            border-radius: 10px;
-        }
-
         /* Botón para descargar */
         .boton {
             display: inline-block;
@@ -100,29 +87,28 @@
     <div class="pase">
         <div class="evento">XV Años de Ana</div>
         <div class="detalle"><strong>Invitado:</strong> <span id="nombre"></span></div>
-        <div class="detalle"><strong>ID:</strong> <span id="id"></span></div>
+        <div class="detalle"><strong>Mesa:</strong> <span id="mesa"></span></div>
         <div class="detalle"><strong>Fecha:</strong> 20 de diciembre de 2024</div>
         <div class="detalle"><strong>Hora:</strong> 7:00 PM</div>
         <div class="detalle"><strong>Lugar:</strong> Salón Las Rosas</div>
-        <a href="#" class="boton" onclick="window.print()">Descargar Pase</a>
     </div>
 
     <script>
         // Obtén el ID del invitado desde la URL
         const params = new URLSearchParams(window.location.search);
         const invitadoID = params.get("invitado");
-    
-        // Datos de prueba (puedes conectar esto a un backend)
+
+        // Datos de prueba con mesas asignadas
         const invitados = {
-            "001": "María López",
-            "002": "Juan Pérez",
-            "003": "Ana Martínez"
+            "001": { nombre: "María López", mesa: "Mesa 1" },
+            "002": { nombre: "Juan Pérez", mesa: "Mesa 2" },
+            "003": { nombre: "Ana Martínez", mesa: "Mesa 3" }
         };
-    
+
         // Inserta los datos en la página
         if (invitadoID && invitados[invitadoID]) {
-            document.getElementById("nombre").textContent = invitados[invitadoID];
-            document.getElementById("id").textContent = invitadoID;
+            document.getElementById("nombre").textContent = invitados[invitadoID].nombre;
+            document.getElementById("mesa").textContent = invitados[invitadoID].mesa;
         } else {
             document.body.innerHTML = "<h1>Invitado no encontrado</h1>";
         }
