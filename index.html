@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pase de Invitado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        .pase {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .evento {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .detalle {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pase">
+        <div class="evento">XV Años de Ana</div>
+        <div class="detalle"><strong>Invitado:</strong> <span id="nombre"></span></div>
+        <div class="detalle"><strong>ID:</strong> <span id="id"></span></div>
+        <div class="detalle"><strong>Fecha:</strong> 20 de diciembre de 2024</div>
+        <div class="detalle"><strong>Hora:</strong> 7:00 PM</div>
+        <div class="detalle"><strong>Lugar:</strong> Salón Las Rosas</div>
+    </div>
+    <script>
+        // Obtén el ID del invitado desde la URL
+        const params = new URLSearchParams(window.location.search);
+        const invitadoID = params.get("invitado");
+    
+        // Datos de prueba (puedes conectar esto a un backend)
+        const invitados = {
+            "001": "María López",
+            "002": "Juan Pérez",
+            "003": "Ana Martínez"
+        };
+    
+        // Inserta los datos en la página
+        if (invitadoID && invitados[invitadoID]) {
+            document.getElementById("nombre").textContent = invitados[invitadoID];
+            document.getElementById("id").textContent = invitadoID;
+        } else {
+            document.body.innerHTML = "<h1>Invitado no encontrado</h1>";
+        }
+    </script>
+    
+</body>
+</html>
