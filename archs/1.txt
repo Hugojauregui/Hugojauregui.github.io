@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Operacion XV</title>
+	<atom:link href="https://operacionxv.mx/feed/" rel="self" type="application/rss+xml" />
+	<link>https://operacionxv.mx</link>
+	<description>Las invitaciones Mas TOP</description>
+	<lastBuildDate>Fri, 11 Aug 2023 06:50:11 +0000</lastBuildDate>
+	<language>es</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+	<item>
+		<title>1001 XV basica</title>
+		<link>https://operacionxv.mx/1001-xv-basica/</link>
+		
+		<dc:creator><![CDATA[Admin]]></dc:creator>
+		<pubDate>Fri, 11 Aug 2023 06:36:38 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">https://operacionxv.mx/?p=12</guid>
+
+					<description><![CDATA[DJ MUSIC ¡Te invito a mi fiesta! Nataly Yuliana Tenemos el honor de invitarlos a celebrar Mis XV años con la bendición de Dios y mis padres: María Antonieta Peñaflor Muñoz Julio Andrés De La Cruz Pérez Mis Padrinos María Victoria Peñaflor Muñoz Enrique Rojas Chávez Faltan: Días Horas Minutos Segundos 28 octubre 2023 Lo [&#8230;]]]></description>
+										<content:encoded><![CDATA[		<div data-elementor-type="wp-post" data-elementor-id="12" class="elementor elementor-12" data-elementor-post-type="post">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-b42cda4 elementor-section-full_width elementor-section-items-top elementor-section-content-middle elementor-section-height-full elementor-section-height-default" data-id="b42cda4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-19662eb1" data-id="19662eb1" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4c39c254 elementor-view-default elementor-widget elementor-widget-icon" data-id="4c39c254" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><title>DJ MUSIC</title><g><path d="M46.308,40.135A41.558,41.558,0,1,0,87.865,81.692,41.6,41.6,0,0,0,46.308,40.135Zm0,79.615A38.058,38.058,0,1,1,84.365,81.692,38.1,38.1,0,0,1,46.308,119.75Z"></path><path d="M58.522,52.387a1.75,1.75,0,0,0-1.349,3.23,28.513,28.513,0,0,1,15.21,15.21,1.75,1.75,0,1,0,3.229-1.349A32.032,32.032,0,0,0,58.522,52.387Z"></path><path d="M56.212,57.927a1.75,1.75,0,0,0-1.349,3.23,22.457,22.457,0,0,1,11.98,11.979,1.75,1.75,0,1,0,3.229-1.348A25.981,25.981,0,0,0,56.212,57.927Z"></path><path d="M35.442,107.767a28.511,28.511,0,0,1-15.21-15.209A1.75,1.75,0,1,0,17,93.907,32.04,32.04,0,0,0,34.093,111a1.75,1.75,0,0,0,1.349-3.23Z"></path><path d="M37.752,102.228a22.465,22.465,0,0,1-11.98-11.98A1.75,1.75,0,1,0,22.543,91.6,25.986,25.986,0,0,0,36.4,105.458a1.75,1.75,0,0,0,1.349-3.23Z"></path><path d="M46.308,67.942a13.75,13.75,0,1,0,13.75,13.75A13.765,13.765,0,0,0,46.308,67.942Zm0,24a10.25,10.25,0,1,1,10.25-10.25A10.261,10.261,0,0,1,46.308,91.942Z"></path><path d="M46.308,73.942a7.75,7.75,0,1,0,7.75,7.75A7.759,7.759,0,0,0,46.308,73.942Zm0,12a4.25,4.25,0,1,1,4.25-4.25A4.254,4.254,0,0,1,46.308,85.942Z"></path><path d="M120.377,12.112a9.823,9.823,0,0,0-13.874,0l0,0-.011-.011a9.848,9.848,0,0,0-2.2-1.641,8.557,8.557,0,0,0-2.008-3.189h0a8.618,8.618,0,0,0-12-.178,8.618,8.618,0,0,0-12,12.367L89.041,30.229a1.749,1.749,0,0,0,2.475,0l2.674-2.674,11.073,11.072a1.748,1.748,0,0,0,2.474,0l12.638-12.638a9.808,9.808,0,0,0,0-13.877Zm-30.1,14.406-9.529-9.53a5.118,5.118,0,1,1,7.238-7.239L89.041,10.8a1.8,1.8,0,0,0,2.475,0l1.053-1.054a5.119,5.119,0,0,1,7.239,7.239Zm27.625-3-11.4,11.4-9.835-9.834,5.618-5.618a8.563,8.563,0,0,0,2.324-4.291l.656.655a1.748,1.748,0,0,0,2.474,0l1.241-1.24a6.312,6.312,0,0,1,10.774,4.473A6.252,6.252,0,0,1,117.9,23.513Z"></path><path d="M86.11,13.864a1.75,1.75,0,1,0-2.474,2.475l3.182,3.182a1.75,1.75,0,0,0,2.475-2.474Z"></path><path d="M117.085,77.309A1.754,1.754,0,0,0,115.573,77l-12.417,3.248a1.751,1.751,0,0,0-1.307,1.693V89.13a4.66,4.66,0,0,0-1.25-.189,4.75,4.75,0,1,0,4.714,5.1,1.714,1.714,0,0,0,.036-.354v-10.4l8.917-2.333v4.921a4.7,4.7,0,0,0-1.25-.188,4.75,4.75,0,1,0,4.714,5.1,1.728,1.728,0,0,0,.036-.354V78.693A1.746,1.746,0,0,0,117.085,77.309ZM100.6,94.941a1.25,1.25,0,1,1,1.25-1.25A1.251,1.251,0,0,1,100.6,94.941Zm12.417-3.248a1.25,1.25,0,1,1,1.25-1.25A1.251,1.251,0,0,1,113.016,91.693Z"></path><path d="M46.581,30.149a4.741,4.741,0,0,0,4.714-4.4,1.714,1.714,0,0,0,.036-.354V15l8.917-2.332V17.59A4.7,4.7,0,0,0,59,17.4a4.75,4.75,0,1,0,4.714,5.1,1.8,1.8,0,0,0,.036-.354V10.4a1.752,1.752,0,0,0-2.193-1.693L49.138,11.956a1.751,1.751,0,0,0-1.307,1.693v7.189a4.66,4.66,0,0,0-1.25-.189,4.75,4.75,0,0,0,0,9.5ZM59,23.4a1.25,1.25,0,1,1,1.25-1.25A1.25,1.25,0,0,1,59,23.4Zm-12.417.747a1.25,1.25,0,1,1-1.25,1.25A1.251,1.251,0,0,1,46.581,24.149Z"></path><path d="M18.333,39.024a4.742,4.742,0,0,0,4.715-4.4,1.786,1.786,0,0,0,.035-.354V24.5l3.107.371a1.749,1.749,0,1,0,.415-3.474l-5.064-.606a1.728,1.728,0,0,0-1.369.429,1.75,1.75,0,0,0-.589,1.308v7.189a4.648,4.648,0,0,0-1.25-.189,4.75,4.75,0,0,0,0,9.5Zm0-6a1.25,1.25,0,1,1-1.25,1.25A1.251,1.251,0,0,1,18.333,33.024Z"></path><path d="M103.681,62.131a1.8,1.8,0,0,0,.036-.354V52l3.106.371a1.749,1.749,0,1,0,.415-3.474l-5.064-.606a1.75,1.75,0,0,0-1.957,1.737v7.188a4.7,4.7,0,0,0-1.25-.188,4.75,4.75,0,1,0,4.714,5.1Zm-5.964-.354a1.25,1.25,0,1,1,1.25,1.25A1.251,1.251,0,0,1,97.717,61.777Z"></path></g></svg>			</div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3ed46043" data-id="3ed46043" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6180a768 elementor-widget elementor-widget-wp-widget-media_audio" data-id="6180a768" data-element_type="widget" data-widget_type="wp-widget-media_audio.default">
+				<div class="elementor-widget-container">
+			<!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+<audio class="wp-audio-shortcode" id="audio-12-1" loop="1" preload="auto" style="width: 100%;" controls="controls"><source type="audio/mpeg" src="https://socialmode.com.mx/wp-content/uploads/2023/04/tomp3.cc-Ed-Sheeran-photograph-sub-espanol.mp3?_=1" /><source type="audio/mpeg" src="https://socialmode.com.mx/wp-content/uploads/2023/04/tomp3.cc-Ed-Sheeran-photograph-sub-espanol.mp3?_=1" /><a href="https://socialmode.com.mx/wp-content/uploads/2023/04/tomp3.cc-Ed-Sheeran-photograph-sub-espanol.mp3">https://socialmode.com.mx/wp-content/uploads/2023/04/tomp3.cc-Ed-Sheeran-photograph-sub-espanol.mp3</a></audio>		</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e32450e elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="e32450e" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_transition_duration&quot;:2000,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:25,&quot;url&quot;:&quot;https:\/\/operacionxv.mx\/wp-content\/uploads\/2023\/08\/unnamed-2-25.jpg&quot;}],&quot;background_slideshow_slide_duration&quot;:1946,&quot;background_slideshow_ken_burns&quot;:&quot;yes&quot;,&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_ken_burns_zoom_direction&quot;:&quot;in&quot;}">
+							"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-51f10b17" data-id="51f10b17" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-61285fc4 elementor-widget elementor-widget-spacer" data-id="61285fc4" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-370b2c6f elementor-widget elementor-widget-spacer" data-id="370b2c6f" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-ccf78f0 elementor-widget elementor-widget-spacer" data-id="ccf78f0" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1dde6dfa elementor-widget elementor-widget-spacer" data-id="1dde6dfa" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-6bbdd5e8 elementor-widget elementor-widget-spacer" data-id="6bbdd5e8" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-72fcd193 elementor-widget elementor-widget-spacer" data-id="72fcd193" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7598b45c elementor-widget elementor-widget-spacer" data-id="7598b45c" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-3ca05506 elementor-widget elementor-widget-heading" data-id="3ca05506" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">¡Te invito a mi fiesta!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4c2300ec . elementor-widget elementor-widget-heading" data-id="4c2300ec" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Nataly Yuliana</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-11c9ba3f elementor-widget elementor-widget-spacer" data-id="11c9ba3f" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-22174cf1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="22174cf1" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-57476cfb" data-id="57476cfb" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-31a2d5ef elementor-widget elementor-widget-text-editor" data-id="31a2d5ef" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							Tenemos el honor de
+invitarlos a celebrar<br>
+<br>						</div>
+				</div>
+				<div class="elementor-element elementor-element-3ff9b9a9 . elementor-widget elementor-widget-heading" data-id="3ff9b9a9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Mis <br>XV años</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-15764054 elementor-widget elementor-widget-text-editor" data-id="15764054" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							con la bendición de Dios y mis padres:						</div>
+				</div>
+				<div class="elementor-element elementor-element-46293eb9 elementor-widget elementor-widget-heading" data-id="46293eb9" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">María Antonieta<br>Peñaflor Muñoz</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7bbb4105 elementor-widget elementor-widget-heading" data-id="7bbb4105" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Julio Andrés <br>De La Cruz Pérez</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-14db6666 elementor-widget elementor-widget-spacer" data-id="14db6666" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-60a51d90 . elementor-widget elementor-widget-heading" data-id="60a51d90" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Mis Padrinos</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3ba86b01 elementor-widget elementor-widget-spacer" data-id="3ba86b01" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-19494ee8 elementor-widget elementor-widget-heading" data-id="19494ee8" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">María Victoria<br>Peñaflor Muñoz
+<br><br>Enrique<br>Rojas Chávez
+</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-33041098 elementor-widget elementor-widget-spacer" data-id="33041098" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-634eee3f elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="634eee3f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:26,&quot;url&quot;:&quot;https:\/\/operacionxv.mx\/wp-content\/uploads\/2023\/08\/unnamed-4-23.jpg&quot;}],&quot;background_slideshow_ken_burns&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:2500,&quot;animation_mobile&quot;:&quot;fadeIn&quot;,&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500,&quot;background_slideshow_ken_burns_zoom_direction&quot;:&quot;in&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-174756a8" data-id="174756a8" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-215ca60a elementor-widget elementor-widget-spacer" data-id="215ca60a" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1a0feb42 . elementor-widget elementor-widget-text-editor" data-id="1a0feb42" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_delay&quot;:500,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p style="text-align: left;">Faltan:</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-4522a1d elementor-countdown--label-block elementor-widget elementor-widget-countdown" data-id="4522a1d" data-element_type="widget" data-widget_type="countdown.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-countdown-wrapper" data-date="1698543000">
+			<div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-days"></span> <span class="elementor-countdown-label">Días</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-hours"></span> <span class="elementor-countdown-label">Horas</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-minutes"></span> <span class="elementor-countdown-label">Minutos</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-seconds"></span> <span class="elementor-countdown-label">Segundos</span></div>		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-41dd518d elementor-widget elementor-widget-heading" data-id="41dd518d" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">28 octubre 2023</h2>		</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-2b7a4383 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2b7a4383" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7dafd92e" data-id="7dafd92e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-7a84857c elementor-widget elementor-widget-spacer" data-id="7a84857c" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-25973285 . elementor-widget elementor-widget-heading" data-id="25973285" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Lo que tienes<br> que saber</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-542fe68 elementor-widget elementor-widget-image" data-id="542fe68" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+													<img fetchpriority="high" decoding="async" width="768" height="114" src="https://operacionxv.mx/wp-content/uploads/2023/08/ornament-768x114.png" class="attachment-medium_large size-medium_large wp-image-27" alt="" srcset="https://operacionxv.mx/wp-content/uploads/2023/08/ornament-768x114.png 768w, https://operacionxv.mx/wp-content/uploads/2023/08/ornament-300x45.png 300w, https://operacionxv.mx/wp-content/uploads/2023/08/ornament.png 1024w" sizes="(max-width: 768px) 100vw, 768px" />													</div>
+				</div>
+				<div class="elementor-element elementor-element-3eb9dfe8 elementor-widget elementor-widget-spacer" data-id="3eb9dfe8" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-11e42cdf elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="11e42cdf" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-b5018bf" data-id="b5018bf" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4194fd96 elementor-view-default elementor-widget elementor-widget-icon" data-id="4194fd96" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><title>CALENDAR</title><g><path d="M121.5,20.6H105.558V18.346a4.75,4.75,0,0,0-9.5,0V20.6H81.02V18.346a4.75,4.75,0,0,0-9.5,0V20.6H56.481V18.346a4.75,4.75,0,1,0-9.5,0V20.6H31.942V18.346a4.75,4.75,0,1,0-9.5,0V20.6H6.5a1.751,1.751,0,0,0-1.75,1.75v87.3A4.756,4.756,0,0,0,9.5,114.4h109a4.756,4.756,0,0,0,4.75-4.75V22.35A1.75,1.75,0,0,0,121.5,20.6ZM8.25,42.1h111.5v59.8H8.25Zm92.558-25a1.252,1.252,0,0,1,1.25,1.25v8a1.25,1.25,0,1,1-2.5,0v-8A1.251,1.251,0,0,1,100.808,17.1ZM75.02,18.346a1.25,1.25,0,0,1,2.5,0v8a1.25,1.25,0,1,1-2.5,0Zm-24.539,0a1.25,1.25,0,1,1,2.5,0v8a1.25,1.25,0,0,1-2.5,0Zm-24.539,0a1.25,1.25,0,1,1,2.5,0v8a1.25,1.25,0,0,1-2.5,0Zm-3.5,5.754v2.246a4.75,4.75,0,0,0,9.5,0V24.1H46.981v2.246a4.75,4.75,0,0,0,9.5,0V24.1H71.52v2.246a4.75,4.75,0,1,0,9.5,0V24.1H96.058v2.246a4.75,4.75,0,1,0,9.5,0V24.1H119.75V38.6H8.25V24.1ZM118.5,110.9H9.5a1.252,1.252,0,0,1-1.25-1.25V105.4h111.5v4.254A1.252,1.252,0,0,1,118.5,110.9Z"></path><path d="M115.5,76a1.75,1.75,0,0,0-1.75,1.75V83.5a1.75,1.75,0,0,0,3.5,0V77.75A1.75,1.75,0,0,0,115.5,76Z"></path><path d="M73.25,52.725a12.415,12.415,0,0,0-8.839,3.662L64,56.8l-.411-.41A12.5,12.5,0,0,0,45.911,74.064L62.763,90.916a1.75,1.75,0,0,0,2.474,0L82.089,74.064A12.5,12.5,0,0,0,73.25,52.725ZM79.614,71.59,64,87.2,48.386,71.59A9,9,0,1,1,61.114,58.861l1.649,1.649a1.75,1.75,0,0,0,2.474,0l1.649-1.649A9,9,0,1,1,79.614,71.59Z"></path></g></svg>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-69a46fc3 elementor-widget elementor-widget-heading" data-id="69a46fc3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">¿Cuándo?</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-563e304f elementor-widget elementor-widget-heading" data-id="563e304f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Sábado
+28 <br>
+octubre
+2023</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-8f6deab elementor-widget elementor-widget-spacer" data-id="8f6deab" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-c8f3258" data-id="c8f3258" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2de7f576 elementor-view-default elementor-widget elementor-widget-icon" data-id="2de7f576" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><title>church-christian-buildings-temple-religion</title><g id="outline"><path d="M18.447,47.105a1,1,0,0,0-.894,0A4.584,4.584,0,0,0,15.016,51H15v6a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V51h-.016A4.584,4.584,0,0,0,18.447,47.105ZM18,49.177A2.586,2.586,0,0,1,18.973,51H17.027A2.586,2.586,0,0,1,18,49.177ZM19,56H17V53h2Z"></path><path d="M7.619,44.075l.762,1.85L10,45.258V49H8v2h2v2H8v2h2v5H8v2H56V60H54V55h2V53H54V51h2V49H54V45.258l1.619.667.762-1.85L40,37.33V35h2V33H40V19a1,1,0,0,0-1-1H36.677L33,8.807V6h2V4H33V2H31V4H29V6h2V8.807L27.323,18H25a1,1,0,0,0-1,1V33H22v2h2v2.33ZM12,44.659l12-5.142V60H12ZM33,55H31v-.764a2.6,2.6,0,0,1,1-2.059,2.6,2.6,0,0,1,1,2.059Zm-2,5V57h2v3Zm9,0V39.517l12,5.142V60ZM38,25.338,36.131,23.2l-2.8-3.2H38ZM32,11.692,34.523,18H29.477ZM26,20h4.671l-2.8,3.2L26,25.338Zm0,8.376,6-6.857,6,6.857V33H26ZM38,35V60H35V54.236a4.594,4.594,0,0,0-2.553-4.131,1,1,0,0,0-.894,0A4.594,4.594,0,0,0,29,54.236V60H26V35Z"></path><path d="M30,48h4a1,1,0,0,0,1-1V41.236A4.594,4.594,0,0,0,32.447,37.1a1,1,0,0,0-.894,0A4.594,4.594,0,0,0,29,41.236V47A1,1,0,0,0,30,48Zm1-2V43h2v3Zm1-6.823A2.586,2.586,0,0,1,32.973,41H31.027A2.586,2.586,0,0,1,32,39.177Z"></path><path d="M32,25a3,3,0,1,0,3,3A3,3,0,0,0,32,25Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,32,29Z"></path><path d="M46.447,47.105a1,1,0,0,0-.894,0A4.594,4.594,0,0,0,43,51.236V57a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V51.236A4.594,4.594,0,0,0,46.447,47.105ZM46,49.177A2.586,2.586,0,0,1,46.973,51H45.027A2.586,2.586,0,0,1,46,49.177ZM45,56V53h2v3Z"></path></g></svg>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2987721a elementor-widget elementor-widget-heading" data-id="2987721a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Ceremonia</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-526b5b1d elementor-view-default elementor-widget elementor-widget-icon" data-id="526b5b1d" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="far fa-clock"></i>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-57c1071b elementor-widget elementor-widget-heading" data-id="57c1071b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">7:15 pm </h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-60758557 elementor-widget elementor-widget-heading" data-id="60758557" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">C. Eligio Ancona 292</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-407d34d2 elementor-widget elementor-widget-spacer" data-id="407d34d2" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-56626aab elementor-widget elementor-widget-image" data-id="56626aab" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+													<img decoding="async" src="https://operacionxv.mx/wp-content/uploads/2023/08/99873253-0384-40a4-8fe4-466aefa46631.jpeg" title="" alt="" loading="lazy" />													</div>
+				</div>
+				<div class="elementor-element elementor-element-599277ae elementor-widget elementor-widget-image" data-id="599277ae" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+													<img decoding="async" src="https://operacionxv.mx/wp-content/uploads/2023/08/99873253-0384-40a4-8fe4-466aefa46631.jpeg" title="" alt="" loading="lazy" />													</div>
+				</div>
+				<div class="elementor-element elementor-element-293ac876 elementor-align-center elementor-widget elementor-widget-button" data-id="293ac876" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;bounceIn&quot;}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a class="elementor-button elementor-button-link elementor-size-md" href="https://www.google.com/maps/place/C.+Eligio+Ancona+292,+Sta+Mar%C3%ADa+la+Ribera,+Cuauht%C3%A9moc,+06400+Ciudad+de+M%C3%A9xico,+CDMX/@19.45357,-99.1663075,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1f8c1bddaae43:0x7ec238343ce8e379!8m2!3d19.453565!4d-99.1637326!16s%2Fg%2F11csm3k0jg?entry=ttu">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Ir al mapa</span>
+					</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-915d3be elementor-widget elementor-widget-spacer" data-id="915d3be" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-a509098" data-id="a509098" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-721e026e elementor-view-default elementor-widget elementor-widget-icon" data-id="721e026e" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Capa_1" x="0px" y="0px" width="557.506px" height="557.506px" viewBox="0 0 557.506 557.506" style="enable-background:new 0 0 557.506 557.506;" xml:space="preserve"><g>	<g>		<path d="M196.261,310.341v73.893c0,5.948,4.822,10.771,10.774,10.771c5.952,0,10.774-4.823,10.774-10.771v-67.14l-34.128-36.022    c-7.454-7.87-10.395-18.862-7.864-29.403l8.213-34.223h-9.599l7.2-10.921c1.518,0.694,3.115,1.242,4.792,1.582    c1.732-5.113,4.669-9.578,8.449-13.103c4.954-4.615,11.353-7.595,18.36-8.333c1.049-0.11,2.108-0.181,3.186-0.187v-35.254    c0-5.949-4.823-10.771-10.771-10.771c-5.948,0-10.771,4.826-10.771,10.771v12.999c-1.288-0.232-2.61-0.374-3.966-0.374    c-1.365,0-2.693,0.141-3.99,0.376v-30.673c0-5.949-4.822-10.771-10.774-10.771c-5.948,0-10.771,4.822-10.771,10.771v58.489    l-5.217,7.916l-5.217-7.916v-58.489c0-5.949-4.823-10.771-10.771-10.771c-5.948,0-10.771,4.822-10.771,10.771v30.673    c-1.297-0.232-2.625-0.376-3.99-0.376c-2.751,0-5.376,0.521-7.812,1.432v-50.089c0-5.949-4.823-10.771-10.774-10.771    s-10.771,4.823-10.771,10.771v58.489l-6.613,10.034v-50.163c0-5.949-4.823-10.771-10.771-10.771    c-5.948,0-10.771,4.822-10.771,10.771v13.369c-2.436-0.909-5.058-1.432-7.812-1.432c-12.344,0-22.351,10.006-22.351,22.35    c0,12.344,10.006,22.351,22.351,22.351c2.751,0,5.376-0.521,7.812-1.432v6.512c0,1.31,0.266,2.595,0.725,3.807h-8.537H44.852    l-16.741-25.398v-58.485c0-5.949-4.823-10.771-10.771-10.771S6.568,109.25,6.568,115.198v61.72c0,2.108,0.618,4.167,1.778,5.927    l29.051,44.076v47.09c-0.138,0.691-0.214,1.404-0.214,2.136v89.728c0,5.949,4.822,10.771,10.771,10.771    s10.774-4.822,10.774-10.771V291.98h5.355h5.355v73.893c0,5.949,4.823,10.771,10.774,10.771s10.774-4.822,10.774-10.771v-89.728    c0-0.731-0.076-1.444-0.214-2.136v-46.867l11.955,18.137v47.09c-0.138,0.691-0.214,1.404-0.214,2.136v89.729    c0,5.948,4.822,10.771,10.774,10.771c5.949,0,10.771-4.823,10.771-10.771v-73.893h5.355h5.355v73.893    c0,5.948,4.822,10.771,10.771,10.771s10.771-4.823,10.771-10.771v-89.729c0-0.731-0.077-1.444-0.214-2.136v-47.09l4.067-6.172    l4.066,6.172v47.09c-0.138,0.691-0.214,1.404-0.214,2.136v89.729c0,5.948,4.822,10.771,10.771,10.771s10.774-4.823,10.774-10.771    v-73.893h5.355H196.261L196.261,310.341z M129.4,217.445H110.17l-6.582-9.988l6.555-9.945c3.886,6.6,11.043,11.043,19.256,11.043    c3.314,0,6.445-0.741,9.275-2.032l7.2,10.921H129.4z"></path>		<path d="M240.977,197.839c1.107-1.771,2.295-3.485,3.595-5.107c1.212-1.512,2.482-2.971,3.847-4.342    c2.396-2.408,5.019-4.584,7.831-6.505c3.075-2.099,6.383-3.874,9.869-5.306v-17.274c0-5.948-4.823-10.771-10.771-10.771    c-2.653,0-5.052,0.998-6.928,2.585v-17.561c0-5.949-4.823-10.771-10.774-10.771s-10.771,4.822-10.771,10.771v54.633    c2.472,0.835,4.771,1.967,6.897,3.326C236.506,193.262,238.923,195.4,240.977,197.839z"></path>		<polygon points="233.902,334.086 225.484,325.2 225.484,389.527 233.902,379.239   "></polygon>		<path d="M537.135,112.499c-5.947,0-10.771,4.823-10.771,10.771v58.489l-16.74,25.398h-19.229h-8.537    c0.459-1.215,0.725-2.497,0.725-3.807v-6.512c2.436,0.909,5.059,1.432,7.809,1.432c12.344,0,22.35-10.006,22.35-22.35    c0-12.344-10.006-22.351-22.35-22.351c-2.75,0-5.377,0.521-7.809,1.432v-13.369c0-5.949-4.822-10.771-10.775-10.771    c-5.947,0-10.77,4.822-10.77,10.771v50.166l-6.617-10.034v-58.495c0-5.949-4.822-10.771-10.77-10.771    c-5.949,0-10.775,4.823-10.775,10.771v50.089c-2.436-0.909-5.059-1.432-7.812-1.432c-1.363,0-2.691,0.141-3.99,0.376V141.63    c0-5.949-4.822-10.771-10.771-10.771c-5.947,0-10.77,4.822-10.77,10.771v58.489l-5.219,7.916l-0.82-1.242v2.485v36.662v2.485    l0.82-1.242l4.066,6.172v47.09c-0.137,0.691-0.213,1.404-0.213,2.136v89.729c0,5.948,4.822,10.771,10.773,10.771    c5.949,0,10.771-4.823,10.771-10.771v-73.893h5.355h5.355v73.893c0,5.948,4.822,10.771,10.77,10.771    c5.949,0,10.775-4.823,10.775-10.771V302.58c0-0.731-0.076-1.444-0.215-2.136v-47.09l11.955-18.137v46.868    c-0.137,0.691-0.213,1.404-0.213,2.136v89.728c0,5.949,4.822,10.771,10.773,10.771s10.771-4.822,10.771-10.771v-73.893h5.355    h5.354v73.893c0,5.949,4.824,10.771,10.775,10.771s10.771-4.822,10.771-10.771v-89.728c0-0.731-0.076-1.444-0.215-2.136v-47.091    l29.051-44.076c1.16-1.76,1.779-3.819,1.779-5.927v-61.72C547.91,117.325,543.088,112.499,537.135,112.499z M444.301,225.52    h-19.229H408.6l7.201-10.921c2.826,1.294,5.961,2.032,9.275,2.032c8.213,0,15.373-4.443,19.256-11.043l6.555,9.945L444.301,225.52    z"></path>		<path d="M390.252,263.305c-0.602,1.236-1.254,2.448-2.02,3.608l-42.299,64.177v66.772c0.221,1.524,0.334,3.061,0.334,4.581v0.517    c0.389,0.043,0.771,0.12,1.172,0.12c5.949,0,10.771-4.823,10.771-10.771v-73.893h5.355h5.355v73.893    c0,5.948,4.822,10.771,10.773,10.771s10.771-4.823,10.771-10.771V302.58c0-0.731-0.076-1.444-0.215-2.136V263.305z"></path>		<path d="M327.596,141.63c0-5.949-4.822-10.771-10.771-10.771c-5.947,0-10.773,4.822-10.773,10.771v1.411    c-1.879-1.591-4.275-2.586-6.928-2.586c-5.949,0-10.771,4.826-10.771,10.771v21.432c6.227,0.223,12.186,1.497,17.699,3.678    c1.309,0.517,2.586,1.099,3.844,1.713c6.832,3.348,12.873,8.057,17.699,13.844V141.63H327.596z"></path>		<path d="M95.18,94.372c6.426-8.433,6.714-20.294,1.401-29.572c-5.747-10.034-30.863-29.146-16.992-40.264    c7.699-6.172-3.201-16.925-10.82-10.82c-9.033,7.24-9.893,18.354-6.75,28.88c4.189,14.024,31.708,28.617,19.951,44.052    C75.984,94.5,89.283,102.107,95.18,94.372z"></path>		<path d="M494.023,28.985c9.816-0.994,6.514-15.945-3.197-14.963c-11.52,1.166-18.281,10.024-21.365,20.569    c-4.109,14.048,11.055,41.258-7.203,47.818c-9.291,3.338-2.266,16.952,6.887,13.663c9.979-3.586,16.668-13.385,17.254-24.058    C487.027,60.47,476.336,30.776,494.023,28.985z"></path>		<path d="M194.348,92.688c1.643,10.563,9.275,19.651,19.56,22.225c9.437,2.362,15.074-11.882,5.499-14.281    c-18.822-4.715-6.438-33.296-11.921-46.867c-4.116-10.187-11.726-18.33-23.305-18.345c-9.761-0.012-11.563,15.193-1.695,15.205    C200.257,50.653,192.573,81.266,194.348,92.688z"></path>		<path d="M381.332,37.851c4.498-10.025,5.105-21.154-2.904-29.517c-6.75-7.053-18.969,2.179-12.145,9.306    c12.293,12.84-15.113,28.495-22.127,37.687c-6.484,8.5-7.754,20.297-2.488,29.501c4.83,8.442,19.01,2.647,14.111-5.924    C346.146,62.064,375.342,51.208,381.332,37.851z"></path>		<path d="M243.213,53.885c4.097,9.875,13.666,16.895,24.266,16.958c9.728,0.061,11.83-15.113,1.958-15.177    c-19.403-0.123-14.14-30.824-22.684-42.708c-6.414-8.923-15.735-15.031-26.986-12.301c-9.489,2.301-7.638,17.5,1.952,15.174    C239,11.645,238.782,43.206,243.213,53.885z"></path>		<path d="M135.128,95.73c13.813,0,13.813-21.42,0-21.42S121.315,95.73,135.128,95.73z"></path>		<path d="M32.618,65.13c13.812,0,13.812-21.42,0-21.42C18.805,43.71,18.805,65.13,32.618,65.13z"></path>		<path d="M320.258,16.17c-13.812,0-13.812,21.42,0,21.42S334.07,16.17,320.258,16.17z"></path>		<path d="M300.367,92.67c13.814,0,13.814-21.42,0-21.42C286.555,71.25,286.555,92.67,300.367,92.67z"></path>		<path d="M418.178,60.541c13.812,0,13.812-21.42,0-21.42S404.365,60.541,418.178,60.541z"></path>		<path d="M540.578,62.07c-13.812,0-13.812,21.42,0,21.42S554.391,62.07,540.578,62.07z"></path>		<path d="M336.666,317.348l38.791-58.853c1.791-2.714,2.742-5.894,2.742-9.143v-23.828v-2.791v-11.579v-33.739v-45.328    c0-0.407-0.031-0.808-0.061-1.208c-0.621-8.611-7.789-15.41-16.562-15.41c-9.18,0-16.617,7.442-16.617,16.619v17.191v32.629    v24.749v18.865v18.844l-8.08,12.255l-17.746,26.931H279.07h-3.666h-22.506l-27.775-29.321l5.508-22.947l2.161-9    c0.006-0.031,0.009-0.064,0.018-0.095c0.101-0.438,0.181-0.875,0.245-1.31c0.021-0.217,0.058-0.428,0.083-0.646    c0.214-1.906,0.089-3.788-0.331-5.584c-0.397-1.705-1.049-3.332-1.943-4.816c-2.219-3.681-5.848-6.508-10.355-7.592    c-0.107-0.024-0.211-0.034-0.318-0.058c-1.203-0.266-2.402-0.41-3.586-0.41c-0.064,0-0.125,0.016-0.189,0.016    c-7.427,0.085-14.134,5.18-15.946,12.729l-0.701,2.922l-1.083,4.516l-7.986,33.278c-1.313,5.468,0.229,11.23,4.094,15.312    l23.014,24.297l7.895,8.335l23.5,24.811v0.021v56.689l-2.172,2.653l-18.238,22.289l-34.798,42.537    c-5.566,6.809-4.872,16.771,1.591,22.741l42.344,39.089c3.195,2.95,7.237,4.406,11.267,4.406c4.477,0,8.941-1.799,12.215-5.346    c6.227-6.747,5.805-17.258-0.939-23.488l-30.839-28.468l28.015-34.234h40.079v114.009c0,9.177,7.443,16.619,16.619,16.619    c9.178,0,16.619-7.442,16.619-16.619v-138.44c0-1.129-0.119-2.233-0.334-3.299v-72.641L336.666,317.348z"></path>		<path d="M249.171,235.116c2.543,10.643,9.489,19.569,18.844,24.701c3.403,1.866,7.124,3.222,11.056,3.984    c2.381,0.462,4.832,0.722,7.344,0.722c15.055,0,28.045-8.703,34.314-21.331c1.463-2.947,2.59-6.089,3.256-9.407    c0.494-2.454,0.76-4.994,0.76-7.595c0-2.996-0.379-5.896-1.029-8.693c-2.02-8.7-6.99-16.249-13.818-21.555    c-1.225-0.952-2.51-1.824-3.844-2.623c-2.322-1.389-4.795-2.549-7.402-3.427c-3.258-1.099-6.713-1.753-10.296-1.934    c-0.646-0.034-1.285-0.098-1.94-0.098c-5.568,0-10.847,1.215-15.621,3.351c-1.625,0.725-3.179,1.57-4.676,2.506    c-9.706,6.08-16.505,16.355-17.8,28.308c-0.024,0.217-0.027,0.434-0.058,0.651c-0.095,1.031-0.147,2.075-0.159,3.127    c0,0.128-0.019,0.254-0.019,0.386c0,1.239,0.071,2.46,0.187,3.669C248.44,231.655,248.761,233.403,249.171,235.116z"></path>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-28158a63 elementor-widget elementor-widget-heading" data-id="28158a63" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Fiesta</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-e822d98 elementor-view-default elementor-widget elementor-widget-icon" data-id="e822d98" data-element_type="widget" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="far fa-clock"></i>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-3531b4d5 elementor-widget elementor-widget-heading" data-id="3531b4d5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">8:00 pm</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6ac020ec elementor-widget elementor-widget-heading" data-id="6ac020ec" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">C. Eligio Ancona 292, Sta María la Ribera, Cuauhtémoc, 06400 Ciudad de México, CDMX</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-63360133 elementor-widget elementor-widget-spacer" data-id="63360133" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-61cee396 elementor-widget elementor-widget-image" data-id="61cee396" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+													<img decoding="async" src="https://operacionxv.mx/wp-content/uploads/2023/08/unnamed-9-18.jpg" title="" alt="" loading="lazy" />													</div>
+				</div>
+				<div class="elementor-element elementor-element-1c1c01bb elementor-widget elementor-widget-spacer" data-id="1c1c01bb" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-57d5e41a elementor-align-center elementor-widget elementor-widget-button" data-id="57d5e41a" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;bounceIn&quot;}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a class="elementor-button elementor-button-link elementor-size-md" href="https://www.google.com/maps/place/C.+Eligio+Ancona+292,+Sta+Mar%C3%ADa+la+Ribera,+Cuauht%C3%A9moc,+06400+Ciudad+de+M%C3%A9xico,+CDMX/@19.45357,-99.1663075,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1f8c1bddaae43:0x7ec238343ce8e379!8m2!3d19.453565!4d-99.1637326!16s%2Fg%2F11csm3k0jg?entry=ttu">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Ir al mapa</span>
+					</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-26fab67f elementor-widget elementor-widget-spacer" data-id="26fab67f" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6abf20dc" data-id="6abf20dc" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-29f5f80f elementor-view-default elementor-widget elementor-widget-icon" data-id="29f5f80f" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Capa_1" x="0px" y="0px" viewBox="0 0 1000 1200" style="enable-background:new 0 0 1000 1200;" xml:space="preserve"><path d="M738.6,808.66c-10.6-75.23-29.03-142.32-56.35-205.09c-7.09-16.28-9.93-32.87-8.95-52.19c0.11-2.22,0.61-4.32,1.51-6.42  c2.17-5.03,4.33-10.07,6.48-15.11c3.5-8.18,7.12-16.65,10.75-24.93c21.35-48.6,32.54-99.83,33.28-152.27  c0.05-3.95-0.07-7.13-2.15-9.24c-2.09-2.12-5.2-2.29-9.37-2.29c-3.83,0-7.67,0.01-11.5,0.01c-9.25,0.02-18.81,0.04-28.21-0.09  c-4.23-0.07-7.64,1.29-10.9,4.38c-22.36,21.17-45.1,42.57-67.58,63.6c-5.36,5.02-10.81,10.7-15.04,18.32  c-3.6-6.26-7.64-11.41-12.46-15.94c-22.71-21.31-46.54-43.72-70.83-66.62c-2.69-2.54-5.5-3.72-8.82-3.72c-0.03,0-0.07,0-0.1,0  c-16.4,0.12-30.07,0.12-43.02,0c-3.14-0.02-5.45,0.74-7.07,2.34c-2.2,2.17-2.46,5.23-2.47,7.33c-0.03,9.88,0.48,20.45,1.55,32.31  c3.83,42.28,14.79,83.9,32.57,123.71c4.65,10.41,9.15,21.11,13.5,31.46c1.03,2.45,2.06,4.9,3.09,7.35c-1.54-0.35-3.07-0.77-4.67-1.2  c-2.29-0.62-4.65-1.27-7.08-1.71c-0.69-0.13-0.94-0.27-0.96-0.27c-0.02-0.06-0.1-0.35-0.05-1.1c0.24-3.47,0.15-8.5-3.46-12.19  c-1.57-1.61-2.08-3.24-1.94-6.24c0.15-3.18,0.14-6-0.03-8.63c-0.48-7.47-5.62-12.58-12.78-12.71l-2.07-0.04  c-13.09-0.25-26.63-0.51-39.83,5.06c-7.14,3.01-14.74,5.42-22.1,7.75c-4.15,1.31-8.44,2.67-12.63,4.13  c-2.76,0.96-5.04,0.98-7.62,0.07c-3.74-1.33-7.57-2.56-11.28-3.75c-5.73-1.84-11.66-3.75-17.26-6.03  c-14.86-6.05-30.28-8.44-47.16-7.32c-8.97,0.6-13.87,5.53-14.16,14.27c-0.09,2.85-0.06,5.72-0.03,8.49l0.01,1.05  c0.02,1.5-0.16,1.93-0.58,2.32c-3.45,3.3-5,7.7-4.73,13.45c0.05,1.02-0.11,1.29-0.11,1.29c0,0-0.24,0.25-1.35,0.5  c-4.05,0.89-8.1,1.95-12.02,2.97c-3.43,0.9-6.97,1.82-10.46,2.62c-4.41,1-11.02,2.51-13.33,9.77c-0.27,0.07-0.59,0.17-0.93,0.31  c-9.27,3.76-12.09,7.91-12.09,17.77c-0.02,109.59-0.02,205.3,0,292.6c0,12.05,6.16,18.16,18.28,18.16  c43.62,0.01,87.23,0.01,130.85,0.01c43.62,0,87.23,0,130.85-0.01c11.9,0,18.29-6.27,18.48-18.11c0.02-1.26,0.04-2.53,0.07-3.79  c0.12-6.44,0.25-13.1-0.17-19.67c-0.16-2.39,0.27-2.88,0.29-2.9c0.11-0.12,0.68-0.49,3.44-0.49c0.03,0,0.06,0,0.09,0  c53.35,0.15,107.58,0.13,160.03,0.11l28.24-0.01c2.44,0,5.28-0.03,8.05-0.34c9.78-1.1,16.15-8.32,15.85-17.96  C740.01,818.69,739.29,813.59,738.6,808.66z M524.49,736.47c0-9.09-0.01-18.17-0.01-27.26c0-9.15,0.01-18.3,0.01-27.44  c0.02-28.52,0.04-58.01-0.14-87.02c-0.01-2.42,0.4-2.86,0.42-2.88c0.07-0.07,0.53-0.41,2.97-0.41c0.04,0,0.07,0,0.11,0  c42.76,0.18,86.4,0.17,129.71,0c3.12,0.02,4.16,0.65,5.42,3.55c24.59,56.5,42.84,115.57,54.24,175.55  c2.45,12.91,4.41,26.17,6.3,38.99c0.51,3.48,1.03,6.96,1.55,10.43c0.62,4.12,0.29,5.51-0.1,5.96c-0.58,0.67-2.67,1.01-6.22,1.01  l-42.21,0c-48.75-0.01-99.15-0.01-148.73,0.11c-0.02,0-0.04,0-0.07,0c-2.46,0-2.92-0.38-2.96-0.43c-0.04-0.04-0.44-0.51-0.42-2.96  C524.53,794.61,524.51,765.05,524.49,736.47z M662.15,536.86c-0.82,2-1.36,2.38-3.78,2.34c-26.28-0.15-47.68-0.14-67.34,0.02  c-1.86,0.02-2.35-0.22-2.38-0.22c0,0,0,0,0,0c-0.01-0.02-0.28-0.43-0.24-2.18c0.21-10.39,0.17-20.95,0.14-31.15  c-0.01-4-0.03-8.01-0.03-12.01c0-3.57,0.04-7.15,0.09-10.73c0.1-7.94,0.2-16.14-0.2-24.23c-0.75-15.13,4.76-27.5,17.33-38.94  c10.91-9.94,21.84-20.2,32.41-30.13c2.8-2.63,5.6-5.26,8.4-7.88c8.13-7.62,16.82-15.81,25.24-23.99c1.4-1.36,2.68-1.87,4.72-1.83  l0.6,0.01c10.14,0.12,20.63,0.25,30.96-0.06c1.15-0.03,1.63,0.09,1.81,0.15c0.07,0.19,0.2,0.76,0.17,2.24  c-0.77,43.99-10.01,87.83-27.46,130.33c-3.31,8.06-6.81,16.21-10.19,24.09C668.98,520.59,665.47,528.76,662.15,536.86z   M656.44,553.92c1.08,0,1.57,0.11,1.76,0.18c0.05,0.19,0.14,0.66,0.09,1.68c-0.34,7.23-0.33,13.14,0.02,18.58  c0.06,0.88-0.02,1.32-0.07,1.5c-0.53,0.17-1.97,0.17-2.61,0.17c-25.64-0.06-51.72-0.06-76.93-0.05l-22.43,0  c-2.83,0-5.65-0.01-8.48-0.01c-7.18-0.02-14.61-0.04-21.93,0.07c-0.87,0.01-1.29-0.04-1.49-0.09c-0.05-0.18-0.11-0.53-0.12-1.16  c-0.14-8.31-4.5-14.11-12.27-16.33c-0.31-0.09-0.75-0.21-0.96-0.31c-0.01-0.03-0.02-0.07-0.04-0.13c-0.42-1.58-1.1-2.89-1.94-4.01  l22.75,0c40.84,0,83.07,0.01,124.61-0.09C656.41,553.92,656.43,553.92,656.44,553.92z M508.75,577.98c0,0.34,0.01,0.67,0.01,1.01  v286.92c0,2.09,0,5.24-0.34,5.8c-0.64,0.42-3.9,0.42-6.06,0.42c-9.21,0.01-18.4,0-27.6-0.01c-29.3-0.01-59.59-0.03-89.39,0.11  c-2.47,0.02-2.87-0.35-2.89-0.37c0,0-0.38-0.41-0.34-2.68c0.27-16.69,0.19-33.65,0.11-50.04l-0.03-5.85  c-0.01-2.47,0.57-4.21,2.07-6.22c28.86-38.57,58.09-77.87,86.36-115.88l10.51-14.13c6.35-8.54,11.18-15.1,15.65-21.29  c2.42-3.34,3.18-7.14,2.13-10.7c-1.06-3.62-3.94-6.59-7.92-8.16c-3.42-1.35-6.85-1.6-10.21-1.6c-1,0-1.99,0.02-2.98,0.04  c-1.35,0.03-2.72,0.06-4.1,0.03l4.47-8.49c4.99-9.48,9.87-18.76,14.79-28.02c2.39-4.51,4.87-9.08,7.27-13.5  c1.85-3.42,3.7-6.83,5.54-10.26l0.29-0.56c0.29-0.56,0.77-1.48,1.06-1.73c0.06,0,0.18,0.02,0.38,0.08c0.61,0.18,1.36,0.41,1.25,2.61  C508.73,576.37,508.74,577.19,508.75,577.98z M254.63,563.38c1-0.42,2.93-0.92,3.86-1.16l0.21-0.05c4.8-1.25,9.76-2.54,14.65-3.74  c0.82-0.2,1.7-0.42,2.39-0.56c0.03,0.79,0.03,1.84,0.03,2.82c0,7.52,0,15.05,0,22.57l0,18.34c0,0.37,0,0.73,0.01,1.09  c-6.24-11.61-12.65-23.47-19.2-35.43C255.93,566.05,255,564.35,254.63,563.38z M290.86,562.43c-0.01-6.98-0.02-14.21,0.04-21.3  c0.02-1.9,0.49-3.33,1.34-4.02c0.94-0.76,2.42-0.67,3.49-0.45c2.57,0.51,5.14,1.01,7.72,1.5c13.76,2.63,27.98,5.36,40.93,11.34  c2.04,0.94,2.42,1.21,2.3,3.93c-0.58,13.3-0.57,26.39,0.05,38.89c0.12,2.51-0.13,2.62-2.09,3.52c-12.22,5.59-25.38,8.4-37.82,10.8  c-1.29,0.25-2.58,0.53-3.87,0.81c-2.32,0.51-4.52,0.98-6.74,1.28c-1.32,0.18-3.11,0.21-4.08-0.64c-1-0.87-1.22-2.7-1.23-4.08  c-0.05-7.38-0.04-14.89-0.03-22.16c0-3.09,0.01-6.19,0.01-9.28C290.87,569.19,290.86,565.81,290.86,562.43z M296.27,516.54  c-0.01-0.09-0.02-0.17-0.03-0.24c0.41-0.02,0.95-0.01,1.32-0.01c0.26,0,0.52,0.01,0.77,0.01c1.98,0,3.96,0,6.37,0l3.89,0l0.46-0.04  c6.03-0.94,13.34,1.22,19.71,3.45c11.76,4.13,24.31,8.49,37.15,12.44c1.78,0.55,1.76,0.75,1.54,3.29c-0.04,0.52-0.09,1.09-0.11,1.67  c-0.85-0.05-1.88-0.07-2.93,0.33c-5.98,2.29-11.19-0.02-17.21-2.69c-0.58-0.26-1.16-0.52-1.74-0.77  c-13.82-6.02-28.62-8.58-42.93-11.05c-1.54-0.27-3.08-0.53-4.62-0.8c-1.39-0.24-1.73-0.58-1.73-0.58c-0.12-0.26-0.02-1.27,0.04-1.86  C296.31,518.75,296.42,517.67,296.27,516.54z M382.39,533.95c-0.06-0.61-0.04-0.9-0.02-1.02c0.06-0.03,0.16-0.08,0.33-0.14  c5.18-1.71,10.41-3.53,15.47-5.29c10.92-3.79,22.21-7.71,33.47-10.76c4.84-1.31,10.23-0.98,15.95-0.64  c1.87,0.11,3.79,0.23,5.69,0.28c-0.18,0.66-0.37,1.48-0.09,2.39c0.55,2.18,0.26,2.77,0.26,2.77c-0.05,0.06-0.39,0.35-2.31,0.7  c-19.13,3.5-38.92,7.12-57.14,16.15c-1.86,0.92-4.35,0.25-7.23-0.53c-1.45-0.39-2.93-0.79-4.46-1.02c0.01-0.12,0.02-0.23,0.03-0.33  C382.4,535.67,382.48,534.81,382.39,533.95z M572.79,483.34c0.02,3.79,0.04,7.57,0.04,11.36c0,3.88-0.01,7.76-0.02,11.64  c-0.03,10.15-0.05,20.65,0.11,30.98c0.02,1.07-0.09,1.55-0.15,1.74c-0.19,0.06-0.67,0.17-1.8,0.16c-11.2-0.08-22.49-0.11-33.73-0.11  c-9.52,0-18.99,0.02-28.31,0.04l-6.97,0.01c-1.95,0-2.01-0.07-2.4-1c-2.36-5.58-4.76-11.14-7.16-16.7  c-12.49-28.94-25.41-58.86-32.29-90.3c-5.17-23.61-7.88-43.2-8.54-61.64c-0.15-4.37-0.51-8.84-0.83-12.79  c-0.03-0.35-0.03-0.6-0.03-0.78c0.13-0.01,0.3-0.02,0.52-0.02c11.73,0.14,23.63,0.09,34.82,0.03c1.3-0.02,2.16,0.62,3.65,2.04  l11.91,11.27c18.89,17.87,37.78,35.75,56.68,53.61c10.13,9.58,14.91,20.93,14.59,34.7C572.69,466.18,572.74,474.9,572.79,483.34z   M328.47,617.11c7.91-1.8,16.15-4.82,25.93-9.52l0.24-0.12c1.33-0.64,1.86-0.85,2.57-0.72c11.82,2.24,23.77,2.24,35.53-0.01  c0.61-0.12,0.94-0.04,1.25,0.12c8.24,4.19,17.28,7.58,28.23,10.57l-47.24,95.63c-5.96-12.01-11.91-24.03-17.85-36.05  c-9.52-19.24-19.35-39.13-29.1-58.66c-0.22-0.43-0.36-0.76-0.45-1C327.8,617.28,328.09,617.2,328.47,617.11z M473.81,559.58  c-0.02-0.88,0.03-1.44,0.08-1.77c0.33,0.04,0.87,0.15,1.71,0.4c5.85,1.76,11.87,3.1,17.69,4.4l1.16,0.26  c0.34,0.08,0.6,0.15,0.8,0.21c-0.09,0.23-0.24,0.54-0.46,0.95c-6.99,12.97-14,26.14-20.9,39.11c0.01-3.14,0.02-6.29,0.03-9.43  C473.97,582.54,474,570.97,473.81,559.58z M458.75,631.68c-0.61,1.15-1.25,2.38-1.82,3.71c-1.05,2.48-2.26,6.16-0.72,9.42  c1.54,3.25,5.07,4.64,7.96,5.49c3.85,1.13,7.56,1.06,11.15,0.99c1.86-0.03,3.61-0.07,5.34,0.06c0.3,0.02,0.59,0.02,0.87,0.01  c-0.17,0.19-0.33,0.39-0.49,0.6c-8.47,11.45-17.16,23.04-25.56,34.26c-4.96,6.63-9.93,13.25-14.88,19.89  c-19.41,26.01-39.1,52.49-58.15,78.1l-0.19,0.26c-0.05-5.75-0.04-11.58-0.03-17.24l0.01-6.42l-0.04-0.5  c-3.71-21.72,6.05-40.83,14.65-57.7c13.19-25.84,25.78-51.34,39.7-79.61c0.77-1.57,1.11-2.11,2.01-2.11c0.41,0,0.94,0.11,1.67,0.29  c0.61,0.15,1.22,0.3,1.83,0.46c4.11,1.03,8.38,2.14,12.91,2.07c3.38-0.03,6.43-0.72,9.04-1.98L458.75,631.68z M458.96,583.2  c0,6.94,0.01,13.87-0.02,20.81c-0.01,2.08-0.48,3.6-1.32,4.29c-0.94,0.77-2.56,0.65-3.75,0.42c-2.45-0.48-4.9-0.95-7.35-1.41  c-13.9-2.63-28.28-5.35-41.31-11.54c-1.85-0.88-2.12-1.15-2.05-3.37c0.41-13.93,0.41-26.65,0.01-38.89  c-0.09-2.63,0.41-3.13,2.59-4.12c12.31-5.59,25.82-8.27,38.88-10.86l2.32-0.47c2.11-0.43,4.28-0.87,6.41-1.21  c0.6-0.1,1.28-0.17,1.94-0.17c0.96,0,1.88,0.16,2.46,0.65c0.97,0.82,1.18,2.74,1.18,4.21c0.02,7.4,0.02,14.8,0.01,22.2l0,9.32  C458.96,576.43,458.96,579.82,458.96,583.2z M388.58,587.68l0,1.88c0,0.97-0.13,2.26-0.79,2.92c-0.68,0.68-2.02,0.82-3.02,0.82  c-1.93,0-3.87,0-5.8,0.01c-4.6,0.01-9.37,0.02-14.04-0.03c-2.79-0.03-3.72-1.02-3.7-3.92c0.02-3.87,0.02-7.74,0.01-11.62l0-4.99  c0-1.68,0.01-3.36,0.02-5.04c0.02-3.8,0.04-7.73-0.04-11.61c-0.06-2.87,0.9-3.91,3.68-3.98c3.37-0.08,6.71-0.12,9.98-0.12  c3.5,0,6.94,0.05,10.28,0.14c2.56,0.07,3.47,1.03,3.45,3.67C388.54,566.44,388.56,577.24,388.58,587.68z M301.58,622.69l0.19-0.04  c5.41-1.09,8.67-1.75,10.12-1.04c1.44,0.71,2.94,3.77,5.25,8.71c9.55,20.35,19.8,40.75,29.72,60.48  c6.27,12.47,12.75,25.36,18.98,38.1c0.17,0.35,0.35,0.69,0.53,1.03c0.55,1.06,1.03,1.97,1.03,2.79l0,51.59l-1.78-2.37  c-4.18-5.57-8.37-11.15-12.53-16.73l-3.15-4.22c-22.5-30.16-45.01-60.33-67.48-90.51c-3.45-4.63-6.9-9.39-10.24-13.99  c-1.26-1.73-2.51-3.47-3.77-5.2c1.69-0.06,3.41-0.01,5.21,0.04c4.17,0.12,8.49,0.24,12.92-1.06c4.92-1.44,6.91-4.04,7.72-5.97  c0.75-1.78,1.21-4.71-0.84-8.56c-2.48-4.65-5-9.38-7.55-14.17C290.08,623.58,295.33,623.96,301.58,622.69z M276.07,635.36  c-0.07,0-0.15,0-0.22,0c-3.39-0.04-6.6-0.08-9.84,0.1c-5.36,0.3-10.76,1.42-14.01,7.55c-3.43,6.48,0.08,11.24,2.65,14.73  c18.15,24.61,34.74,47,50.73,68.46c11.24,15.09,22.52,30.16,33.79,45.23c8.7,11.63,17.4,23.27,26.09,34.91  c1.58,2.12,2.25,4,2.23,6.27c-0.19,21.2-0.18,39.84,0.01,57.01c0.02,1.87-0.25,2.3-0.25,2.3c-0.02,0.01-0.45,0.28-2.32,0.29  c-22.26-0.09-44.8-0.11-66.95-0.11c-6.39,0-12.75,0-19.06,0c-11.25,0-22.51,0-33.76,0c-3,0-3.69-0.28-3.83-0.38  c-0.16-0.21-0.42-1.01-0.42-4.1c-0.01-93.31-0.01-186.61,0-279.92l0-11.06c-0.01-0.83-0.01-1.61,0.06-2.33  c0.08-0.8,0.39-1.18,1.17-1.41c0.19-0.06,0.3-0.06,0.35-0.06c0.01,0,0.02,0,0.02,0c0.01,0,0.26,0.14,0.63,0.82  c1.47,2.69,2.96,5.36,4.46,8.03c2.06,3.67,4.19,7.47,6.19,11.23c6.19,11.67,12.42,23.57,18.44,35.08L276.07,635.36z"></path></svg>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-64ee2ef7 elementor-widget elementor-widget-heading" data-id="64ee2ef7" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Código de vestimenta</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2bbf4c52 elementor-widget elementor-widget-heading" data-id="2bbf4c52" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Formal</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2ce4cba6 elementor-widget elementor-widget-spacer" data-id="2ce4cba6" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-ff39d7f elementor-widget elementor-widget-spacer" data-id="ff39d7f" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-381f5ea5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="381f5ea5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:35,&quot;url&quot;:&quot;https:\/\/operacionxv.mx\/wp-content\/uploads\/2023\/08\/unnamed-8-17.jpg&quot;}],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-67421d02" data-id="67421d02" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-545dc759 elementor-widget elementor-widget-spacer" data-id="545dc759" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-247bce32 . elementor-widget elementor-widget-heading" data-id="247bce32" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Asistencia</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-31baf297 elementor-widget elementor-widget-spacer" data-id="31baf297" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-a8fc1d3 elementor-widget elementor-widget-spacer" data-id="a8fc1d3" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7f63b925 elementor-widget elementor-widget-spacer" data-id="7f63b925" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1474e3d8 elementor-widget elementor-widget-spacer" data-id="1474e3d8" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-7c46113a elementor-widget elementor-widget-heading" data-id="7c46113a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">¡Queremos compartir este momento contigo!
+<br>Por favor ayúdanos confirmando tu asistencia.</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-68e49173 elementor-align-center elementor-widget elementor-widget-button" data-id="68e49173" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;slideInDown&quot;}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a class="elementor-button elementor-button-link elementor-size-md" href="https://wa.link/ckrll7">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 50 50" width="50px" height="50px"><path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"></path></svg>			</span>
+									<span class="elementor-button-text">Confirmar asistencia</span>
+					</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-42d96b63 . elementor-widget elementor-widget-heading" data-id="42d96b63" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Pase para <br>5 personas</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-680d0b4b elementor-widget elementor-widget-heading" data-id="680d0b4b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Respetuosamente: <br>NO niños</h2>		</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-c188357 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c188357" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2987fb5d" data-id="2987fb5d" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4ed41f75 elementor-widget elementor-widget-spacer" data-id="4ed41f75" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-286167d7 . elementor-widget elementor-widget-heading" data-id="286167d7" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Opciones de Regalo</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-c8ad97 elementor-widget elementor-widget-spacer" data-id="c8ad97" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-57204263 elementor-widget elementor-widget-text-editor" data-id="57204263" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							Mi mejor regalo es compartir contigo este gran día, 
+<br>si deseas obsequiarme algo, puedo sugerir las
+siguientes opciones:						</div>
+				</div>
+				<div class="elementor-element elementor-element-4e189821 elementor-widget elementor-widget-spacer" data-id="4e189821" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2de3f675 elementor-view-default elementor-widget elementor-widget-icon" data-id="2de3f675" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="far fa-envelope"></i>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2424400f elementor-view-default elementor-widget elementor-widget-icon" data-id="2424400f" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<i aria-hidden="true" class="fas fa-gift"></i>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-2c5646a1 elementor-widget elementor-widget-spacer" data-id="2c5646a1" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-c35bbe2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c35bbe2" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2036d432" data-id="2036d432" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5f92d7e0 elementor-view-default elementor-widget elementor-widget-icon" data-id="5f92d7e0" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;bounce&quot;}" data-widget_type="icon.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-icon-wrapper">
+			<div class="elementor-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><title>CAMERA</title><g><path d="M118.5,33.5H101.293l-2.456-9.737a1.75,1.75,0,0,0-1.7-1.323H64.86a1.75,1.75,0,0,0-1.7,1.323L60.707,33.5H34.94V29.25a1.75,1.75,0,0,0-1.75-1.75h-9a1.75,1.75,0,0,0-1.75,1.75V33.5H9.5a4.756,4.756,0,0,0-4.75,4.75v62.561a4.756,4.756,0,0,0,4.75,4.75h109a4.756,4.756,0,0,0,4.75-4.75V38.25A4.756,4.756,0,0,0,118.5,33.5ZM8.25,55H57.3a28.683,28.683,0,0,0,5,38.058H8.25Zm47.5,16.25A25.25,25.25,0,1,1,81,96.5,25.278,25.278,0,0,1,55.75,71.25Zm54,0A28.581,28.581,0,0,0,104.7,55h15.05V93.058H99.7A28.689,28.689,0,0,0,109.75,71.25ZM66.223,25.94H95.777l1.907,7.56H64.316ZM25.94,31h5.5v2.5h-5.5ZM9.5,37h109a1.252,1.252,0,0,1,1.25,1.25V51.5H101.863a28.681,28.681,0,0,0-41.738.013c-.042,0-.083-.013-.125-.013H8.25V38.25A1.252,1.252,0,0,1,9.5,37Zm109,65.061H9.5a1.252,1.252,0,0,1-1.25-1.25V96.558H66.813a1.747,1.747,0,0,0,.442-.063,28.706,28.706,0,0,0,27.414.042,1.775,1.775,0,0,0,.206.021H119.75v4.253A1.252,1.252,0,0,1,118.5,102.061Z"></path><path d="M12.5,73.958a1.75,1.75,0,0,0-1.75,1.75v6a1.75,1.75,0,0,0,3.5,0v-6A1.75,1.75,0,0,0,12.5,73.958Z"></path><path d="M103.75,71.25A22.75,22.75,0,1,0,81,94,22.776,22.776,0,0,0,103.75,71.25Zm-42,0A19.25,19.25,0,1,1,81,90.5,19.272,19.272,0,0,1,61.75,71.25Z"></path><path d="M86.312,27.971h-12a1.75,1.75,0,0,0,0,3.5h12a1.75,1.75,0,0,0,0-3.5Z"></path><path d="M24.192,46h9a1.75,1.75,0,1,0,0-3.5h-9a1.75,1.75,0,0,0,0,3.5Z"></path><path d="M109.5,49a4.75,4.75,0,1,0-4.75-4.75A4.756,4.756,0,0,0,109.5,49Zm0-6a1.25,1.25,0,1,1-1.25,1.25A1.252,1.252,0,0,1,109.5,43Z"></path><path d="M82.237,79.688l6.894-6.894a6.145,6.145,0,0,0,0-8.693h0A6.15,6.15,0,0,0,81,63.6a6.148,6.148,0,0,0-8.131,9.193l6.894,6.894a1.75,1.75,0,0,0,2.474,0Zm-6.893-9.369a2.647,2.647,0,1,1,3.745-3.743l.674.674a1.752,1.752,0,0,0,2.474,0l.675-.675a2.712,2.712,0,0,1,3.744,0h0a2.646,2.646,0,0,1,0,3.744L81,75.976Z"></path></g></svg>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-1496e87f elementor-widget elementor-widget-heading" data-id="1496e87f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">¡Toma muchas<br>fotos!<br></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f314a6 elementor-widget elementor-widget-heading" data-id="f314a6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Y no olvides usar el hashtag</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-7676e9d5 elementor-widget elementor-widget-heading" data-id="7676e9d5" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">#XVdeNatalyYuliana<br></h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-20303a58 elementor-align-center elementor-widget elementor-widget-button" data-id="20303a58" data-element_type="widget" data-settings="{&quot;_animation_mobile&quot;:&quot;bounceIn&quot;}" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a class="elementor-button elementor-button-link elementor-size-md" href="https://www.instagram.com/explore/tags/xvaños/">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256px" height="256px" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid"><g><path d="M127.999746,23.06353 C162.177385,23.06353 166.225393,23.1936027 179.722476,23.8094161 C192.20235,24.3789926 198.979853,26.4642218 203.490736,28.2166477 C209.464938,30.5386501 213.729395,33.3128586 218.208268,37.7917319 C222.687141,42.2706052 225.46135,46.5350617 227.782844,52.5092638 C229.535778,57.0201472 231.621007,63.7976504 232.190584,76.277016 C232.806397,89.7746075 232.93647,93.8226147 232.93647,128.000254 C232.93647,162.177893 232.806397,166.225901 232.190584,179.722984 C231.621007,192.202858 229.535778,198.980361 227.782844,203.491244 C225.46135,209.465446 222.687141,213.729903 218.208268,218.208776 C213.729395,222.687649 209.464938,225.461858 203.490736,227.783352 C198.979853,229.536286 192.20235,231.621516 179.722476,232.191092 C166.227425,232.806905 162.179418,232.936978 127.999746,232.936978 C93.8200742,232.936978 89.772067,232.806905 76.277016,232.191092 C63.7971424,231.621516 57.0196391,229.536286 52.5092638,227.783352 C46.5345536,225.461858 42.2700971,222.687649 37.7912238,218.208776 C33.3123505,213.729903 30.538142,209.465446 28.2166477,203.491244 C26.4637138,198.980361 24.3784845,192.202858 23.808908,179.723492 C23.1930946,166.225901 23.0630219,162.177893 23.0630219,128.000254 C23.0630219,93.8226147 23.1930946,89.7746075 23.808908,76.2775241 C24.3784845,63.7976504 26.4637138,57.0201472 28.2166477,52.5092638 C30.538142,46.5350617 33.3123505,42.2706052 37.7912238,37.7917319 C42.2700971,33.3128586 46.5345536,30.5386501 52.5092638,28.2166477 C57.0196391,26.4642218 63.7971424,24.3789926 76.2765079,23.8094161 C89.7740994,23.1936027 93.8221066,23.06353 127.999746,23.06353 M127.999746,0 C93.2367791,0 88.8783247,0.147348072 75.2257637,0.770274749 C61.601148,1.39218523 52.2968794,3.55566141 44.1546281,6.72008828 C35.7374966,9.99121548 28.5992446,14.3679613 21.4833489,21.483857 C14.3674532,28.5997527 9.99070739,35.7380046 6.71958019,44.1551362 C3.55515331,52.2973875 1.39167714,61.6016561 0.769766653,75.2262718 C0.146839975,88.8783247 0,93.2372872 0,128.000254 C0,162.763221 0.146839975,167.122183 0.769766653,180.774236 C1.39167714,194.398852 3.55515331,203.703121 6.71958019,211.845372 C9.99070739,220.261995 14.3674532,227.400755 21.4833489,234.516651 C28.5992446,241.632547 35.7374966,246.009293 44.1546281,249.28042 C52.2968794,252.444847 61.601148,254.608323 75.2257637,255.230233 C88.8783247,255.85316 93.2367791,256 127.999746,256 C162.762713,256 167.121675,255.85316 180.773728,255.230233 C194.398344,254.608323 203.702613,252.444847 211.844864,249.28042 C220.261995,246.009293 227.400247,241.632547 234.516143,234.516651 C241.632039,227.400755 246.008785,220.262503 249.279912,211.845372 C252.444339,203.703121 254.607815,194.398852 255.229725,180.774236 C255.852652,167.122183 256,162.763221 256,128.000254 C256,93.2372872 255.852652,88.8783247 255.229725,75.2262718 C254.607815,61.6016561 252.444339,52.2973875 249.279912,44.1551362 C246.008785,35.7380046 241.632039,28.5997527 234.516143,21.483857 C227.400247,14.3679613 220.261995,9.99121548 211.844864,6.72008828 C203.702613,3.55566141 194.398344,1.39218523 180.773728,0.770274749 C167.121675,0.147348072 162.762713,0 127.999746,0 Z M127.999746,62.2703115 C91.698262,62.2703115 62.2698034,91.69877 62.2698034,128.000254 C62.2698034,164.301738 91.698262,193.730197 127.999746,193.730197 C164.30123,193.730197 193.729689,164.301738 193.729689,128.000254 C193.729689,91.69877 164.30123,62.2703115 127.999746,62.2703115 Z M127.999746,170.667175 C104.435741,170.667175 85.3328252,151.564259 85.3328252,128.000254 C85.3328252,104.436249 104.435741,85.3333333 127.999746,85.3333333 C151.563751,85.3333333 170.666667,104.436249 170.666667,128.000254 C170.666667,151.564259 151.563751,170.667175 127.999746,170.667175 Z M211.686338,59.6734287 C211.686338,68.1566129 204.809755,75.0337031 196.326571,75.0337031 C187.843387,75.0337031 180.966297,68.1566129 180.966297,59.6734287 C180.966297,51.1902445 187.843387,44.3136624 196.326571,44.3136624 C204.809755,44.3136624 211.686338,51.1902445 211.686338,59.6734287 Z" fill="#0A0A08"></path></g></svg>			</span>
+									<span class="elementor-button-text">Ir a Instagram</span>
+					</span>
+					</a>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-69ca2a87 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="69ca2a87" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7cae1c8f" data-id="7cae1c8f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6230baf0 . elementor-widget elementor-widget-heading" data-id="6230baf0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Mis <br>Momentos</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-e9018bc elementor-widget elementor-widget-image" data-id="e9018bc" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+													<img fetchpriority="high" decoding="async" width="768" height="114" src="https://operacionxv.mx/wp-content/uploads/2023/08/ornament-768x114.png" class="attachment-medium_large size-medium_large wp-image-27" alt="" srcset="https://operacionxv.mx/wp-content/uploads/2023/08/ornament-768x114.png 768w, https://operacionxv.mx/wp-content/uploads/2023/08/ornament-300x45.png 300w, https://operacionxv.mx/wp-content/uploads/2023/08/ornament.png 1024w" sizes="(max-width: 768px) 100vw, 768px" />													</div>
+				</div>
+				<div class="elementor-element elementor-element-6cc81de8 elementor-widget elementor-widget-gallery" data-id="6cc81de8" data-element_type="widget" data-settings="{&quot;columns&quot;:3,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:40,&quot;sizes&quot;:[]},&quot;gallery_layout&quot;:&quot;masonry&quot;,&quot;columns_tablet&quot;:3,&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;overlay_title&quot;:&quot;caption&quot;,&quot;image_hover_animation&quot;:&quot;grow&quot;,&quot;lazyload&quot;:&quot;yes&quot;,&quot;columns_mobile&quot;:1,&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;link_to&quot;:&quot;file&quot;,&quot;overlay_background&quot;:&quot;yes&quot;,&quot;content_hover_animation&quot;:&quot;fade-in&quot;}" data-widget_type="gallery.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-gallery__container">
+					</div>
+			</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7799690f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7799690f" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-499b2838" data-id="499b2838" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2e9edf55 elementor-widget elementor-widget-text-editor" data-id="2e9edf55" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>¡Gracias por ser parte de uno de los mejores días de mi vida!</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-5f0defea elementor-widget elementor-widget-heading" data-id="5f0defea" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Con amor:</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2f5960d3 animated-fast . elementor-widget elementor-widget-heading" data-id="2f5960d3" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;fadeInDown&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Nataly Yuliana</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-714aee2b elementor-widget elementor-widget-text-editor" data-id="714aee2b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>© 2023 Nataly Yuliana  by Social Mode ALL RIGHTS RESERVED</p><p>¿Tienes un evento en puerta?<br />Diseña con nosotros tu invitación web digital.</p><p>Dando Click <a href="https://wa.me/5218121806258">aquí</a></p>						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-13d36b78 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="13d36b78" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-53cec2b" data-id="53cec2b" data-element_type="column">
+			<div class="elementor-widget-wrap">
+							</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
