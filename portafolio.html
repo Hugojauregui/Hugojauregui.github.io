@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Portfolio - Ingeniero en Computación</title>
+    <style>
+        :root {
+            --blue: #0078d4;
+            --pink: #e74c8c;
+            --light-blue: #50b0e9;
+            --dark-blue: #005a9e;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--blue), var(--pink));
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .logo span {
+            color: var(--pink);
+        }
+        
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navbar ul li {
+            margin-left: 30px;
+        }
+        
+        .navbar ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar ul li a:hover {
+            color: var(--pink);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--pink);
+            opacity: 0.1;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: var(--blue);
+            opacity: 0.1;
+            animation: float 20s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 30px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--blue), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--blue), var(--pink));
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--blue);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--blue), var(--pink));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            padding-right: 50px;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--blue);
+        }
+        
+        .about-text p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .skills {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skill {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--blue), var(--pink));
+            animation: progressAnimation 2s ease-in-out;
+        }
+        
+        @keyframes progressAnimation {
+            from { width: 0; }
+        }
+        
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        
+        .projects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(231, 76, 140, 0.05) 0%, transparent 70%),
+                        radial-gradient(circle at bottom left, rgba(0, 120, 212, 0.05) 0%, transparent 70%);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--blue);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--blue);
+        }
+        
+        .project-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            padding: 5px 10px;
+            background-color: rgba(0, 120, 212, 0.1);
+            color: var(--blue);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        /* Certificates Section */
+        .certificates {
+            padding: 100px 0;
+        }
+        
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .certificate-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .certificate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--blue), var(--pink));
+        }
+        
+        .certificate-content {
+            padding: 20px;
+        }
+        
+        .certificate-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--blue);
+        }
+        
+        .certificate-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--blue);
+        }
+        
+        .contact-info p {
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to right, var(--blue), var(--pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.2);
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--blue), var(--pink));
+            padding: 50px 0 20px;
+            color: var(--white);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo p {
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--white);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            padding-left: 5px;
+            color: #f0f0f0;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .navbar {
+                display: none;
+            }
+            
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-text, .contact-info {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+        }
+
+        /* Animated Elements */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: var(--blue);
+            border-bottom-color: var(--pink);
+            animation: spin 1.5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Hugo<span>Jauregui</span></div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#certificados">Certificados</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h1>Ingeniero en Computación</h1>
+            <p>Estudiante activo de ingeniería en computación con experiencia en desarrollo web, aplicaciones Python, Android Studio y C++. Apasionado por la tecnología y el desarrollo de soluciones innovadoras.</p>
+            <a href="#proyectos" class="btn">Ver Proyectos</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Conóceme un poco más</h3>
+                    <p>Soy un estudiante activo de ingeniería en computación comprometido con el desarrollo de habilidades técnicas y profesionales. Aunque no cuento con experiencia laboral formal, he trabajado en diversos proyectos que me han permitido aplicar mis conocimientos y desarrollar soluciones efectivas.</p>
+                    <p>Mi formación incluye certificaciones en HTML, CSS, JavaScript, control de versiones y desarrollo front-end. También tengo conocimiento en gestión de proyectos basados en ISO/IEC 29110 y fundamentos de redes CCNA de Cisco.</p>
+                    <p>Me apasiona aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer como profesional en el ámbito de la computación.</p>
+                </div>
+                <div class="skills">
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>HTML/CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>PHP</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>C++</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Android Studio</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="proyectos">
+        <div class="container">
+            <h2 class="section-title">Mis Proyectos</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas">🌐</i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sitio Web para Cotización de Impresiones 3D</h3>
+                        <p>Desarrollado durante mi servicio social, este sitio permite a los usuarios cotizar impresiones 3D de manera eficiente y sencilla.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">CRUD</span>
+                        </div>
+                        <a href="#" class="btn">Ver Proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas">📱</i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Aplicación Android</h3>
+                        <p>Aplicación móvil desarrollada en Android Studio que implementa funcionalidades innovadoras utilizando Java.</p>
+                        <div class="project-tags">
+                            <span class="tag">Android Studio</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">XML</span>
+                        </div>
+                        <a href="#" class="btn">Ver Proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas">🐍</i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de Análisis de Datos en Python</h3>
+                        <p>Herramienta desarrollada en Python para el análisis y visualización de datos complejos.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Matplotlib</span>
+                        </div>
+                        <a href="#" class="btn">Ver Proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas">🖥️</i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Algoritmos en C++</h3>
+                        <p>Implementación de algoritmos avanzados y estructuras de datos en C++ para solucionar problemas complejos.</p>
+                        <div class="project-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">Algoritmos</span>
+                            <span class="tag">Estructuras de Datos</span>
+                        </div>
+                        <a href="#" class="btn">Ver Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificados">
+    <div class="container">
+        <h2 class="section-title">Certificaciones</h2>
+        <div class="certificate-grid">
+            <div class="certificate-card">
+                <div class="certificate-content">
+                    <h3>HTML y CSS en Profundidad</h3>
+                    <p>Coursera</p>
+                    <p>Desarrollo avanzado de sitios web utilizando HTML y CSS con enfoque en responsive design y accesibilidad.</p>
+                    <a href="https://coursera.org/share/801040d282345bdb967c889b2b9756a9" class="btn-certificado" target="_blank">Ver Certificado</a>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-content">
+                    <h3>Control de Versiones</h3>
+                    <p>Coursera</p>
+                    <p>Gestión de código fuente utilizando sistemas de control de versiones como Git y GitHub.</p>
+                    
+                    <a href="https://coursera.org/share/8c77435c94488b54df5016a69b76b267" class="btn-certificado" target="_blank">Ver Certificado</a>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-content">
+                    <h3>Programación con JavaScript</h3>
+                    <p>Coursera</p>
+                    <p>Fundamentos y técnicas avanzadas de programación con JavaScript para desarrollo web.</p>
+                    <a href="https://coursera.org/share/99d56b1c2fe4b1e28b717c08a2ee0c72" class="btn-certificado" target="_blank">Ver Certificado</a>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-content">
+                    <h3>Introducción al Desarrollo Front-End</h3>
+                    <p>Coursera</p>
+                    <p>Conceptos fundamentales para el desarrollo de interfaces web modernas y atractivas.</p>
+                    <a href="https://coursera.org/share/99d56b1c2fe4b1e28b717c08a2ee0c72" class="btn-certificado" target="_blank">Ver Certificado</a>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-content">
+                    <h3>ISO/IEC 29110: Gestión de Proyectos</h3>
+                    <p>Constancia de Taller</p>
+                    <p>Prácticas para la gestión efectiva de desarrollo de proyectos basados en estándares internacionales.</p>
+                    <a href="https://drive.google.com/file/d/1Vm8nB-GzwxecQLNdY7SGn8tCGims1JYK/view?usp=drivesdk" class="btn-certificado" target="_blank">Ver Certificado</a>
+                </div>
+            </div>
+            <div class="certificate-card">
+                <div class="certificate-content">
+                    <h3>CCNA: Fundamentos de Computación</h3>
+                    <p>Cisco</p>
+                    <p>Conocimientos fundamentales sobre redes, enrutamiento y conectividad inalámbrica.</p>
+                    <a href="https://www.credly.com/badges/d24d6bf7-7b86-4808-9617-73ceda518454/public_url" class="btn-certificado" target="_blank">Ver Certificado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .btn-certificado {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-certificado:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>¡Hablemos!</h3>
+                    <p>Si estás interesado en mi trabajo o tienes alguna oportunidad de colaboración, no dudes en contactarme. Estoy abierto a nuevos proyectos y oportunidades de aprendizaje.</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i>✉️</i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hugo.jauregui05@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i>📱</i>
+                        </div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+52 33 1340 3270</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i>📍</i>
+                        </div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Guadalajara, Jal.</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="formContacto">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Asunto">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensaje</button>
+                </form>
+                <script>
+document.getElementById("formContacto").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita el envío real del formulario
+
+    // Obtener los valores del formulario
+    const nombre = this.querySelector('input[placeholder="Nombre"]').value;
+    const email = this.querySelector('input[placeholder="Email"]').value;
+    const asunto = this.querySelector('input[placeholder="Asunto"]').value;
+    const mensaje = this.querySelector('textarea[placeholder="Mensaje"]').value;
+
+    // Aquí podrías hacer algo con los datos, como enviarlos a un servidor
+
+    // Mostrar mensaje de confirmación
+    alert("¡Gracias por tu mensaje, " + nombre + "! Me pondré en contacto contigo pronto.");
+
+    // Resetear el formulario
+    this.reset();
+});
+</script>
+
+                            </div>
+                        </div>
+                    </section>
+                
+                    <!-- Footer -->
+                    <footer>
+                        <div class="container">
+                            <div class="footer-content">
+                                <div class="footer-logo">
+                                    <h3>Dev<span>Portfolio</span></h3>
+                                    <p>Ingeniero en Computación apasionado por crear soluciones innovadoras y eficientes utilizando tecnologías modernas.</p>
+                                    <div class="social-links">
+                                      <a href="https://github.com/tuusuario" class="social-link" target="_blank" aria-label="GitHub">
+                                      <i class="fab fa-github fa-2x"></i>
+                                      </a>
+                                      <a href="https://www.linkedin.com/in/tuusuario" class="social-link" target="_blank" aria-label="LinkedIn">
+                                      <i class="fab fa-linkedin fa-2x"></i>
+                                    </a>
+                                    <style>
+                                        .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #c0c945; /* Color de LinkedIn */
+}
+.social-link:first-child:hover {
+    color: #c0c945; /* GitHub negro */
+}
+
+                                    </style>
+                                </div>
+
+                                </div>
+                                <div class="footer-links">
+                                    <h4>Enlaces Rápidos</h4>
+                                    <ul>
+                                        <li><a href="#inicio">Inicio</a></li>
+                                        <li><a href="#sobre-mi">Sobre Mí</a></li>
+                                        <li><a href="#proyectos">Proyectos</a></li>
+                                        <li><a href="#certificados">Certificados</a></li>
+                                        <li><a href="#contacto">Contacto</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            <div class="copyright">
+                                <p>&copy; 2025 DevPortfolio. Todos los derechos reservados.</p>
+                            </div>
+                        </div>
+                    </footer>
+                    
+                    <!-- Preloader -->
+                    <div class="preloader">
+                        <div class="loader"></div>
+                    </div>
+                    
+                    <!-- JavaScript for Preloader -->
+                    <script>
+                        window.addEventListener('load', function() {
+                            const preloader = document.querySelector('.preloader');
+                            preloader.classList.add('fade-out');
+                            
+                            // Remove preloader after animation
+                            setTimeout(function() {
+                                preloader.style.display = 'none';
+                            }, 500);
+                        });
+                    </script>
+                </body>
+                </html>
