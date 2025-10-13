@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProtoScan - Sistema de Análisis Parasitológico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#11a4d4",
+            "background-light": "#f6f8f8",
+            "background-dark": "#101d22",
+            "foreground-light": "#101d22",
+            "foreground-dark": "#f6f8f8",
+            "card-light": "#ffffff",
+            "card-dark": "#182c34",
+            "border-light": "#e5e7eb",
+            "border-dark": "#374151",
+            "muted-light": "#6b7280",
+            "muted-dark": "#9ca3af",
+            "subtle-light": "#e7f0f3",
+            "subtle-dark": "#1a2c33",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+</script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<div class="flex flex-col min-h-screen">
+<header class="bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark sticky top-0 z-10 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold">ProtoScan</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-primary" href="#">Inicio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="carga_muestra.html">Análisis</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Servicios</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contacto">Contacto</a>
+</nav>
+<div class="flex items-center">
+<a href="login.html">
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+Iniciar Sesión
+</button>
+</a>
+</div>
+</div>
+</div>
+</header>
+
+<main class="flex-grow">
+<section class="relative bg-gradient-to-br from-background-light to-subtle-light dark:from-background-dark dark:to-subtle-dark py-20 md:py-32">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+Sistema Avanzado de <span class="text-primary">Análisis Parasitológico</span>
+</h2>
+<p class="text-lg md:text-xl text-muted-light dark:text-muted-dark mb-8 leading-relaxed">
+Optimiza y agiliza el diagnóstico de parásitos mediante inteligencia artificial y análisis de imágenes microscópicas, respaldado por una base de conocimientos clínicos.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a href="carga_muestra.html" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-lg text-base font-bold hover:bg-primary/90 transition-colors shadow-lg">
+<span class="material-symbols-outlined">science</span>
+Iniciar Análisis
+</a>
+<a href="#acerca" class="inline-flex items-center justify-center gap-2 bg-card-light dark:bg-card-dark text-foreground-light dark:text-foreground-dark px-8 py-3 rounded-lg text-base font-bold hover:bg-opacity-80 transition-colors shadow-lg border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined">info</span>
+Conocer Más
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="acerca" class="py-16 md:py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-12">
+<h3 class="text-3xl md:text-4xl font-bold mb-4">¿Qué es ProtoScan?</h3>
+<p class="text-lg text-muted-light dark:text-muted-dark">Una herramienta diseñada para profesionales y estudiantes del sector salud</p>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm p-8 md:p-12">
+<p class="text-base md:text-lg leading-relaxed mb-6">
+ProtoScan es un sistema innovador que combina <strong>análisis de imágenes microscópicas</strong> con <strong>evaluación clínica integral</strong> para proporcionar diagnósticos parasitológicos precisos y rápidos. Nuestro software está especialmente diseñado para mejorar el flujo de trabajo en laboratorios clínicos y entornos educativos.
+</p>
+<p class="text-base md:text-lg leading-relaxed mb-6">
+El sistema analiza muestras de <strong>heces, sangre, orina y otros tejidos</strong> mediante fotografías tomadas a través de microscopio, aplicando algoritmos avanzados que comparan la imagen con una extensa base de conocimientos parasitológicos.
+</p>
+<p class="text-base md:text-lg leading-relaxed">
+Además, integramos un <strong>cuestionario clínico detallado</strong> que permite al sistema correlacionar síntomas, antecedentes y factores epidemiológicos, refinando así la precisión del diagnóstico y reduciendo significativamente el tiempo de análisis.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="servicios" class="py-16 md:py-24 bg-subtle-light dark:bg-subtle-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-12">
+<h3 class="text-3xl md:text-4xl font-bold mb-4">Características Principales</h3>
+<p class="text-lg text-muted-light dark:text-muted-dark">Tecnología al servicio del diagnóstico clínico</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-5xl">photo_camera</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Análisis de Imágenes</h4>
+<p class="text-muted-light dark:text-muted-dark">
+Carga fotografías microscópicas de muestras siguiendo estándares profesionales para obtener resultados precisos y confiables.
+</p>
+</div>
+
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-5xl">quiz</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Cuestionario Clínico</h4>
+<p class="text-muted-light dark:text-muted-dark">
+Sistema de evaluación integral que correlaciona síntomas, antecedentes y factores de riesgo para mejorar el diagnóstico.
+</p>
+</div>
+
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-5xl">analytics</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Diagnóstico Inteligente</h4>
+<p class="text-muted-light dark:text-muted-dark">
+Algoritmos avanzados que comparan resultados con una amplia base de conocimientos parasitológicos para identificar patógenos.
+</p>
+</div>
+
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-5xl">verified</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Alta Precisión</h4>
+<p class="text-muted-light dark:text-muted-dark">
+Resultados con porcentaje de certeza calculado en base a múltiples parámetros clínicos y morfológicos.
+</p>
+</div>
+
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-5xl">speed</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Resultados Rápidos</h4>
+<p class="text-muted-light dark:text-muted-dark">
+Reduce significativamente el tiempo de análisis, permitiendo diagnósticos más ágiles sin comprometer la calidad.
+</p>
+</div>
+
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-5xl">school</span>
+</div>
+<h4 class="text-xl font-bold mb-3">Herramienta Educativa</h4>
+<p class="text-muted-light dark:text-muted-dark">
+Ideal para estudiantes y profesionales en formación que buscan mejorar sus habilidades diagnósticas.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 md:py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-12">
+<h3 class="text-3xl md:text-4xl font-bold mb-4">Proceso de Análisis</h3>
+<p class="text-lg text-muted-light dark:text-muted-dark">Simple, eficiente y profesional</p>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary/20 dark:bg-primary/30 text-primary rounded-full text-2xl font-bold mb-4">1</div>
+<h4 class="text-lg font-bold mb-2">Captura de Muestra</h4>
+<p class="text-muted-light dark:text-muted-dark text-sm">Toma una fotografía microscópica siguiendo los estándares de calidad establecidos</p>
+</div>
+<div class="text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary/20 dark:bg-primary/30 text-primary rounded-full text-2xl font-bold mb-4">2</div>
+<h4 class="text-lg font-bold mb-2">Cuestionario Clínico</h4>
+<p class="text-muted-light dark:text-muted-dark text-sm">Completa la evaluación con datos del paciente, síntomas y antecedentes relevantes</p>
+</div>
+<div class="text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary/20 dark:bg-primary/30 text-primary rounded-full text-2xl font-bold mb-4">3</div>
+<h4 class="text-lg font-bold mb-2">Obtén Resultados</h4>
+<p class="text-muted-light dark:text-muted-dark text-sm">Recibe un diagnóstico detallado con porcentaje de certeza y justificación clínica</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="py-16 md:py-24 bg-subtle-light dark:bg-subtle-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h3 class="text-3xl md:text-4xl font-bold mb-4">Contacto</h3>
+<p class="text-lg text-muted-light dark:text-muted-dark">¿Tienes alguna pregunta? Estamos aquí para ayudarte</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<h4 class="text-xl font-bold mb-6">Envíanos un mensaje</h4>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium mb-1" for="name">Nombre Completo</label>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="name" placeholder="Tu nombre" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="email">Correo Electrónico</label>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="email" placeholder="correo@ejemplo.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="subject">Asunto</label>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="subject" placeholder="¿En qué podemos ayudarte?" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="message">Mensaje</label>
+<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="message" placeholder="Describe tu consulta o comentario" rows="4"></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-primary/90 transition-colors shadow-lg">
+Enviar Mensaje
+</button>
+</form>
+</div>
+
+<div class="space-y-6">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">location_on</span>
+</div>
+<div>
+<h5 class="font-bold mb-1">Ubicación</h5>
+<p class="text-muted-light dark:text-muted-dark text-sm">Centro Universitario de Ciencias Exactas e Ingenierías<br/>Universidad de Guadalajara<br/>Guadalajara, Jalisco, México</p>
+</div>
+</div>
+</div>
+
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<div>
+<h5 class="font-bold mb-1">Email</h5>
+<p class="text-muted-light dark:text-muted-dark text-sm">contacto@protoscan.com<br/>soporte@protoscan.com</p>
+</div>
+</div>
+</div>
+
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">schedule</span>
+</div>
+<div>
+<h5 class="font-bold mb-1">Horario de Atención</h5>
+<p class="text-muted-light dark:text-muted-dark text-sm">Lunes a Viernes: 9:00 AM - 6:00 PM<br/>Sábados: 10:00 AM - 2:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-card-light dark:bg-card-dark border-t border-border-light dark:border-border-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid md:grid-cols-4 gap-8 mb-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="text-primary size-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="font-bold text-lg">ProtoScan</span>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark">Sistema avanzado de análisis parasitológico para profesionales de la salud.</p>
+</div>
+<div>
+<h6 class="font-bold mb-4">Navegación</h6>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Inicio</a></li>
+<li><a href="#acerca" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Acerca de</a></li>
+<li><a href="#servicios" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Servicios</a></li>
+<li><a href="#contacto" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold mb-4">Recursos</h6>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Documentación</a></li>
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Guía de Uso</a></li>
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Preguntas Frecuentes</a></li>
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Soporte Técnico</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold mb-4">Legal</h6>
+<ul class="space-y-2 text-sm">
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Términos de Uso</a></li>
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Política de Privacidad</a></li>
+<li><a href="#" class="text-muted-light dark:text-muted-dark hover:text-primary transition-colors">Aviso de Cookies</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-border-light dark:border-border-dark pt-6 text-center">
+<p class="text-sm text-muted-light dark:text-muted-dark">© 2025 ProtoScan - Universidad de Guadalajara. Todos los derechos reservados.</p>
+<p class="text-xs text-muted-light dark:text-muted-dark mt-2">Desarrollado por Christopher Roberto Ramos-Salazar</p>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>

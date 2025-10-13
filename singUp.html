@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProtoScan Registro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11a4d4",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101d22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="w-full">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.29 16.29C15.9 16.68 15.27 16.68 14.88 16.29L12 13.41L9.12 16.29C8.73 16.68 8.1 16.68 7.71 16.29C7.32 15.9 7.32 15.27 7.71 14.88L10.59 12L7.71 9.12C7.32 8.73 7.32 8.1 7.71 7.71C8.1 7.32 8.73 7.32 9.12 7.71L12 10.59L14.88 7.71C15.27 7.32 15.9 7.32 16.29 7.71C16.68 8.1 16.68 8.73 16.29 9.12L13.41 12L16.29 14.88C16.68 15.27 16.68 15.9 16.29 16.29Z"></path>
+</svg>
+</div>
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white">ProtoScan</h1>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="max-w-md w-full space-y-8 bg-white dark:bg-gray-800/20 p-8 rounded-xl shadow-lg">
+<div>
+<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+                        Crea tu cuenta
+                    </h2>
+<p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+                        Regístrate para acceder a la plataforma
+                    </p>
+</div>
+<form action="login.html" class="mt-8 space-y-6" method="GET">
+<input name="remember" type="hidden" value="true"/>
+<div class="space-y-4">
+<div>
+<label class="sr-only" for="full-name">Nombre completo</label>
+<input autocomplete="name" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="full-name" name="name" placeholder="Nombre completo" required="" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="email-address">Correo electrónico</label>
+<input autocomplete="email" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="email-address" name="email" placeholder="Correo electrónico" required="" type="email"/>
+</div>
+<div>
+<label class="sr-only" for="password">Contraseña</label>
+<input autocomplete="new-password" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="password" name="password" placeholder="Contraseña" required="" type="password"/>
+</div>
+<div>
+<label class="sr-only" for="confirm-password">Confirmar contraseña</label>
+<input autocomplete="new-password" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña" required="" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-start">
+<div class="flex items-center h-5">
+<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="ml-3 text-sm">
+<label class="text-gray-500 dark:text-gray-400" for="terms">Acepto los <a class="font-medium text-primary hover:text-primary/80" href="#">Términos y Condiciones</a></label>
+</div>
+</div>
+</div>
+<div>
+<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
+                            Crear Cuenta
+                        </button>
+</div>
+</form>
+<div class="text-center text-sm text-gray-600 dark:text-gray-400">
+<p>
+                        ¿Ya tienes una cuenta?
+                        <a class="font-medium text-primary hover:text-primary/80" href="#">
+                            Inicia sesión
+                        </a>
+</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

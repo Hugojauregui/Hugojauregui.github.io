@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11a4d4",
+              "background-light": "#f6f8f8",
+              "background-dark": "#101d22",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700 px-10 py-4">
+<div class="flex items-center gap-4 text-gray-900 dark:text-white">
+<div class="text-primary h-8 w-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-xl font-bold">ProtoScan</h2>
+</div>
+<div class="flex flex-1 items-center justify-end gap-8">
+<nav class="flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary" href="index.html#inicio">Inicio</a>
+<a class="text-sm font-medium hover:text-primary" href="index.html#analisis">Análisis</a>
+<a class="text-sm font-medium hover:text-primary" href="Resultado.html">Resultados</a>
+<a class="text-sm font-medium hover:text-primary" href="index.html#contacto">Ayuda</a>
+</nav>
+<div class="aspect-square w-10 h-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAosi8bUlxD0Qy91ha6_bnWFtZThF0WLzetD4sB0KrH7kNX6oem9yNR9ogXkHU9LMBCpgnaCKVCVjCtnCKpCgatnTg5UGVXGElTjhRPrt2J3lE4-2swQtKqekjfbS7imJ2C8mckxmsdLT5VO1-z6WBkWmE6nms9A3prAvqLxhRENl8Tqq4h_KtRlUobQ9TJeQbRyvpr5JGJDwB4Syga41DrjYTTfnAEU3gYtbcWw6G-S6ewXHy4IqEr0FC1UGfoiE11VIyC5uokXE");'></div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-10 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-2xl space-y-8">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Configuración de la cuenta</h1>
+<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Administre la información de su perfil, notificaciones y preferencias de privacidad.</p>
+</div>
+<div class="space-y-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark p-6 shadow-sm">
+<h2 class="text-lg font-semibold text-gray-900 dark:text-white">Información Personal</h2>
+<div class="grid grid-cols-1 gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="name">Nombre</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 bg-background-light dark:bg-gray-800 dark:border-gray-600 focus:border-primary focus:ring-primary text-gray-900 dark:text-white" id="name" type="text" value="Ana Pérez"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Correo electrónico</label>
+<input class="mt-1 block w-full rounded-lg border-gray-300 bg-background-light dark:bg-gray-800 dark:border-gray-600 focus:border-primary focus:ring-primary text-gray-900 dark:text-white" id="email" type="email" value="ana.perez@example.com"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="password">Contraseña</label>
+<div class="relative mt-1">
+<input class="block w-full rounded-lg border-gray-300 bg-background-light dark:bg-gray-800 dark:border-gray-600 focus:border-primary focus:ring-primary text-gray-900 dark:text-white" id="password" type="password" value="********"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+<span class="material-symbols-outlined h-5 w-5"> visibility_off </span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark p-6 shadow-sm">
+<h2 class="text-lg font-semibold text-gray-900 dark:text-white">Preferencias</h2>
+<div class="divide-y divide-gray-200 dark:divide-gray-700">
+<div class="flex items-center justify-between py-4">
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-white">Notificaciones por correo electrónico</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Recibe alertas sobre nuevos resultados de análisis.</p>
+</div>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox" value=""/>
+<div class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-4">
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-white">Configuración de privacidad</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Controla quién puede ver tu información.</p>
+</div>
+<button class="rounded-lg bg-background-light dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-300 dark:border-gray-600">
+                    Gestionar
+                  </button>
+</div>
+</div>
+</div>
+<div class="flex justify-end pt-2">
+<a href="index.html">
+<button class="flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Guardar cambios
+              </button>
+              </a>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

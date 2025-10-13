@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ProtoScan - Análisis Parasitológico</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#11a4d4",
+            "background-light": "#f6f8f8",
+            "background-dark": "#101d22",
+            "foreground-light": "#101d22",
+            "foreground-dark": "#f6f8f8",
+            "card-light": "#ffffff",
+            "card-dark": "#182c34",
+            "border-light": "#e5e7eb",
+            "border-dark": "#374151",
+            "muted-light": "#6b7280",
+            "muted-dark": "#9ca3af"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<div class="flex flex-col min-h-screen">
+<header class="bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark sticky top-0 z-10">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-xl font-bold">ProtoScan</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#inicio">Inicio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#servicios">Servicios</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#contacto">Contacto</a>
+</nav>
+<div class="flex items-center">
+<a href="login.html">
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+              Iniciar Sesión
+            </button>
+            </a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="max-w-4xl mx-auto">
+<div class="mb-10">
+<h2 class="text-3xl font-bold tracking-tight">Solicitud de Análisis Parasitológico</h2>
+<p class="mt-2 text-muted-light dark:text-muted-dark">Siga los pasos a continuación para enviar su muestra para análisis.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<h3 class="text-xl font-bold mb-4">1. Subir Fotografía de la Muestra</h3>
+<p class="text-muted-light dark:text-muted-dark mb-4">Asegúrate de que la fotografía cumpla con los siguientes criterios para un análisis preciso:</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span>Buena iluminación sin sombras.</span>
+</li>
+<li class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span>Enfoque claro y nítido.</span>
+</li>
+<li class="flex items-start gap-3">
+<svg class="w-5 h-5 text-primary flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span>Muestra completa y visible.</span>
+</li>
+</ul>
+<button class="w-full bg-primary/20 dark:bg-primary/30 text-primary font-medium py-2 px-4 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
+                Subir Fotografía
+              </button>
+</div>
+</div>
+<div class="space-y-8">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<h3 class="text-xl font-bold mb-4">2. Cuestionario Clínico</h3>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium mb-1" for="patient-name">Nombre del Paciente</label>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="patient-name" placeholder="Ingresa el nombre completo" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium mb-1" for="age">Edad</label>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="age" placeholder="Años" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="gender">Género</label>
+<select class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="gender">
+<option>Seleccionar</option>
+<option>Masculino</option>
+<option>Femenino</option>
+<option>Otro</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="symptoms">Síntomas</label>
+<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="symptoms" placeholder="Describe los síntomas del paciente" rows="4"></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="history">Antecedentes Clínicos</label>
+<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="history" placeholder="Detalla los antecedentes clínicos relevantes" rows="4"></textarea>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-end">
+<a href="Resultado.html">
+  <button class="bg-primary text-white px-8 py-3 rounded-lg text-base font-bold hover:bg-primary/90 transition-colors shadow-lg">
+    Enviar Solicitud
+  </button>
+</a>
+
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
