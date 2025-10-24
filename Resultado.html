@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="es">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ProtoScan - Resultados del Análisis</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>
     tailwind.config = {
@@ -34,16 +35,65 @@
         },
       },
     }
-  </script>
+</script>
 <style>
-     .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-      }
-  </style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .skeleton {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  .dark .skeleton {
+    background: linear-gradient(90deg, #1a2c33 25%, #2a3c43 50%, #1a2c33 75%);
+    background-size: 1000px 100%;
+  }
+  
+  .progress-animate {
+    transition: width 2s ease-out;
+  }
+  
+  .notification-badge {
+    animation: pulse-slow 2s infinite;
+  }
+</style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
 <div class="flex flex-col min-h-screen">
@@ -66,79 +116,251 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#recursos">Recursos</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#contacto">Contacto</a>
 </nav>
-<button class="p-2 rounded-full hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors">
+<button class="p-2 rounded-full hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors relative" id="notificationBtn">
 <span class="material-symbols-outlined text-text-light dark:text-text-dark">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full notification-badge"></span>
 </button>
-
-<a href="Settings.html" 
-   class="block transition-transform duration-300 hover:scale-125">
-  <div class="size-10 rounded-full bg-cover bg-center shadow-md"
-       style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgcImNU8yMpSSYTuKm3BaE2DPNIYW44ROWcjcaWBeFeJSTtIKv3649LD9Fxth1hLofhqhwu85wrdJWFlh9pItI_fEFN5zNdZJtq-QvIL03ocwZzOwx5taeoQxl7cLZ8PpqOeQVCVbW-Fy89VlAVdSJcctAzeXWw4d8joKoo3NA5YNQMYz-G-XmBXWpxvcWavoCszHJ0d1bbGpE5aFClaPX2v4PB-h600NilJJIA1ImiQDuTDaX0qe5TLbKxnM_D7aj6F3rP7Oaf2k");'>
-  </div>
+<a href="Settings.html" class="block transition-transform duration-300 hover:scale-125">
+<div class="size-10 rounded-full bg-cover bg-center shadow-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgcImNU8yMpSSYTuKm3BaE2DPNIYW44ROWcjcaWBeFeJSTtIKv3649LD9Fxth1hLofhqhwu85wrdJWFlh9pItI_fEFN5zNdZJtq-QvIL03ocwZzOwx5taeoQxl7cLZ8PpqOeQVCVbW-Fy89VlAVdSJcctAzeXWw4d8joKoo3NA5YNQMYz-G-XmBXWpxvcWavoCszHJ0d1bbGpE5aFClaPX2v4PB-h600NilJJIA1ImiQDuTDaX0qe5TLbKxnM_D7aj6F3rP7Oaf2k");'></div>
 </a>
-
 </div>
 </div>
 </div>
 </header>
+
 <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="max-w-4xl mx-auto">
-<h2 class="text-4xl font-bold tracking-tight mb-8">Resultados Detallados del Análisis</h2>
-<div class="bg-subtle-light dark:bg-subtle-dark rounded-xl shadow-sm overflow-hidden">
+<!-- Loading Screen (oculto por defecto) -->
+<div id="loadingScreen" class="max-w-4xl mx-auto hidden">
+<div class="text-center mb-8">
+<div class="inline-block">
+<div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+</div>
+<h2 class="text-2xl font-bold mt-4">Analizando resultados...</h2>
+<p class="text-text-light/60 dark:text-text-dark/60 mt-2">Procesando información médica</p>
+</div>
+<div class="space-y-4">
+<div class="skeleton h-32 rounded-xl"></div>
+<div class="skeleton h-24 rounded-xl"></div>
+<div class="skeleton h-24 rounded-xl"></div>
+</div>
+</div>
+
+<!-- Content (visible después de cargar) -->
+<div id="mainContent">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-4xl font-bold tracking-tight fade-in-up" style="animation-delay: 0.1s">Resultados Detallados del Análisis</h2>
+<div class="flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg fade-in-up" style="animation-delay: 0.2s">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="text-sm font-medium">Análisis completado</span>
+</div>
+</div>
+
+<div class="bg-subtle-light dark:bg-subtle-dark rounded-xl shadow-sm overflow-hidden fade-in-up" style="animation-delay: 0.3s">
 <div class="grid grid-cols-1 md:grid-cols-2">
-<div class="bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj_J5eqdmfFeMmaiAWVWoksGAgCVl5UrFYASLOlgwbv57sEF81BwTkat1t9bqP1vVyz6ALQG5ahsiSAzdS8448E4uX4axesgKGreuh1TQTQfFJbL6otO9PIUdQulNdidkimzgZaIq7yrSGPqAi9tUk-7BntzoTUCd4MAIgs1lxOBCsN-YOWgZO34u6l6Dn5NyAKeUbNdXDHIKxVostPBFFLEhSW9B-cTQKw1zN6aJT0yhvxFiOhecV6SMy_RVfOwR4noWGxklT9Wg");'></div>
+<div class="bg-cover bg-center min-h-[300px]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj_J5eqdmfFeMmaiAWVWoksGAgCVl5UrFYASLOlgwbv57sEF81BwTkat1t9bqP1vVyz6ALQG5ahsiSAzdS8448E4uX4axesgKGreuh1TQTQfFJbL6otO9PIUdQulNdidkimzgZaIq7yrSGPqAi9tUk-7BntzoTUCd4MAIgs1lxOBCsN-YOWgZO34u6l6Dn5NyAKeUbNdXDHIKxVostPBFFLEhSW9B-cTQKw1zN6aJT0yhvxFiOhecV6SMy_RVfOwR4noWGxklT9Wg");'></div>
 <div class="p-8 flex flex-col justify-center">
 <h3 class="text-2xl font-bold">Posible Parásito Identificado:<br/><span class="text-primary">Giardia lamblia</span></h3>
 <p class="mt-4 text-base text-text-light/80 dark:text-text-dark/80">
-                Giardia lamblia es un parásito microscópico que causa la giardiasis, una infección intestinal común. Se transmite a través del consumo de agua o alimentos contaminados con quistes de Giardia.
-              </p>
+Giardia lamblia es un parásito microscópico que causa la giardiasis, una infección intestinal común. Se transmite a través del consumo de agua o alimentos contaminados con quistes de Giardia.
+</p>
+<div class="mt-4 flex items-center gap-2 text-sm text-primary">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>Análisis realizado: <span id="analysisTime"></span></span>
 </div>
 </div>
 </div>
+</div>
+
 <div class="mt-12 space-y-8">
-<div>
+<div class="fade-in-up" style="animation-delay: 0.4s">
 <h3 class="text-2xl font-bold flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">science</span>
-                Probabilidad del Diagnóstico
-            </h3>
+Probabilidad del Diagnóstico
+</h3>
 <div class="mt-4">
 <div class="flex justify-between items-center mb-2">
 <span class="text-base font-medium">Certeza del Diagnóstico</span>
-<span class="text-lg font-bold text-primary">85%</span>
+<span class="text-lg font-bold text-primary" id="confidenceValue">0%</span>
 </div>
 <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
-<div class="bg-primary h-4 rounded-full" style="width: 85%;"></div>
+<div class="bg-primary h-4 rounded-full progress-animate" id="confidenceBar" style="width: 0%;"></div>
+</div>
+<div class="mt-2 text-sm text-text-light/60 dark:text-text-dark/60">
+Basado en <span class="font-medium text-primary">1,247</span> análisis similares
 </div>
 </div>
 </div>
-<div>
+
+<div class="fade-in-up" style="animation-delay: 0.5s">
 <h3 class="text-2xl font-bold flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">verified_user</span>
-              Justificación del Diagnóstico
-            </h3>
+Justificación del Diagnóstico
+</h3>
 <p class="mt-4 text-base leading-relaxed text-text-light/80 dark:text-text-dark/80">
-              El diagnóstico de Giardia lamblia se basa en la combinación de los síntomas reportados en el cuestionario y la información de nuestra base de conocimientos. Los síntomas clave incluyen diarrea, dolor abdominal, náuseas y pérdida de peso. Estos síntomas, junto con la información epidemiológica y los factores de riesgo identificados, sugieren fuertemente la presencia de Giardia lamblia.
-            </p>
+El diagnóstico de Giardia lamblia se basa en la combinación de los síntomas reportados en el cuestionario y la información de nuestra base de conocimientos. Los síntomas clave incluyen diarrea, dolor abdominal, náuseas y pérdida de peso. Estos síntomas, junto con la información epidemiológica y los factores de riesgo identificados, sugieren fuertemente la presencia de Giardia lamblia.
+</p>
+</div>
+
+<!-- Nueva sección: Datos del análisis -->
+<div class="fade-in-up" style="animation-delay: 0.6s">
+<h3 class="text-2xl font-bold flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">analytics</span>
+Detalles del Procesamiento
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-subtle-light dark:bg-subtle-dark p-4 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">image</span>
+<span class="text-sm font-medium">Imágenes Procesadas</span>
+</div>
+<div class="text-2xl font-bold">12</div>
+</div>
+<div class="bg-subtle-light dark:bg-subtle-dark p-4 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">timer</span>
+<span class="text-sm font-medium">Tiempo de Análisis</span>
+</div>
+<div class="text-2xl font-bold">4.2s</div>
+</div>
+<div class="bg-subtle-light dark:bg-subtle-dark p-4 rounded-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">database</span>
+<span class="text-sm font-medium">Patrones Comparados</span>
+</div>
+<div class="text-2xl font-bold">1,247</div>
 </div>
 </div>
-<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-<a href="carga_muestra.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-primary text-white font-bold rounded-lg shadow-md hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
-  <span class="material-symbols-outlined">home</span>
-  Volver al Inicio
-</a>
+</div>
+</div>
 
-<a href="Historial.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-subtle-light dark:bg-subtle-dark text-text-light dark:text-text-dark font-bold rounded-lg shadow-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
-  <span class="material-symbols-outlined">history</span>
-  Historial de Pacientes
+<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up" style="animation-delay: 0.7s">
+<a href="carga_muestra.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-primary text-white font-bold rounded-lg shadow-md hover:bg-primary/90 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined">home</span>
+Volver al Inicio
 </a>
-
+<button id="downloadBtn" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-700 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined">download</span>
+Descargar Reporte
+</button>
+<a href="Historial.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-subtle-light dark:bg-subtle-dark text-text-light dark:text-text-dark font-bold rounded-lg shadow-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined">history</span>
+Historial de Pacientes
+</a>
 </div>
 </div>
 </main>
+
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-4 right-4 bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 z-50">
+<span class="material-symbols-outlined">check_circle</span>
+<span id="toastMessage">Acción completada</span>
+</div>
+
 <footer class="bg-subtle-light dark:bg-subtle-dark border-t border-subtle-light dark:border-subtle-dark">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm text-text-light/60 dark:text-text-dark/60">
 <p>© 2024 Health Insights. Todos los derechos reservados.</p>
 </div>
 </footer>
 </div>
-</body></html>
+
+<script>
+// Simular carga inicial
+window.addEventListener('load', () => {
+  const loadingScreen = document.getElementById('loadingScreen');
+  const mainContent = document.getElementById('mainContent');
+  
+  // Mostrar pantalla de carga
+  loadingScreen.classList.remove('hidden');
+  mainContent.classList.add('hidden');
+  
+  // Simular tiempo de procesamiento
+  setTimeout(() => {
+    loadingScreen.classList.add('hidden');
+    mainContent.classList.remove('hidden');
+    
+    // Animar barra de progreso
+    setTimeout(() => {
+      const bar = document.getElementById('confidenceBar');
+      const value = document.getElementById('confidenceValue');
+      let progress = 0;
+      const target = 85;
+      
+      const interval = setInterval(() => {
+        progress += 1;
+        bar.style.width = progress + '%';
+        value.textContent = progress + '%';
+        
+        if (progress >= target) {
+          clearInterval(interval);
+        }
+      }, 20);
+    }, 500);
+    
+    // Mostrar hora actual del análisis
+    const now = new Date();
+    document.getElementById('analysisTime').textContent = now.toLocaleString('es-MX', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }, 2500);
+});
+
+// Funcionalidad del botón de notificaciones
+document.getElementById('notificationBtn').addEventListener('click', function() {
+  showToast('No hay nuevas notificaciones');
+});
+
+// Funcionalidad del botón de descarga
+document.getElementById('downloadBtn').addEventListener('click', function() {
+  const btn = this;
+  const originalContent = btn.innerHTML;
+  
+  // Cambiar botón a estado de carga
+  btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span><span>Generando...</span>';
+  btn.disabled = true;
+  
+  // Simular descarga
+  setTimeout(() => {
+    btn.innerHTML = '<span class="material-symbols-outlined">check</span><span>Descargado</span>';
+    showToast('Reporte descargado exitosamente');
+    
+    // Restaurar botón
+    setTimeout(() => {
+      btn.innerHTML = originalContent;
+      btn.disabled = false;
+    }, 2000);
+  }, 1500);
+});
+
+// Función para mostrar toast
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  const toastMessage = document.getElementById('toastMessage');
+  
+  toastMessage.textContent = message;
+  toast.classList.remove('translate-y-20', 'opacity-0');
+  toast.classList.add('translate-y-0', 'opacity-100');
+  
+  setTimeout(() => {
+    toast.classList.add('translate-y-20', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }, 3000);
+}
+
+// Agregar efecto hover mejorado a las tarjetas
+document.querySelectorAll('.bg-subtle-light, .bg-subtle-dark').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-2px)';
+    this.style.transition = 'transform 0.3s ease';
+  });
+  
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+  });
+});
+</script>
+</body>
+</html>

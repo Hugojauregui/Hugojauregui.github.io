@@ -1,107 +1,688 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="es">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ProtoScan Login</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#11a4d4",
-                        "background-light": "#f6f8f8",
-                        "background-dark": "#101d22",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#11a4d4",
+                    "background-light": "#f6f8f8",
+                    "background-dark": "#101d22",
+                },
+                fontFamily: {
+                    "display": ["Inter"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
                 },
             },
-        }
-    </script>
+        },
+    }
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
         }
-    </style>
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        10%, 30%, 50%, 70%, 90% {
+            transform: translateX(-10px);
+        }
+        20%, 40%, 60%, 80% {
+            transform: translateX(10px);
+        }
+    }
+    
+    @keyframes pulse-border {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(17, 164, 212, 0.4);
+        }
+        50% {
+            box-shadow: 0 0 0 8px rgba(17, 164, 212, 0);
+        }
+    }
+    
+    .fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .fade-in-down {
+        animation: fadeInDown 0.6s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .scale-in {
+        animation: scaleIn 0.5s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .float-animation {
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    .shake {
+        animation: shake 0.5s ease-in-out;
+    }
+    
+    .input-focus {
+        transition: all 0.3s ease;
+    }
+    
+    .input-focus:focus {
+        transform: scale(1.02);
+    }
+    
+    .btn-hover {
+        transition: all 0.3s ease;
+    }
+    
+    .btn-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(17, 164, 212, 0.3);
+    }
+    
+    .btn-hover:active {
+        transform: translateY(0);
+    }
+    
+    .pulse-border {
+        animation: pulse-border 2s infinite;
+    }
+    
+    /* Background animation */
+    .bg-gradient-animated {
+        background: linear-gradient(-45deg, #f6f8f8, #e7f0f3, #d4e9f0, #c2e0ed);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+    
+    .dark .bg-gradient-animated {
+        background: linear-gradient(-45deg, #101d22, #1a2c33, #0d181b, #152329);
+        background-size: 400% 400%;
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    /* Loading overlay */
+    .loading-overlay {
+        backdrop-filter: blur(4px);
+        transition: opacity 0.3s ease;
+    }
+</style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="flex flex-col min-h-screen">
-<header class="w-full">
+<body class="bg-gradient-animated font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen relative">
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay hidden fixed inset-0 bg-black/20 dark:bg-black/40 z-50 flex items-center justify-center">
+    <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-2xl text-center scale-in">
+        <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p class="text-lg font-semibold text-gray-900 dark:text-white">Iniciando sesión...</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Verificando credenciales</p>
+    </div>
+</div>
+
+<header class="w-full fade-in-down">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-700">
+<div class="flex justify-between items-center py-4 border-b border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
 <div class="flex items-center gap-3">
-<div class="text-primary">
+<div class="text-primary float-animation">
 <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.29 16.29C15.9 16.68 15.27 16.68 14.88 16.29L12 13.41L9.12 16.29C8.73 16.68 8.1 16.68 7.71 16.29C7.32 15.9 7.32 15.27 7.71 14.88L10.59 12L7.71 9.12C7.32 8.73 7.32 8.1 7.71 7.71C8.1 7.32 8.73 7.32 9.12 7.71L12 10.59L14.88 7.71C15.27 7.32 15.9 7.32 16.29 7.71C16.68 8.1 16.68 8.73 16.29 9.12L13.41 12L16.29 14.88C16.68 15.27 16.68 15.9 16.29 16.29Z"></path>
 </svg>
 </div>
 <h1 class="text-2xl font-bold text-gray-900 dark:text-white">ProtoScan</h1>
 </div>
+<button id="themeToggle" class="p-2 rounded-full hover:bg-white/50 dark:hover:bg-gray-800/50 transition-all duration-300 hover:scale-110">
+<span class="material-symbols-outlined text-gray-900 dark:text-white">dark_mode</span>
+</button>
 </div>
 </div>
 </header>
+
 <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-<div class="max-w-md w-full space-y-8 bg-white dark:bg-gray-800/20 p-8 rounded-xl shadow-lg">
-<div>
-<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
-                        Bienvenido a ProtoScan
-                    </h2>
-<p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-                        Inicia sesión para continuar
-                    </p>
+<div class="max-w-md w-full">
+<div class="bg-white/80 dark:bg-gray-800/40 backdrop-blur-xl p-8 rounded-xl shadow-2xl scale-in" style="animation-delay: 0.2s">
+<div class="text-center mb-8 fade-in-up" style="animation-delay: 0.3s">
+<div class="inline-block p-4 bg-primary/10 rounded-full mb-4">
+<span class="material-symbols-outlined text-primary text-4xl">lock</span>
 </div>
-<form action="carga_muestra.html" class="mt-8 space-y-6" method="GET">
-<input name="remember" type="hidden" value="true"/>
-<div class="rounded-lg shadow-sm -space-y-px">
-<div>
-<label class="sr-only" for="email-address">Correo electrónico o nombre de usuario</label>
-<input autocomplete="email" class="appearance-none rounded-t-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="email-address" name="email" placeholder="Correo electrónico o nombre de usuario" required="" type="email"/>
+<h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">
+Bienvenido de nuevo
+</h2>
+<p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+Inicia sesión para continuar con ProtoScan
+</p>
 </div>
-<div>
-<label class="sr-only" for="password">Contraseña</label>
-<input autocomplete="current-password" class="appearance-none rounded-b-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="password" name="password" placeholder="Contraseña" required="" type="password"/>
+
+<form id="loginForm" class="space-y-6">
+<!-- Email Input -->
+<div class="fade-in-up" style="animation-delay: 0.4s">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="email-address">
+Correo electrónico
+</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">email</span>
 </div>
+<input 
+    autocomplete="email" 
+    class="input-focus appearance-none rounded-lg block w-full pl-10 pr-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary sm:text-sm" 
+    id="email-address" 
+    name="email" 
+    placeholder="tu@email.com" 
+    required 
+    type="email"
+/>
 </div>
-<div class="flex items-center justify-between">
+<p id="emailError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">error</span>
+<span></span>
+</p>
+</div>
+
+<!-- Password Input -->
+<div class="fade-in-up" style="animation-delay: 0.5s">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="password">
+Contraseña
+</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-gray-400">key</span>
+</div>
+<input 
+    autocomplete="current-password" 
+    class="input-focus appearance-none rounded-lg block w-full pl-10 pr-12 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary sm:text-sm" 
+    id="password" 
+    name="password" 
+    placeholder="••••••••" 
+    required 
+    type="password"
+/>
+<button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-gray-400">visibility</span>
+</button>
+</div>
+<p id="passwordError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">error</span>
+<span></span>
+</p>
+</div>
+
+<!-- Remember & Forgot -->
+<div class="flex items-center justify-between fade-in-up" style="animation-delay: 0.6s">
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded cursor-pointer" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block text-sm text-gray-700 dark:text-gray-300 cursor-pointer" for="remember-me">
+Recordarme
+</label>
+</div>
 <div class="text-sm">
-<a class="font-medium text-primary hover:text-primary/80" href="#">
-                                ¿Olvidaste tu contraseña?
-                            </a>
+<a class="font-medium text-primary hover:text-primary/80 transition-colors" href="forgot-password.html">
+¿Olvidaste tu contraseña?
+</a>
 </div>
 </div>
-<div>
-<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
-                            Iniciar Sesión
-                        </button>
+
+<!-- Submit Button -->
+<div class="fade-in-up" style="animation-delay: 0.7s">
+<button 
+    id="loginBtn"
+    class="btn-hover group relative w-full flex justify-center items-center gap-2 py-4 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" 
+                    type="submit"
+>
+<span id="btnText" class="flex items-center gap-2">
+<span class="material-symbols-outlined">login</span>
+Iniciar Sesión
+</span>
+<span id="btnSpinner" class="material-symbols-outlined animate-spin hidden">progress_activity</span>
+</button>
+</div>
+
+<!-- Divider -->
+<div class="relative fade-in-up" style="animation-delay: 0.8s">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-300 dark:border-gray-600"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-white dark:bg-gray-800/40 text-gray-500 dark:text-gray-400">O continúa con</span>
+</div>
+</div>
+
+<!-- Social Login -->
+<div class="grid grid-cols-2 gap-3 fade-in-up" style="animation-delay: 0.9s">
+<button type="button" class="btn-hover flex items-center justify-center gap-2 py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all">
+<svg class="w-5 h-5" viewBox="0 0 24 24">
+<path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+<path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+<path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+<path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+</svg>
+Google
+</button>
+<button type="button" class="btn-hover flex items-center justify-center gap-2 py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+</svg>
+Facebook
+</button>
 </div>
 </form>
-<div class="text-center text-sm text-gray-600 dark:text-gray-400">
-<p>
-                        ¿No tienes una cuenta?
-                        <a class="font-medium text-primary hover:text-primary/80" href="singUp.html">
-                            Regístrate
-                        </a>
+
+<!-- Sign Up Link -->
+<div class="text-center mt-6 fade-in-up" style="animation-delay: 1s">
+<p class="text-sm text-gray-600 dark:text-gray-400">
+¿No tienes una cuenta?
+<a class="font-medium text-primary hover:text-primary/80 transition-colors" href="singUp.html">
+Regístrate gratis
+</a>
 </p>
 </div>
 </div>
+
+<!-- Features -->
+<div class="mt-8 grid grid-cols-3 gap-4 fade-in-up" style="animation-delay: 1.1s">
+<div class="text-center">
+<div class="inline-block p-3 bg-white/50 dark:bg-gray-800/50 rounded-lg mb-2">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<p class="text-xs text-gray-600 dark:text-gray-400">Seguro</p>
+</div>
+<div class="text-center">
+<div class="inline-block p-3 bg-white/50 dark:bg-gray-800/50 rounded-lg mb-2">
+<span class="material-symbols-outlined text-primary">speed</span>
+</div>
+<p class="text-xs text-gray-600 dark:text-gray-400">Rápido</p>
+</div>
+<div class="text-center">
+<div class="inline-block p-3 bg-white/50 dark:bg-gray-800/50 rounded-lg mb-2">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+</div>
+<p class="text-xs text-gray-600 dark:text-gray-400">Soporte 24/7</p>
+</div>
+</div>
+</div>
 </main>
+
+<footer class="w-full border-t border-gray-200/50 dark:border-gray-700/50 py-6 backdrop-blur-sm fade-in-up" style="animation-delay: 1.2s">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center text-sm text-gray-600 dark:text-gray-400">
+<p>© 2024 ProtoScan. Todos los derechos reservados.</p>
+<div class="mt-2 flex justify-center gap-4">
+<a href="#" class="hover:text-primary transition-colors">Privacidad</a>
+<span>•</span>
+<a href="#" class="hover:text-primary transition-colors">Términos</a>
+<span>•</span>
+<a href="#" class="hover:text-primary transition-colors">Ayuda</a>
+</div>
+</div>
+</div>
+</footer>
 </div>
 
-</body></html>
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-4 right-4 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+<div class="bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm">
+<div class="flex items-center gap-3">
+<span id="toastIcon" class="material-symbols-outlined text-2xl"></span>
+<div class="flex-1">
+<p id="toastTitle" class="text-sm font-bold"></p>
+<p id="toastMessage" class="text-xs text-gray-600 dark:text-gray-400"></p>
+</div>
+<button onclick="hideToast()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+</div>
+
+<script>
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+themeToggle.addEventListener('click', () => {
+    htmlElement.classList.toggle('dark');
+    const icon = themeToggle.querySelector('.material-symbols-outlined');
+    icon.textContent = htmlElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+    
+    // Guardar preferencia
+    localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+});
+
+// Cargar tema guardado
+if (localStorage.getItem('theme') === 'dark') {
+    htmlElement.classList.add('dark');
+    themeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
+}
+
+// Toggle Password Visibility
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('password');
+
+togglePassword.addEventListener('click', () => {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    togglePassword.querySelector('.material-symbols-outlined').textContent = 
+        type === 'password' ? 'visibility' : 'visibility_off';
+});
+
+// Email Validation
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Show Toast
+function showToast(title, message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toastIcon');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMessage = document.getElementById('toastMessage');
+    const toastContainer = toast.querySelector('div');
+    
+    const types = {
+        success: { 
+            icon: 'check_circle', 
+            color: 'text-green-600',
+            border: 'border-green-600'
+        },
+        error: { 
+            icon: 'error', 
+            color: 'text-red-600',
+            border: 'border-red-600'
+        },
+        warning: { 
+            icon: 'warning', 
+            color: 'text-yellow-600',
+            border: 'border-yellow-600'
+        },
+        info: { 
+            icon: 'info', 
+            color: 'text-blue-600',
+            border: 'border-blue-600'
+        }
+    };
+    
+    toastIcon.textContent = types[type].icon;
+    toastIcon.className = `material-symbols-outlined text-2xl ${types[type].color}`;
+    toastContainer.className = `bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm ${types[type].border}`;
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+    
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+        hideToast();
+    }, 5000);
+}
+
+function hideToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('translate-y-20', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+}
+
+// Form Validation
+const emailInput = document.getElementById('email-address');
+const passwordInputField = document.getElementById('password');
+const emailError = document.getElementById('emailError');
+const passwordError = document.getElementById('passwordError');
+
+emailInput.addEventListener('blur', () => {
+    if (emailInput.value && !isValidEmail(emailInput.value)) {
+        emailError.querySelector('span:last-child').textContent = 'Formato de correo inválido';
+        emailError.classList.remove('hidden');
+        emailInput.classList.add('border-red-500', 'shake');
+        setTimeout(() => emailInput.classList.remove('shake'), 500);
+    } else {
+        emailError.classList.add('hidden');
+        emailInput.classList.remove('border-red-500');
+    }
+});
+
+passwordInputField.addEventListener('input', () => {
+    if (passwordInputField.value.length > 0 && passwordInputField.value.length < 6) {
+        passwordError.querySelector('span:last-child').textContent = 'La contraseña debe tener al menos 6 caracteres';
+        passwordError.classList.remove('hidden');
+        passwordInputField.classList.add('border-yellow-500');
+    } else {
+        passwordError.classList.add('hidden');
+        passwordInputField.classList.remove('border-yellow-500', 'border-red-500');
+    }
+});
+
+// Form Submit
+const loginForm = document.getElementById('loginForm');
+const loginBtn = document.getElementById('loginBtn');
+const btnText = document.getElementById('btnText');
+const btnSpinner = document.getElementById('btnSpinner');
+const loadingOverlay = document.getElementById('loadingOverlay');
+
+loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = emailInput.value.trim();
+    const password = passwordInputField.value;
+    
+    // Validaciones
+    let hasError = false;
+    
+    if (!isValidEmail(email)) {
+        emailError.querySelector('span:last-child').textContent = 'Por favor, ingresa un correo válido';
+        emailError.classList.remove('hidden');
+        emailInput.classList.add('border-red-500', 'shake');
+        setTimeout(() => emailInput.classList.remove('shake'), 500);
+        hasError = true;
+    }
+    
+    if (password.length < 6) {
+        passwordError.querySelector('span:last-child').textContent = 'La contraseña es muy corta';
+        passwordError.classList.remove('hidden');
+        passwordInputField.classList.add('border-red-500', 'shake');
+        setTimeout(() => passwordInputField.classList.remove('shake'), 500);
+        hasError = true;
+    }
+    
+    if (hasError) {
+        showToast('Error de validación', 'Por favor, corrige los errores en el formulario', 'error');
+        return;
+    }
+    
+    // Mostrar loading
+    loginBtn.disabled = true;
+    btnText.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+    loadingOverlay.classList.remove('hidden');
+    
+    // Simular login
+    setTimeout(() => {
+        // Guardar sesión
+        const rememberMe = document.getElementById('remember-me').checked;
+        if (rememberMe) {
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('rememberMe', 'true');
+        }
+        
+        // Mostrar éxito
+        showToast('¡Bienvenido!', 'Inicio de sesión exitoso', 'success');
+        
+        // Esperar un poco antes de redirigir
+        setTimeout(() => {
+            window.location.href = 'carga_muestra.html';
+        }, 1000);
+    }, 2000);
+});
+
+// Cargar email si está guardado
+window.addEventListener('load', () => {
+    if (localStorage.getItem('rememberMe') === 'true') {
+        const savedEmail = localStorage.getItem('userEmail');
+        if (savedEmail) {
+            emailInput.value = savedEmail;
+            document.getElementById('remember-me').checked = true;
+        }
+    }
+});
+
+// Social Login Buttons
+document.querySelectorAll('button[type="button"]').forEach(btn => {
+    if (btn !== themeToggle && btn !== togglePassword) {
+        btn.addEventListener('click', function() {
+            const platform = this.textContent.trim();
+            showToast('Próximamente', `Inicio de sesión con ${platform} estará disponible pronto`, 'info');
+        });
+    }
+});
+
+// Animación de partículas en el fondo (opcional)
+function createParticle() {
+    const particle = document.createElement('div');
+    particle.style.position = 'fixed';
+    particle.style.width = '4px';
+    particle.style.height = '4px';
+    particle.style.backgroundColor = 'rgba(17, 164, 212, 0.3)';
+    particle.style.borderRadius = '50%';
+    particle.style.pointerEvents = 'none';
+    particle.style.left = Math.random() * window.innerWidth + 'px';
+    particle.style.top = '-10px';
+    particle.style.zIndex = '0';
+    
+    document.body.appendChild(particle);
+    
+    const duration = Math.random() * 3000 + 2000;
+    const animation = particle.animate([
+        { transform: 'translateY(0px)', opacity: 1 },
+        { transform: `translateY(${window.innerHeight + 10}px)`, opacity: 0 }
+    ], {
+        duration: duration,
+        easing: 'linear'
+    });
+    
+    animation.onfinish = () => {
+        particle.remove();
+    };
+}
+
+// Crear partículas ocasionalmente
+setInterval(() => {
+    if (Math.random() > 0.7) {
+        createParticle();
+    }
+}, 500);
+
+// Easter egg: Konami Code
+let konamiCode = [];
+const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+document.addEventListener('keydown', (e) => {
+    konamiCode.push(e.key);
+    konamiCode = konamiCode.slice(-10);
+    
+    if (konamiCode.join(',') === konamiSequence.join(',')) {
+        showToast('¡Easter Egg!', '🎮 ¡Encontraste el código Konami! +30 vidas', 'success');
+        document.body.style.animation = 'gradient 2s ease infinite';
+    }
+});
+
+// Auto-focus en el primer input
+emailInput.focus();
+
+// Prevenir envío múltiple
+let isSubmitting = false;
+loginForm.addEventListener('submit', function(e) {
+    if (isSubmitting) {
+        e.preventDefault();
+        return;
+    }
+    isSubmitting = true;
+});
+
+// Efectos de sonido (opcional - comentado por defecto)
+/*
+function playSound(type) {
+    const sounds = {
+        success: 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBTGH0fPTgjMGHm7A7+OZSA0PV6zn77BdGA==',
+        error: 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBTGH0fPTgjMGHm7A7+OZSA0PV6zn77BdGA=='
+    };
+    const audio = new Audio(sounds[type]);
+    audio.volume = 0.1;
+    audio.play().catch(() => {}); // Ignorar errores de reproducción
+}
+*/
+</script>
+</body>
+</html>
