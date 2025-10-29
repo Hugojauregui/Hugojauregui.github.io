@@ -1,42 +1,95 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="es">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ProtoScan - Historial de Análisis</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#11a4d4",
-                        "background-light": "#f6f8f8",
-                        "background-dark": "#101d22",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#11a4d4",
+                    "background-light": "#f6f8f8",
+                    "background-dark": "#101d22",
+                },
+                fontFamily: {
+                    "display": ["Inter"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
                 },
             },
-        }
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+        },
+    }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideInRight {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    
+    .fade-in-up { animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+    .slide-in-right { animation: slideInRight 0.5s ease-out forwards; opacity: 0; }
+    .scale-in { animation: scaleIn 0.5s ease-out forwards; opacity: 0; }
+    
+    #themeToggle { transition: transform 0.3s ease; }
+    tr { transition: all 0.2s ease; }
+    
+    .row-actions { opacity: 0; transition: opacity 0.2s ease; }
+    tr:hover .row-actions { opacity: 1; }
+    
+    .badge-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    
+    .filter-btn {
+        background: rgb(226 232 240 / 0.6);
+        color: rgb(71 85 105);
+    }
+    .dark .filter-btn {
+        background: rgb(30 41 59 / 0.6);
+        color: rgb(203 213 225);
+    }
+    .filter-btn.active {
+        background: rgba(17, 164, 212, 0.1);
+        color: #11a4d4;
+        font-weight: 600;
+    }
+    .dark .filter-btn.active {
+        background: rgba(17, 164, 212, 0.2);
+        color: #11a4d4;
+    }
+</style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 transition-colors duration-300">
 <div class="flex min-h-screen flex-col">
-<header class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<header class="bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="flex h-16 items-center justify-between">
 <div class="flex items-center gap-4">
-<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
 <h1 class="text-xl font-bold text-slate-900 dark:text-white">ProtoScan</h1>
 </div>
 <nav class="hidden md:flex items-center gap-8">
@@ -45,136 +98,431 @@
 <a class="font-medium text-primary text-sm" href="#">Historial</a>
 <a class="text-sm font-medium text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="index.html#contacto">Contacto</a>
 </nav>
-<div class="flex items-center gap-4">
-<button class="p-2 rounded-full text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-<span class="material-symbols-outlined text-2xl">
-                                notifications
-                            </span>
+<div class="flex items-center gap-3">
+<button id="themeToggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">dark_mode</span>
 </button>
-<a href="Settings.html" class="block transition-transform duration-300 hover:scale-125">
+<button id="notificationBtn" class="p-2 rounded-full text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors relative">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+</button>
+<a href="Settings.html" class="block transition-transform duration-300 hover:scale-110">
 <div class="size-10 rounded-full bg-cover bg-center shadow-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgcImNU8yMpSSYTuKm3BaE2DPNIYW44ROWcjcaWBeFeJSTtIKv3649LD9Fxth1hLofhqhwu85wrdJWFlh9pItI_fEFN5zNdZJtq-QvIL03ocwZzOwx5taeoQxl7cLZ8PpqOeQVCVbW-Fy89VlAVdSJcctAzeXWw4d8joKoo3NA5YNQMYz-G-XmBXWpxvcWavoCszHJ0d1bbGpE5aFClaPX2v4PB-h600NilJJIA1ImiQDuTDaX0qe5TLbKxnM_D7aj6F3rP7Oaf2k");'></div>
 </a>
 </div>
 </div>
 </div>
 </header>
+
 <main class="flex-grow">
 <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-<div class="mb-8">
+<div class="mb-8 fade-in-up">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div>
 <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Historial de Análisis</h2>
-<p class="mt-1 text-slate-500 dark:text-slate-400">Consulta y gestiona los análisis realizados a tus pacientes.</p>
+<p class="mt-1 text-slate-500 dark:text-slate-400">Consulta y gestiona los análisis de tus pacientes</p>
 </div>
-<div class="bg-background-light dark:bg-background-dark/50 rounded-lg p-4 sm:p-6">
-<div class="flex flex-col sm:flex-row gap-4 mb-6">
+<div class="flex items-center gap-2 px-4 py-2 bg-primary/10 dark:bg-primary/20 rounded-lg">
+<span class="material-symbols-outlined text-primary text-sm">analytics</span>
+<span class="text-sm font-semibold text-primary"><span id="totalAnalysis">5</span> análisis totales</span>
+</div>
+</div>
+</div>
+
+<div class="bg-white dark:bg-slate-900/50 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-4 sm:p-6 mb-6 scale-in" style="animation-delay: 0.1s">
+<div class="flex flex-col sm:flex-row gap-4 mb-4">
 <div class="relative flex-grow">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500">search</span>
-<input class="w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 pl-10 pr-4 py-2 focus:border-primary focus:ring-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500" placeholder="Buscar por paciente, fecha o tipo de muestra" type="text"/>
+<input id="searchInput" class="w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 pl-10 pr-4 py-2.5 focus:border-primary focus:ring-2 focus:ring-primary text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all" placeholder="Buscar por paciente, fecha o tipo de muestra..." type="text"/>
 </div>
-<button class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary/80 transition-colors">
+<button onclick="window.location.href='carga_muestra.html'" class="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 transition-all hover:scale-105">
 <span class="material-symbols-outlined mr-2 -ml-1">add</span>
-                            Nuevo Análisis
-                        </button>
-</div>
-<div class="flex flex-wrap gap-2 mb-6">
-<button class="flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary dark:bg-primary/20 dark:text-primary">
-                            Paciente
-                            <span class="material-symbols-outlined text-base">close</span>
+Nuevo Análisis
 </button>
-<button class="flex items-center gap-2 rounded-full bg-slate-200/60 px-3 py-1 text-sm font-medium text-slate-600 hover:bg-slate-300/60 dark:bg-slate-700/60 dark:text-slate-300 dark:hover:bg-slate-600/60 transition-colors">
-                            Fecha
-                        </button>
-<button class="flex items-center gap-2 rounded-full bg-slate-200/60 px-3 py-1 text-sm font-medium text-slate-600 hover:bg-slate-300/60 dark:bg-slate-700/60 dark:text-slate-300 dark:hover:bg-slate-600/60 transition-colors">
-                            Tipo de Muestra
-                        </button>
 </div>
+
+<div class="flex flex-wrap gap-2">
+<button id="filterAll" class="filter-btn active flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all" data-filter="all">
+<span class="material-symbols-outlined text-base">filter_list</span>
+Todos (<span class="filter-count">5</span>)
+</button>
+<button id="filterCompleted" class="filter-btn flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all" data-filter="completed">
+<span class="material-symbols-outlined text-base">check_circle</span>
+Completados (<span class="filter-count">4</span>)
+</button>
+<button id="filterInProgress" class="filter-btn flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all" data-filter="in-progress">
+<span class="material-symbols-outlined text-base">schedule</span>
+En proceso (<span class="filter-count">1</span>)
+</button>
+<button id="sortBtn" class="flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all ml-auto">
+<span class="material-symbols-outlined text-base">sort</span>
+<span id="sortText">Más recientes</span>
+</button>
+</div>
+</div>
+
+<div class="bg-white dark:bg-slate-900/50 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden scale-in" style="animation-delay: 0.2s">
 <div class="overflow-x-auto">
 <table class="min-w-full divide-y divide-slate-200 dark:divide-slate-800">
 <thead class="bg-slate-50 dark:bg-slate-800/50">
 <tr>
-<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Paciente</th>
-<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Fecha</th>
-<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Tipo de Muestra</th>
-<th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400" scope="col">Estado</th>
-<th class="relative px-6 py-3" scope="col"><span class="sr-only">Acciones</span></th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400" scope="col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span>
+Paciente
+</div>
+</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400" scope="col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+Fecha
+</div>
+</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400" scope="col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">science</span>
+Tipo
+</div>
+</th>
+<th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400" scope="col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">flag</span>
+Estado
+</div>
+</th>
+<th class="relative px-6 py-4" scope="col">
+<span class="sr-only">Acciones</span>
+</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
-<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">Isabel Torres</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">2024-07-20</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Heces</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm">
-<span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">
-<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>
-                                            Completado
-                                        </span>
-</td>
-<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-<a class="text-primary hover:text-primary/80 transition-colors" href="Resultado.html">Ver resultados</a>
-</td>
-</tr>
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
-<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">Carlos Ruiz</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">2024-07-15</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Sangre</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm">
-<span class="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300">
-<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-yellow-400" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>
-                                            En proceso
-                                        </span>
-</td>
-<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-<a class="text-primary hover:text-primary/80 transition-colors" href="#">Ver resultados</a>
-</td>
-</tr>
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
-<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">Ana García</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">2024-07-10</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Orina</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm">
-<span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">
-<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>
-                                            Completado
-                                        </span>
-</td>
-<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-<a class="text-primary hover:text-primary/80 transition-colors" href="#">Ver resultados</a>
-</td>
-</tr>
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
-<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">Javier López</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">2024-07-05</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Heces</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm">
-<span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">
-<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>
-                                            Completado
-                                        </span>
-</td>
-<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-<a class="text-primary hover:text-primary/80 transition-colors" href="#">Ver resultados</a>
-</td>
-</tr>
-<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
-<td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">Sofía Martínez</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">2024-06-30</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-500 dark:text-slate-400">Sangre</td>
-<td class="whitespace-nowrap px-6 py-4 text-sm">
-<span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">
-<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>
-                                            Completado
-                                        </span>
-</td>
-<td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-<a class="text-primary hover:text-primary/80 transition-colors" href="#">Ver resultados</a>
-</td>
-</tr>
+<tbody id="tableBody" class="divide-y divide-slate-200 dark:divide-slate-800">
 </tbody>
 </table>
+</div>
+
+<div id="emptyState" class="hidden text-center py-12">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full mb-4">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 text-3xl">search_off</span>
+</div>
+<h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-1">No se encontraron resultados</h3>
+<p class="text-sm text-slate-500 dark:text-slate-400">Intenta con otros términos de búsqueda</p>
+</div>
+</div>
+
+<div id="pagination" class="mt-6 flex items-center justify-between fade-in-up" style="animation-delay: 0.3s">
+<div class="text-sm text-slate-500 dark:text-slate-400">
+Mostrando <span class="font-medium text-slate-900 dark:text-white" id="showingFrom">1</span> a 
+<span class="font-medium text-slate-900 dark:text-white" id="showingTo">5</span> de 
+<span class="font-medium text-slate-900 dark:text-white" id="totalResults">5</span> resultados
 </div>
 </div>
 </div>
 </main>
 </div>
 
-</body></html>
+<div id="toast" class="fixed bottom-4 right-4 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+<div id="toastContent" class="bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm">
+<div class="flex items-center gap-3">
+<span id="toastIcon" class="material-symbols-outlined text-2xl"></span>
+<div class="flex-1">
+<p id="toastTitle" class="text-sm font-bold"></p>
+<p id="toastMessage" class="text-xs text-gray-600 dark:text-gray-400"></p>
+</div>
+<button onclick="hideToast()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+</div>
+
+<div id="deleteModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-2xl max-w-md w-full p-6 scale-in">
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-red-600 dark:text-red-400 text-2xl">delete</span>
+</div>
+<div class="flex-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">¿Eliminar análisis?</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Esta acción no se puede deshacer.</p>
+<div class="flex gap-3 justify-end">
+<button id="cancelDelete" class="px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+Cancelar
+</button>
+<button id="confirmDelete" class="px-4 py-2 rounded-lg bg-red-600 text-sm font-medium text-white hover:bg-red-700 transition-all">
+Eliminar
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const analysisData = [
+    { id: 1, patient: "Isabel Torres", date: "2024-07-20", sampleType: "Heces", status: "completed", result: "Giardia lamblia" },
+    { id: 2, patient: "Carlos Ruiz", date: "2024-07-15", sampleType: "Sangre", status: "in-progress", result: "Pendiente" },
+    { id: 3, patient: "Ana García", date: "2024-07-10", sampleType: "Orina", status: "completed", result: "Negativo" },
+    { id: 4, patient: "Javier López", date: "2024-07-05", sampleType: "Heces", status: "completed", result: "Entamoeba histolytica" },
+    { id: 5, patient: "Sofía Martínez", date: "2024-06-30", sampleType: "Sangre", status: "completed", result: "Negativo" }
+];
+
+let filteredData = [...analysisData];
+let currentFilter = 'all';
+let currentSort = 'newest';
+let deleteTargetId = null;
+
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+function toggleTheme() {
+    htmlElement.classList.toggle('dark');
+    const icon = themeToggle.querySelector('.material-symbols-outlined');
+    icon.textContent = htmlElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+    themeToggle.style.transform = 'rotate(360deg)';
+    setTimeout(() => { themeToggle.style.transform = 'rotate(0deg)'; }, 300);
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+
+if (localStorage.getItem('theme') === 'dark') {
+    htmlElement.classList.add('dark');
+    themeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
+}
+
+function showToast(title, message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toastIcon');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMessage = document.getElementById('toastMessage');
+    const toastContent = document.getElementById('toastContent');
+    
+    const types = {
+        success: { icon: 'check_circle', color: 'text-green-600', border: 'border-green-600' },
+        error: { icon: 'error', color: 'text-red-600', border: 'border-red-600' },
+        warning: { icon: 'warning', color: 'text-yellow-600', border: 'border-yellow-600' },
+        info: { icon: 'info', color: 'text-blue-600', border: 'border-blue-600' }
+    };
+    
+    toastIcon.textContent = types[type].icon;
+    toastIcon.className = `material-symbols-outlined text-2xl ${types[type].color}`;
+    toastContent.className = `bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm ${types[type].border}`;
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+    
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => hideToast(), 5000);
+}
+
+function hideToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('translate-y-20', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+}
+
+function formatDate(dateString) {
+    return new Date(dateString).toLocaleDateString('es-MX', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+function getSampleBadgeColor(type) {
+    const colors = {
+        'Heces': 'bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300',
+        'Sangre': 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300',
+        'Orina': 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300'
+    };
+    return colors[type] || 'bg-gray-100 dark:bg-gray-900/30 text-gray-800 dark:text-gray-300';
+}
+
+function getSampleIcon(type) {
+    const icons = { 'Heces': 'science', 'Sangre': 'water_drop', 'Orina': 'local_drink' };
+    return icons[type] || 'science';
+}
+
+function getStatusBadge(status) {
+    if (status === 'completed') {
+        return `<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/30 px-3 py-1 text-xs font-semibold text-green-800 dark:text-green-300">
+<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-500" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>Completado</span>`;
+    }
+    return `<span class="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/30 px-3 py-1 text-xs font-semibold text-yellow-800 dark:text-yellow-300 badge-pulse">
+<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-yellow-500" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"></circle></svg>En proceso</span>`;
+}
+
+function renderTable(data) {
+    const tableBody = document.getElementById('tableBody');
+    const emptyState = document.getElementById('emptyState');
+    
+    if (data.length === 0) {
+        tableBody.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+    }
+    
+    emptyState.classList.add('hidden');
+    tableBody.innerHTML = data.map(item => `
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group" data-id="${item.id}">
+<td class="whitespace-nowrap px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+</div>
+<div>
+<div class="text-sm font-semibold text-slate-900 dark:text-white">${item.patient}</div>
+<div class="text-xs text-slate-500 dark:text-slate-400">ID: #${String(item.id).padStart(4, '0')}</div>
+</div>
+</div>
+</td>
+<td class="whitespace-nowrap px-6 py-4 text-sm text-slate-600 dark:text-slate-400">${formatDate(item.date)}</td>
+<td class="whitespace-nowrap px-6 py-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium ${getSampleBadgeColor(item.sampleType)}">
+<span class="material-symbols-outlined text-sm">${getSampleIcon(item.sampleType)}</span>${item.sampleType}
+</span>
+</td>
+<td class="whitespace-nowrap px-6 py-4">${getStatusBadge(item.status)}</td>
+<td class="whitespace-nowrap px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 row-actions">
+${item.status === 'completed' ? `
+<a href="Resultado.html" class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-all" title="Ver resultados">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</a>
+<button class="p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-all download-btn" title="Descargar">
+<span class="material-symbols-outlined text-xl">download</span>
+</button>` : ''}
+<button class="p-2 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-all delete-btn" title="Eliminar">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</td>
+</tr>
+`).join('');
+    
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            deleteTargetId = parseInt(e.target.closest('tr').dataset.id);
+            document.getElementById('deleteModal').classList.remove('hidden');
+            document.getElementById('deleteModal').classList.add('flex');
+        });
+    });
+    
+    document.querySelectorAll('.download-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            showToast('Descargando', 'El reporte se está generando...', 'info');
+            setTimeout(() => showToast('Descarga completa', 'Reporte descargado exitosamente', 'success'), 2000);
+        });
+    });
+    
+    updateStats(data);
+}
+
+function updateStats(data) {
+    document.getElementById('showingFrom').textContent = data.length > 0 ? 1 : 0;
+    document.getElementById('showingTo').textContent = data.length;
+    document.getElementById('totalResults').textContent = data.length;
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    filteredData = analysisData.filter(item => 
+        item.patient.toLowerCase().includes(query) ||
+        item.date.includes(query) ||
+        item.sampleType.toLowerCase().includes(query) ||
+        (item.status === 'completed' && 'completado'.includes(query)) ||
+        (item.status === 'in-progress' && 'proceso'.includes(query))
+    );
+    applyCurrentFilter();
+});
+
+function applyCurrentFilter() {
+    let data = [...filteredData];
+    if (currentFilter === 'completed') data = data.filter(item => item.status === 'completed');
+    else if (currentFilter === 'in-progress') data = data.filter(item => item.status === 'in-progress');
+    
+    data.sort((a, b) => currentSort === 'newest' ? new Date(b.date) - new Date(a.date) : new Date(a.date) - new Date(b.date));
+    renderTable(data);
+    updateFilterCounts();
+}
+
+function updateFilterCounts() {
+    document.querySelector('#filterAll .filter-count').textContent = analysisData.length;
+    document.querySelector('#filterCompleted .filter-count').textContent = analysisData.filter(a => a.status === 'completed').length;
+    document.querySelector('#filterInProgress .filter-count').textContent = analysisData.filter(a => a.status === 'in-progress').length;
+    document.getElementById('totalAnalysis').textContent = analysisData.length;
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentFilter = this.dataset.filter;
+        applyCurrentFilter();
+    });
+});
+
+document.getElementById('sortBtn').addEventListener('click', function() {
+    currentSort = currentSort === 'newest' ? 'oldest' : 'newest';
+    document.getElementById('sortText').textContent = currentSort === 'newest' ? 'Más recientes' : 'Más antiguos';
+    showToast('Ordenamiento', `Mostrando ${currentSort === 'newest' ? 'más recientes' : 'más antiguos'} primero`, 'info');
+    applyCurrentFilter();
+});
+
+document.getElementById('cancelDelete').addEventListener('click', () => {
+    document.getElementById('deleteModal').classList.add('hidden');
+    document.getElementById('deleteModal').classList.remove('flex');
+});
+
+document.getElementById('confirmDelete').addEventListener('click', () => {
+    const index = analysisData.findIndex(item => item.id === deleteTargetId);
+    if (index > -1) {
+        const deletedItem = analysisData.splice(index, 1)[0];
+        filteredData = [...analysisData];
+        applyCurrentFilter();
+        showToast('Análisis eliminado', `El análisis de ${deletedItem.patient} ha sido eliminado`, 'success');
+    }
+    document.getElementById('deleteModal').classList.add('hidden');
+    document.getElementById('deleteModal').classList.remove('flex');
+});
+
+document.getElementById('deleteModal').addEventListener('click', (e) => {
+    if (e.target.id === 'deleteModal') {
+        document.getElementById('cancelDelete').click();
+    }
+});
+
+document.getElementById('notificationBtn').addEventListener('click', () => {
+    const inProgress = analysisData.filter(a => a.status === 'in-progress').length;
+    showToast('Notificaciones', `Tienes ${inProgress} análisis en proceso`, 'info');
+});
+
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        document.getElementById('searchInput').focus();
+    }
+    if (e.key === 'Escape' && !document.getElementById('deleteModal').classList.contains('hidden')) {
+        document.getElementById('cancelDelete').click();
+    }
+    if (e.key === '1') document.getElementById('filterAll').click();
+    if (e.key === '2') document.getElementById('filterCompleted').click();
+    if (e.key === '3') document.getElementById('filterInProgress').click();
+});
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        applyCurrentFilter();
+        showToast('¡Bienvenido!', 'Historial de análisis cargado', 'success');
+    }, 100);
+});
+
+console.log('%c📊 ProtoScan History Dashboard', 'color: #11a4d4; font-size: 16px; font-weight: bold;');
+console.log('Total de análisis:', analysisData.length);
+console.log('Completados:', analysisData.filter(a => a.status === 'completed').length);
+console.log('En proceso:', analysisData.filter(a => a.status === 'in-progress').length);
+console.log('\n🔍 Atajos de teclado:');
+console.log('- Ctrl/Cmd + K: Buscar');
+console.log('- 1: Todos los análisis');
+console.log('- 2: Completados');
+console.log('- 3: En proceso');
+console.log('- ESC: Cerrar modales');
+</script>
+</body>
+</html>

@@ -70,8 +70,33 @@
     }
   }
   
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes bounce-subtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
   .fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
     opacity: 0;
   }
   
@@ -93,11 +118,43 @@
   .notification-badge {
     animation: pulse-slow 2s infinite;
   }
+  
+  .bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+  
+  #themeToggle {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-card {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .print-hidden {
+    display: block;
+  }
+  
+  @media print {
+    .print-hidden {
+      display: none !important;
+    }
+    
+    body {
+      background: white !important;
+      color: black !important;
+    }
+  }
 </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark transition-colors duration-300">
 <div class="flex flex-col min-h-screen">
-<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-subtle-light dark:border-subtle-dark">
+<header class="sticky top-0 z-10 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-subtle-light dark:border-subtle-dark print-hidden">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-16">
 <div class="flex items-center gap-4">
@@ -116,11 +173,18 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#recursos">Recursos</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#contacto">Contacto</a>
 </nav>
+
+<!-- Theme Toggle -->
+<button id="themeToggle" class="p-2 rounded-full hover:bg-subtle-light dark:hover:bg-subtle-dark transition-all duration-300">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+
 <button class="p-2 rounded-full hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors relative" id="notificationBtn">
 <span class="material-symbols-outlined text-text-light dark:text-text-dark">notifications</span>
 <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full notification-badge"></span>
 </button>
-<a href="Settings.html" class="block transition-transform duration-300 hover:scale-125">
+
+<a href="Settings.html" class="block transition-transform duration-300 hover:scale-110">
 <div class="size-10 rounded-full bg-cover bg-center shadow-md" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgcImNU8yMpSSYTuKm3BaE2DPNIYW44ROWcjcaWBeFeJSTtIKv3649LD9Fxth1hLofhqhwu85wrdJWFlh9pItI_fEFN5zNdZJtq-QvIL03ocwZzOwx5taeoQxl7cLZ8PpqOeQVCVbW-Fy89VlAVdSJcctAzeXWw4d8joKoo3NA5YNQMYz-G-XmBXWpxvcWavoCszHJ0d1bbGpE5aFClaPX2v4PB-h600NilJJIA1ImiQDuTDaX0qe5TLbKxnM_D7aj6F3rP7Oaf2k");'></div>
 </a>
 </div>
@@ -129,14 +193,23 @@
 </header>
 
 <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<!-- Loading Screen (oculto por defecto) -->
+<!-- Loading Screen -->
 <div id="loadingScreen" class="max-w-4xl mx-auto hidden">
 <div class="text-center mb-8">
 <div class="inline-block">
 <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
 </div>
 <h2 class="text-2xl font-bold mt-4">Analizando resultados...</h2>
-<p class="text-text-light/60 dark:text-text-dark/60 mt-2">Procesando información médica</p>
+<p class="text-text-light/60 dark:text-text-dark/60 mt-2">Procesando información médica con IA</p>
+<div class="mt-6 max-w-xs mx-auto">
+<div class="flex justify-between text-xs text-text-light/60 dark:text-text-dark/60 mb-2">
+<span id="loadingStepText">Iniciando análisis...</span>
+<span id="loadingPercent">0%</span>
+</div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+<div id="loadingBar" class="bg-primary h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+</div>
+</div>
 </div>
 <div class="space-y-4">
 <div class="skeleton h-32 rounded-xl"></div>
@@ -145,118 +218,209 @@
 </div>
 </div>
 
-<!-- Content (visible después de cargar) -->
-<div id="mainContent">
-<div class="flex items-center justify-between mb-8">
-<h2 class="text-4xl font-bold tracking-tight fade-in-up" style="animation-delay: 0.1s">Resultados Detallados del Análisis</h2>
-<div class="flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg fade-in-up" style="animation-delay: 0.2s">
-<span class="material-symbols-outlined text-sm">check_circle</span>
+<!-- Content -->
+<div id="mainContent" class="max-w-4xl mx-auto">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
+<div class="fade-in-up" style="animation-delay: 0.1s">
+<h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Resultados del Análisis</h2>
+<p class="text-sm text-text-light/60 dark:text-text-dark/60 mt-1">ID de análisis: #<span id="analysisId"></span></p>
+</div>
+<div class="flex items-center gap-2 slide-in-right" style="animation-delay: 0.2s">
+<div class="flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg">
+<span class="material-symbols-outlined text-sm bounce-subtle">check_circle</span>
 <span class="text-sm font-medium">Análisis completado</span>
 </div>
 </div>
+</div>
 
-<div class="bg-subtle-light dark:bg-subtle-dark rounded-xl shadow-sm overflow-hidden fade-in-up" style="animation-delay: 0.3s">
+<!-- Card Principal -->
+<div class="bg-subtle-light dark:bg-subtle-dark rounded-xl shadow-lg overflow-hidden hover-card fade-in-up" style="animation-delay: 0.3s">
 <div class="grid grid-cols-1 md:grid-cols-2">
-<div class="bg-cover bg-center min-h-[300px]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj_J5eqdmfFeMmaiAWVWoksGAgCVl5UrFYASLOlgwbv57sEF81BwTkat1t9bqP1vVyz6ALQG5ahsiSAzdS8448E4uX4axesgKGreuh1TQTQfFJbL6otO9PIUdQulNdidkimzgZaIq7yrSGPqAi9tUk-7BntzoTUCd4MAIgs1lxOBCsN-YOWgZO34u6l6Dn5NyAKeUbNdXDHIKxVostPBFFLEhSW9B-cTQKw1zN6aJT0yhvxFiOhecV6SMy_RVfOwR4noWGxklT9Wg");'></div>
+<div class="bg-cover bg-center min-h-[300px] relative" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj_J5eqdmfFeMmaiAWVWoksGAgCVl5UrFYASLOlgwbv57sEF81BwTkat1t9bqP1vVyz6ALQG5ahsiSAzdS8448E4uX4axesgKGreuh1TQTQfFJbL6otO9PIUdQulNdidkimzgZaIq7yrSGPqAi9tUk-7BntzoTUCd4MAIgs1lxOBCsN-YOWgZO34u6l6Dn5NyAKeUbNdXDHIKxVostPBFFLEhSW9B-cTQKw1zN6aJT0yhvxFiOhecV6SMy_RVfOwR4noWGxklT9Wg");'>
+<div class="absolute top-4 left-4">
+<button id="zoomImageBtn" class="p-2 bg-black/50 hover:bg-black/70 text-white rounded-lg backdrop-blur-sm transition-all">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+</div>
+</div>
 <div class="p-8 flex flex-col justify-center">
-<h3 class="text-2xl font-bold">Posible Parásito Identificado:<br/><span class="text-primary">Giardia lamblia</span></h3>
-<p class="mt-4 text-base text-text-light/80 dark:text-text-dark/80">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full w-fit mb-3">
+<span class="material-symbols-outlined text-sm">bug_report</span>
+Parásito detectado
+</div>
+<h3 class="text-2xl font-bold mb-2">Resultado del Diagnóstico:</h3>
+<p class="text-3xl font-bold text-primary mb-4">Giardia lamblia</p>
+<p class="text-base text-text-light/80 dark:text-text-dark/80 leading-relaxed">
 Giardia lamblia es un parásito microscópico que causa la giardiasis, una infección intestinal común. Se transmite a través del consumo de agua o alimentos contaminados con quistes de Giardia.
 </p>
-<div class="mt-4 flex items-center gap-2 text-sm text-primary">
-<span class="material-symbols-outlined text-lg">schedule</span>
-<span>Análisis realizado: <span id="analysisTime"></span></span>
+<div class="mt-6 flex flex-wrap items-center gap-4 text-sm">
+<div class="flex items-center gap-2 text-text-light/60 dark:text-text-dark/60">
+<span class="material-symbols-outlined text-lg text-primary">schedule</span>
+<span><span id="analysisTime"></span></span>
+</div>
+<div class="flex items-center gap-2 text-text-light/60 dark:text-text-dark/60">
+<span class="material-symbols-outlined text-lg text-primary">person</span>
+<span>Dr. Sistema IA</span>
+</div>
 </div>
 </div>
 </div>
 </div>
 
+<!-- Secciones de Información -->
 <div class="mt-12 space-y-8">
+<!-- Probabilidad -->
 <div class="fade-in-up" style="animation-delay: 0.4s">
-<h3 class="text-2xl font-bold flex items-center gap-2">
+<div class="bg-white dark:bg-subtle-dark rounded-xl shadow-lg p-6 hover-card">
+<h3 class="text-2xl font-bold flex items-center gap-2 mb-6">
 <span class="material-symbols-outlined text-primary">science</span>
 Probabilidad del Diagnóstico
 </h3>
-<div class="mt-4">
-<div class="flex justify-between items-center mb-2">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
 <span class="text-base font-medium">Certeza del Diagnóstico</span>
-<span class="text-lg font-bold text-primary" id="confidenceValue">0%</span>
+<span class="text-2xl font-bold text-primary" id="confidenceValue">0%</span>
 </div>
-<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
-<div class="bg-primary h-4 rounded-full progress-animate" id="confidenceBar" style="width: 0%;"></div>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-6 overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-blue-500 h-6 rounded-full progress-animate flex items-center justify-end pr-3" id="confidenceBar" style="width: 0%;">
+<span class="text-xs font-bold text-white" id="confidenceBarText"></span>
 </div>
-<div class="mt-2 text-sm text-text-light/60 dark:text-text-dark/60">
-Basado en <span class="font-medium text-primary">1,247</span> análisis similares
+</div>
+<div class="flex items-start gap-2 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-sm mt-0.5">info</span>
+<p class="text-sm text-blue-800 dark:text-blue-300">
+Basado en <span class="font-semibold">1,247</span> análisis similares en nuestra base de datos
+</p>
+</div>
 </div>
 </div>
 </div>
 
+<!-- Justificación -->
 <div class="fade-in-up" style="animation-delay: 0.5s">
-<h3 class="text-2xl font-bold flex items-center gap-2">
+<div class="bg-white dark:bg-subtle-dark rounded-xl shadow-lg p-6 hover-card">
+<h3 class="text-2xl font-bold flex items-center gap-2 mb-4">
 <span class="material-symbols-outlined text-primary">verified_user</span>
 Justificación del Diagnóstico
 </h3>
-<p class="mt-4 text-base leading-relaxed text-text-light/80 dark:text-text-dark/80">
-El diagnóstico de Giardia lamblia se basa en la combinación de los síntomas reportados en el cuestionario y la información de nuestra base de conocimientos. Los síntomas clave incluyen diarrea, dolor abdominal, náuseas y pérdida de peso. Estos síntomas, junto con la información epidemiológica y los factores de riesgo identificados, sugieren fuertemente la presencia de Giardia lamblia.
+<div class="prose dark:prose-invert max-w-none">
+<p class="text-base leading-relaxed text-text-light/80 dark:text-text-dark/80">
+El diagnóstico de <strong>Giardia lamblia</strong> se basa en la combinación de los síntomas reportados en el cuestionario y la información de nuestra base de conocimientos. Los síntomas clave incluyen diarrea, dolor abdominal, náuseas y pérdida de peso.
+</p>
+<p class="text-base leading-relaxed text-text-light/80 dark:text-text-dark/80 mt-3">
+Estos síntomas, junto con la información epidemiológica y los factores de riesgo identificados, sugieren fuertemente la presencia de Giardia lamblia.
 </p>
 </div>
+</div>
+</div>
 
-<!-- Nueva sección: Datos del análisis -->
+<!-- Detalles del Procesamiento -->
 <div class="fade-in-up" style="animation-delay: 0.6s">
-<h3 class="text-2xl font-bold flex items-center gap-2 mb-4">
+<div class="bg-white dark:bg-subtle-dark rounded-xl shadow-lg p-6 hover-card">
+<h3 class="text-2xl font-bold flex items-center gap-2 mb-6">
 <span class="material-symbols-outlined text-primary">analytics</span>
 Detalles del Procesamiento
 </h3>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="bg-subtle-light dark:bg-subtle-dark p-4 rounded-lg">
-<div class="flex items-center gap-2 mb-2">
-<span class="material-symbols-outlined text-primary text-sm">image</span>
-<span class="text-sm font-medium">Imágenes Procesadas</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-5 rounded-lg border border-blue-200 dark:border-blue-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="p-2 bg-blue-500 rounded-lg">
+<span class="material-symbols-outlined text-white text-xl">image</span>
 </div>
-<div class="text-2xl font-bold">12</div>
+<span class="text-sm font-medium text-blue-900 dark:text-blue-200">Imágenes</span>
 </div>
-<div class="bg-subtle-light dark:bg-subtle-dark p-4 rounded-lg">
-<div class="flex items-center gap-2 mb-2">
-<span class="material-symbols-outlined text-primary text-sm">timer</span>
-<span class="text-sm font-medium">Tiempo de Análisis</span>
+<div class="text-3xl font-bold text-blue-900 dark:text-blue-100">12</div>
+<p class="text-xs text-blue-700 dark:text-blue-300 mt-1">Procesadas</p>
 </div>
-<div class="text-2xl font-bold">4.2s</div>
+<div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-5 rounded-lg border border-green-200 dark:border-green-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="p-2 bg-green-500 rounded-lg">
+<span class="material-symbols-outlined text-white text-xl">timer</span>
 </div>
-<div class="bg-subtle-light dark:bg-subtle-dark p-4 rounded-lg">
-<div class="flex items-center gap-2 mb-2">
-<span class="material-symbols-outlined text-primary text-sm">database</span>
-<span class="text-sm font-medium">Patrones Comparados</span>
+<span class="text-sm font-medium text-green-900 dark:text-green-200">Tiempo</span>
 </div>
-<div class="text-2xl font-bold">1,247</div>
+<div class="text-3xl font-bold text-green-900 dark:text-green-100">4.2s</div>
+<p class="text-xs text-green-700 dark:text-green-300 mt-1">De análisis</p>
+</div>
+<div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-5 rounded-lg border border-purple-200 dark:border-purple-800">
+<div class="flex items-center gap-3 mb-3">
+<div class="p-2 bg-purple-500 rounded-lg">
+<span class="material-symbols-outlined text-white text-xl">database</span>
+</div>
+<span class="text-sm font-medium text-purple-900 dark:text-purple-200">Patrones</span>
+</div>
+<div class="text-3xl font-bold text-purple-900 dark:text-purple-100">1,247</div>
+<p class="text-xs text-purple-700 dark:text-purple-300 mt-1">Comparados</p>
 </div>
 </div>
 </div>
 </div>
 
-<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up" style="animation-delay: 0.7s">
-<a href="carga_muestra.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-primary text-white font-bold rounded-lg shadow-md hover:bg-primary/90 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<!-- Recomendaciones -->
+<div class="fade-in-up" style="animation-delay: 0.7s">
+<div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 rounded-lg p-6">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-2xl">warning</span>
+<div class="flex-1">
+<h4 class="text-lg font-bold text-yellow-900 dark:text-yellow-200 mb-2">Recomendación Importante</h4>
+<p class="text-sm text-yellow-800 dark:text-yellow-300 leading-relaxed">
+Este análisis es una herramienta de apoyo diagnóstico. Se recomienda <strong>consultar con un médico especialista</strong> para confirmar el diagnóstico y recibir el tratamiento adecuado.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Botones de Acción -->
+<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up print-hidden" style="animation-delay: 0.8s">
+<a href="carga_muestra.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-primary text-white font-bold rounded-lg shadow-md hover:bg-primary/90 transition-all hover:scale-105 hover:shadow-xl">
 <span class="material-symbols-outlined">home</span>
-Volver al Inicio
+Nuevo Análisis
 </a>
-<button id="downloadBtn" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-700 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<button id="downloadBtn" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-green-600 text-white font-bold rounded-lg shadow-md hover:bg-green-700 transition-all hover:scale-105 hover:shadow-xl">
 <span class="material-symbols-outlined">download</span>
-Descargar Reporte
+<span id="downloadBtnText">Descargar Reporte</span>
 </button>
-<a href="Historial.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-subtle-light dark:bg-subtle-dark text-text-light dark:text-text-dark font-bold rounded-lg shadow-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+<button id="printBtn" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition-all hover:scale-105 hover:shadow-xl">
+<span class="material-symbols-outlined">print</span>
+Imprimir
+</button>
+<a href="Historial.html" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-subtle-light dark:bg-subtle-dark text-text-light dark:text-text-dark font-bold rounded-lg shadow-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-all hover:scale-105 hover:shadow-xl">
 <span class="material-symbols-outlined">history</span>
-Historial de Pacientes
+Historial
 </a>
 </div>
 </div>
 </main>
 
-<!-- Toast Notification -->
-<div id="toast" class="fixed bottom-4 right-4 bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2 z-50">
-<span class="material-symbols-outlined">check_circle</span>
-<span id="toastMessage">Acción completada</span>
+<!-- Modal de Imagen -->
+<div id="imageModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 print-hidden">
+<div class="relative max-w-5xl w-full">
+<button id="closeModal" class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj_J5eqdmfFeMmaiAWVWoksGAgCVl5UrFYASLOlgwbv57sEF81BwTkat1t9bqP1vVyz6ALQG5ahsiSAzdS8448E4uX4axesgKGreuh1TQTQfFJbL6otO9PIUdQulNdidkimzgZaIq7yrSGPqAi9tUk-7BntzoTUCd4MAIgs1lxOBCsN-YOWgZO34u6l6Dn5NyAKeUbNdXDHIKxVostPBFFLEhSW9B-cTQKw1zN6aJT0yhvxFiOhecV6SMy_RVfOwR4noWGxklT9Wg" alt="Muestra ampliada" class="w-full h-auto rounded-lg shadow-2xl">
+</div>
 </div>
 
-<footer class="bg-subtle-light dark:bg-subtle-dark border-t border-subtle-light dark:border-subtle-dark">
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-4 right-4 transform translate-y-20 opacity-0 transition-all duration-300 z-50 print-hidden">
+<div id="toastContent" class="bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm">
+<div class="flex items-center gap-3">
+<span id="toastIcon" class="material-symbols-outlined text-2xl"></span>
+<div class="flex-1">
+<p id="toastTitle" class="text-sm font-bold"></p>
+<p id="toastMessage" class="text-xs text-gray-600 dark:text-gray-400"></p>
+</div>
+<button onclick="hideToast()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+</div>
+
+<footer class="bg-subtle-light dark:bg-subtle-dark border-t border-subtle-light dark:border-subtle-dark print-hidden">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm text-text-light/60 dark:text-text-dark/60">
 <p>© 2024 Health Insights. Todos los derechos reservados.</p>
 </div>
@@ -264,103 +428,276 @@ Historial de Pacientes
 </div>
 
 <script>
-// Simular carga inicial
-window.addEventListener('load', () => {
-  const loadingScreen = document.getElementById('loadingScreen');
-  const mainContent = document.getElementById('mainContent');
-  
-  // Mostrar pantalla de carga
-  loadingScreen.classList.remove('hidden');
-  mainContent.classList.add('hidden');
-  
-  // Simular tiempo de procesamiento
-  setTimeout(() => {
-    loadingScreen.classList.add('hidden');
-    mainContent.classList.remove('hidden');
+// ========================================
+// SISTEMA DE TEMA
+// ========================================
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+function toggleTheme() {
+    htmlElement.classList.toggle('dark');
+    const icon = themeToggle.querySelector('.material-symbols-outlined');
+    icon.textContent = htmlElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
     
-    // Animar barra de progreso
+    themeToggle.style.transform = 'rotate(360deg)';
     setTimeout(() => {
-      const bar = document.getElementById('confidenceBar');
-      const value = document.getElementById('confidenceValue');
-      let progress = 0;
-      const target = 85;
-      
-      const interval = setInterval(() => {
-        progress += 1;
-        bar.style.width = progress + '%';
-        value.textContent = progress + '%';
-        
-        if (progress >= target) {
-          clearInterval(interval);
-        }
-      }, 20);
-    }, 500);
-    
-    // Mostrar hora actual del análisis
-    const now = new Date();
-    document.getElementById('analysisTime').textContent = now.toLocaleString('es-MX', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-  }, 2500);
-});
-
-// Funcionalidad del botón de notificaciones
-document.getElementById('notificationBtn').addEventListener('click', function() {
-  showToast('No hay nuevas notificaciones');
-});
-
-// Funcionalidad del botón de descarga
-document.getElementById('downloadBtn').addEventListener('click', function() {
-  const btn = this;
-  const originalContent = btn.innerHTML;
-  
-  // Cambiar botón a estado de carga
-  btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span><span>Generando...</span>';
-  btn.disabled = true;
-  
-  // Simular descarga
-  setTimeout(() => {
-    btn.innerHTML = '<span class="material-symbols-outlined">check</span><span>Descargado</span>';
-    showToast('Reporte descargado exitosamente');
-    
-    // Restaurar botón
-    setTimeout(() => {
-      btn.innerHTML = originalContent;
-      btn.disabled = false;
-    }, 2000);
-  }, 1500);
-});
-
-// Función para mostrar toast
-function showToast(message) {
-  const toast = document.getElementById('toast');
-  const toastMessage = document.getElementById('toastMessage');
-  
-  toastMessage.textContent = message;
-  toast.classList.remove('translate-y-20', 'opacity-0');
-  toast.classList.add('translate-y-0', 'opacity-100');
-  
-  setTimeout(() => {
-    toast.classList.add('translate-y-20', 'opacity-0');
-    toast.classList.remove('translate-y-0', 'opacity-100');
-  }, 3000);
+        themeToggle.style.transform = 'rotate(0deg)';
+    }, 300);
 }
 
-// Agregar efecto hover mejorado a las tarjetas
-document.querySelectorAll('.bg-subtle-light, .bg-subtle-dark').forEach(card => {
-  card.addEventListener('mouseenter', function() {
-    this.style.transform = 'translateY(-2px)';
-    this.style.transition = 'transform 0.3s ease';
-  });
-  
-  card.addEventListener('mouseleave', function() {
-    this.style.transform = 'translateY(0)';
-  });
+themeToggle.addEventListener('click', toggleTheme);
+
+// Cargar tema guardado
+if (localStorage.getItem('theme') === 'dark') {
+    htmlElement.classList.add('dark');
+    themeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
+}
+
+// ========================================
+// SISTEMA DE NOTIFICACIONES TOAST
+// ========================================
+function showToast(title, message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toastIcon');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMessage = document.getElementById('toastMessage');
+    const toastContent = document.getElementById('toastContent');
+    
+    const types = {
+        success: { icon: 'check_circle', color: 'text-green-600', border: 'border-green-600' },
+        error: { icon: 'error', color: 'text-red-600', border: 'border-red-600' },
+        warning: { icon: 'warning', color: 'text-yellow-600', border: 'border-yellow-600' },
+        info: { icon: 'info', color: 'text-blue-600', border: 'border-blue-600' }
+    };
+    
+    toastIcon.textContent = types[type].icon;
+    toastIcon.className = `material-symbols-outlined text-2xl ${types[type].color}`;
+    toastContent.className = `bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm ${types[type].border}`;
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+    
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+        hideToast();
+    }, 5000);
+}
+
+function hideToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('translate-y-20', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+}
+
+// ========================================
+// PANTALLA DE CARGA AVANZADA
+// ========================================
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const mainContent = document.getElementById('mainContent');
+    const loadingBar = document.getElementById('loadingBar');
+    const loadingPercent = document.getElementById('loadingPercent');
+    const loadingStepText = document.getElementById('loadingStepText');
+    
+    const steps = [
+        { percent: 20, text: 'Analizando imagen...' },
+        { percent: 40, text: 'Procesando patrones...' },
+        { percent: 60, text: 'Comparando con base de datos...' },
+        { percent: 80, text: 'Calculando probabilidades...' },
+        { percent: 100, text: 'Generando reporte...' }
+    ];
+    
+    loadingScreen.classList.remove('hidden');
+    mainContent.classList.add('hidden');
+    
+    let currentStep = 0;
+    
+    const loadingInterval = setInterval(() => {
+        if (currentStep < steps.length) {
+            const step = steps[currentStep];
+            loadingBar.style.width = step.percent + '%';
+            loadingPercent.textContent = step.percent + '%';
+            loadingStepText.textContent = step.text;
+            currentStep++;
+        } else {
+            clearInterval(loadingInterval);
+            
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+                
+                // Animar barra de confianza
+                animateConfidence();
+                
+                // Generar datos dinámicos
+                generateDynamicData();
+                
+                showToast('¡Análisis completo!', 'Los resultados están listos', 'success');
+            }, 300);
+        }
+    }, 500);
 });
+
+// ========================================
+// ANIMACIÓN DE BARRA DE CONFIANZA
+// ========================================
+function animateConfidence() {
+    setTimeout(() => {
+        const bar = document.getElementById('confidenceBar');
+        const value = document.getElementById('confidenceValue');
+        const barText = document.getElementById('confidenceBarText');
+        let progress = 0;
+        const target = 85;
+        
+        const interval = setInterval(() => {
+            progress += 1;
+            bar.style.width = progress + '%';
+            value.textContent = progress + '%';
+            
+            if (progress > 30) {
+                barText.textContent = progress + '%';
+            }
+            
+            if (progress >= target) {
+                clearInterval(interval);
+            }
+        }, 20);
+    }, 500);
+}
+
+// ========================================
+// GENERAR DATOS DINÁMICOS
+// ========================================
+function generateDynamicData() {
+    // Generar ID de análisis único
+    const analysisId = 'AS' + Date.now().toString().slice(-8);
+    document.getElementById('analysisId').textContent = analysisId;
+    
+    // Mostrar fecha y hora actual
+    const now = new Date();
+    document.getElementById('analysisTime').textContent = now.toLocaleString('es-MX', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
+// ========================================
+// FUNCIONALIDAD DE NOTIFICACIONES
+// ========================================
+document.getElementById('notificationBtn').addEventListener('click', function() {
+    showToast('Notificaciones', 'No hay nuevas notificaciones en este momento', 'info');
+});
+
+// ========================================
+// MODAL DE IMAGEN
+// ========================================
+const imageModal = document.getElementById('imageModal');
+const zoomImageBtn = document.getElementById('zoomImageBtn');
+const closeModal = document.getElementById('closeModal');
+
+zoomImageBtn.addEventListener('click', () => {
+    imageModal.classList.remove('hidden');
+    imageModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+});
+
+closeModal.addEventListener('click', () => {
+    imageModal.classList.add('hidden');
+    imageModal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+});
+
+imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+        closeModal.click();
+    }
+});
+
+// ========================================
+// BOTÓN DE DESCARGA
+// ========================================
+document.getElementById('downloadBtn').addEventListener('click', function() {
+    const btn = this;
+    const btnText = document.getElementById('downloadBtnText');
+    const originalContent = btn.innerHTML;
+    
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span><span>Generando PDF...</span>';
+    
+    setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined">check</span><span>¡Descargado!</span>';
+        showToast('Descarga completa', 'El reporte se ha descargado exitosamente', 'success');
+        
+        setTimeout(() => {
+            btn.innerHTML = originalContent;
+            btn.disabled = false;
+        }, 2000);
+    }, 2000);
+});
+
+// ========================================
+// BOTÓN DE IMPRESIÓN
+// ========================================
+document.getElementById('printBtn').addEventListener('click', function() {
+    showToast('Preparando impresión', 'Abriendo vista de impresión...', 'info');
+    
+    setTimeout(() => {
+        window.print();
+    }, 500);
+});
+
+// ========================================
+// EFECTOS HOVER EN TARJETAS
+// ========================================
+document.querySelectorAll('.hover-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-4px)';
+        this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// ========================================
+// ATAJOS DE TECLADO
+// ========================================
+document.addEventListener('keydown', (e) => {
+    // Ctrl/Cmd + P para imprimir
+    if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        document.getElementById('printBtn').click();
+    }
+    
+    // Ctrl/Cmd + D para descargar
+    if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+        e.preventDefault();
+        document.getElementById('downloadBtn').click();
+    }
+    
+    // Escape para cerrar modal
+    if (e.key === 'Escape') {
+        if (!imageModal.classList.contains('hidden')) {
+            closeModal.click();
+        }
+    }
+});
+
+// ========================================
+// ANALYTICS SIMULADO
+// ========================================
+console.log('%c🔬 ProtoScan Analysis Complete', 'color: #11a4d4; font-size: 16px; font-weight: bold;');
+console.log('Analysis ID:', document.getElementById('analysisId')?.textContent || 'Loading...');
+console.log('Confidence Level: 85%');
+console.log('Processing Time: 4.2s');
+console.log('Images Analyzed: 12');
+console.log('Patterns Matched: 1,247');
 </script>
 </body>
 </html>
