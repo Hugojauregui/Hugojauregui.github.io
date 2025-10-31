@@ -1,120 +1,468 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="es">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Stitch Design</title>
-<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<title>ProtoScan - Configuración de Cuenta</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#11a4d4",
-              "background-light": "#f6f8f8",
-              "background-dark": "#101d22",
-            },
-            fontFamily: {
-              display: ["Inter"],
-            },
-            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
-          },
-        },
-      };
-    </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#11a4d4",
+            "background-light": "#f6f8f8",
+            "background-dark": "#101d22",
+            "foreground-light": "#101d22",
+            "foreground-dark": "#f6f8f8",
+            "card-light": "#ffffff",
+            "card-dark": "#182c34",
+            "border-light": "#e5e7eb",
+            "border-dark": "#374151",
+            "muted-light": "#6b7280",
+            "muted-dark": "#9ca3af",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+</script>
 <style>
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-      }
-    </style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    #themeToggle {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .scale-in {
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .input-focused {
+      transition: all 0.3s ease;
+    }
+    
+    .save-button {
+      transition: all 0.3s ease;
+    }
+    
+    .save-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(17, 164, 212, 0.3);
+    }
+</style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700 px-10 py-4">
-<div class="flex items-center gap-4 text-gray-900 dark:text-white">
-<div class="text-primary h-8 w-8">
-<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark transition-colors duration-300">
+<div class="flex flex-col min-h-screen">
+<header class="bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark sticky top-0 z-10 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-xl font-bold">ProtoScan</h1>
 </div>
-<h2 class="text-xl font-bold">ProtoScan</h2>
-</div>
-<div class="flex flex-1 items-center justify-end gap-8">
-<nav class="flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary" href="index.html#inicio">Inicio</a>
-<a class="text-sm font-medium hover:text-primary" href="index.html#analisis">Análisis</a>
-<a class="text-sm font-medium hover:text-primary" href="Resultado.html">Resultados</a>
-<a class="text-sm font-medium hover:text-primary" href="index.html#contacto">Ayuda</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#inicio">Inicio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="carga_muestra.html">Análisis</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="Resultado.html">Resultados</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#contacto">Ayuda</a>
 </nav>
-<div class="aspect-square w-10 h-10 rounded-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAosi8bUlxD0Qy91ha6_bnWFtZThF0WLzetD4sB0KrH7kNX6oem9yNR9ogXkHU9LMBCpgnaCKVCVjCtnCKpCgatnTg5UGVXGElTjhRPrt2J3lE4-2swQtKqekjfbS7imJ2C8mckxmsdLT5VO1-z6WBkWmE6nms9A3prAvqLxhRENl8Tqq4h_KtRlUobQ9TJeQbRyvpr5JGJDwB4Syga41DrjYTTfnAEU3gYtbcWw6G-S6ewXHy4IqEr0FC1UGfoiE11VIyC5uokXE");'></div>
+<div class="flex items-center gap-3">
+<button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+</div>
+</div>
 </div>
 </header>
-<main class="flex flex-1 justify-center py-10 px-4 sm:px-6 lg:px-8">
-<div class="w-full max-w-2xl space-y-8">
-<div>
-<h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Configuración de la cuenta</h1>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Administre la información de su perfil, notificaciones y preferencias de privacidad.</p>
+
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="max-w-3xl mx-auto">
+<!-- Encabezado -->
+<div class="mb-8 fade-in">
+<h2 class="text-3xl font-bold tracking-tight mb-2">Configuración de la Cuenta</h2>
+<p class="text-muted-light dark:text-muted-dark">Administra tu información de perfil, notificaciones y preferencias de privacidad.</p>
 </div>
-<div class="space-y-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark p-6 shadow-sm">
-<h2 class="text-lg font-semibold text-gray-900 dark:text-white">Información Personal</h2>
-<div class="grid grid-cols-1 gap-6">
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="name">Nombre</label>
-<input class="mt-1 block w-full rounded-lg border-gray-300 bg-background-light dark:bg-gray-800 dark:border-gray-600 focus:border-primary focus:ring-primary text-gray-900 dark:text-white" id="name" type="text" value="Ana Pérez"/>
+
+<!-- Información Personal -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm p-6 md:p-8 mb-6 hover-lift scale-in" style="animation-delay: 0.1s">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">badge</span>
 </div>
-<div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Correo electrónico</label>
-<input class="mt-1 block w-full rounded-lg border-gray-300 bg-background-light dark:bg-gray-800 dark:border-gray-600 focus:border-primary focus:ring-primary text-gray-900 dark:text-white" id="email" type="email" value="ana.perez@example.com"/>
+<h3 class="text-xl font-bold">Información Personal</h3>
 </div>
+
+<form id="profileForm" class="space-y-5">
 <div>
-<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="password">Contraseña</label>
-<div class="relative mt-1">
-<input class="block w-full rounded-lg border-gray-300 bg-background-light dark:bg-gray-800 dark:border-gray-600 focus:border-primary focus:ring-primary text-gray-900 dark:text-white" id="password" type="password" value="********"/>
-<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
-<span class="material-symbols-outlined h-5 w-5"> visibility_off </span>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="name">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
+Nombre Completo
+</label>
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all input-focused" 
+  id="name" 
+  type="text" 
+  value="Ana Pérez"
+  placeholder="Ingresa tu nombre completo"
+/>
+</div>
+
+<div>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="email">
+<span class="material-symbols-outlined text-sm text-primary">mail</span>
+Correo Electrónico
+</label>
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all input-focused" 
+  id="email" 
+  type="email" 
+  value="ana.perez@example.com"
+  placeholder="correo@ejemplo.com"
+/>
+</div>
+
+<div>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="phone">
+<span class="material-symbols-outlined text-sm text-primary">phone</span>
+Teléfono (Opcional)
+</label>
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all input-focused" 
+  id="phone" 
+  type="tel" 
+  placeholder="+52 33 1234 5678"
+/>
+</div>
+
+<div>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="password">
+<span class="material-symbols-outlined text-sm text-primary">lock</span>
+Contraseña
+</label>
+<div class="relative">
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 pr-12 focus:ring-2 focus:ring-primary focus:border-primary transition-all input-focused" 
+  id="password" 
+  type="password" 
+  value="password123"
+/>
+<button 
+  type="button"
+  id="togglePassword" 
+  class="absolute inset-y-0 right-0 flex items-center pr-4 text-muted-light dark:text-muted-dark hover:text-primary transition-colors"
+>
+<span class="material-symbols-outlined text-xl">visibility_off</span>
+</button>
+</div>
+<p class="mt-2 text-xs text-muted-light dark:text-muted-dark flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">info</span>
+Haz clic en el ícono para cambiar tu contraseña
+</p>
+</div>
+</form>
+</div>
+
+<!-- Preferencias -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm p-6 md:p-8 mb-6 hover-lift scale-in" style="animation-delay: 0.2s">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">tune</span>
+</div>
+<h3 class="text-xl font-bold">Preferencias</h3>
+</div>
+
+<div class="space-y-5">
+<!-- Notificaciones Email -->
+<div class="flex items-start justify-between py-4 border-b border-border-light dark:border-border-dark">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-base">notifications</span>
+<p class="text-sm font-semibold">Notificaciones por Correo Electrónico</p>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark ml-7">Recibe alertas sobre nuevos resultados de análisis y actualizaciones importantes.</p>
+</div>
+<label class="relative inline-flex cursor-pointer items-center ml-4">
+<input id="emailNotif" checked="" class="peer sr-only" type="checkbox"/>
+<div class="peer h-6 w-11 rounded-full bg-gray-300 dark:bg-gray-600 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/50"></div>
+</label>
+</div>
+
+<!-- Notificaciones Push -->
+<div class="flex items-start justify-between py-4 border-b border-border-light dark:border-border-dark">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-base">notifications_active</span>
+<p class="text-sm font-semibold">Notificaciones Push</p>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark ml-7">Recibe notificaciones instantáneas en tu dispositivo.</p>
+</div>
+<label class="relative inline-flex cursor-pointer items-center ml-4">
+<input id="pushNotif" class="peer sr-only" type="checkbox"/>
+<div class="peer h-6 w-11 rounded-full bg-gray-300 dark:bg-gray-600 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/50"></div>
+</label>
+</div>
+
+<!-- Privacidad -->
+<div class="flex items-start justify-between py-4">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-base">privacy_tip</span>
+<p class="text-sm font-semibold">Configuración de Privacidad</p>
+</div>
+<p class="text-sm text-muted-light dark:text-muted-dark ml-7">Controla quién puede ver tu información y resultados de análisis.</p>
+</div>
+<button class="ml-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark px-4 py-2 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-all hover:scale-105">
+Gestionar
 </button>
 </div>
 </div>
 </div>
+
+<!-- Idioma y Región -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm p-6 md:p-8 mb-6 hover-lift scale-in" style="animation-delay: 0.3s">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">language</span>
 </div>
-<div class="space-y-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-background-dark p-6 shadow-sm">
-<h2 class="text-lg font-semibold text-gray-900 dark:text-white">Preferencias</h2>
-<div class="divide-y divide-gray-200 dark:divide-gray-700">
-<div class="flex items-center justify-between py-4">
+<h3 class="text-xl font-bold">Idioma y Región</h3>
+</div>
+
+<div class="grid md:grid-cols-2 gap-5">
 <div>
-<p class="text-sm font-medium text-gray-900 dark:text-white">Notificaciones por correo electrónico</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Recibe alertas sobre nuevos resultados de análisis.</p>
-</div>
-<label class="relative inline-flex cursor-pointer items-center">
-<input checked="" class="peer sr-only" type="checkbox" value=""/>
-<div class="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/50 dark:bg-gray-700 dark:border-gray-600"></div>
+<label class="block text-sm font-medium mb-2" for="language">
+Idioma
 </label>
+<select 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all" 
+  id="language"
+>
+<option selected>Español (México)</option>
+<option>English (US)</option>
+<option>Português (Brasil)</option>
+</select>
 </div>
-<div class="flex items-center justify-between py-4">
+
 <div>
-<p class="text-sm font-medium text-gray-900 dark:text-white">Configuración de privacidad</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Controla quién puede ver tu información.</p>
+<label class="block text-sm font-medium mb-2" for="timezone">
+Zona Horaria
+</label>
+<select 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all" 
+  id="timezone"
+>
+<option selected>GMT-6 (Ciudad de México)</option>
+<option>GMT-5 (Ciudad de Nueva York)</option>
+<option>GMT-3 (Buenos Aires)</option>
+</select>
 </div>
-<button class="rounded-lg bg-background-light dark:bg-gray-700 px-4 py-2 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 border border-gray-300 dark:border-gray-600">
-                    Gestionar
-                  </button>
 </div>
 </div>
+
+<!-- Botones de Acción -->
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-2 fade-in">
+<button class="w-full sm:w-auto order-2 sm:order-1 text-sm font-medium text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">delete</span>
+Eliminar Cuenta
+</button>
+<div class="w-full sm:w-auto order-1 sm:order-2 flex gap-3">
+<button id="cancelBtn" class="flex-1 sm:flex-none px-6 py-2.5 rounded-lg border border-border-light dark:border-border-dark text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-all hover:scale-105">
+Cancelar
+</button>
+<button id="saveBtn" class="flex-1 sm:flex-none save-button bg-primary text-white px-8 py-2.5 rounded-lg text-sm font-bold shadow-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">save</span>
+<span id="saveBtnText">Guardar Cambios</span>
+</button>
 </div>
-<div class="flex justify-end pt-2">
-<a href="index.html">
-<button class="flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Guardar cambios
-              </button>
-              </a>
 </div>
 </div>
 </main>
 </div>
+
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-4 right-4 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+<div id="toastContent" class="bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm">
+<div class="flex items-center gap-3">
+<span id="toastIcon" class="material-symbols-outlined text-2xl"></span>
+<div class="flex-1">
+<p id="toastTitle" class="text-sm font-bold"></p>
+<p id="toastMessage" class="text-xs text-gray-600 dark:text-gray-400"></p>
+</div>
+<button onclick="hideToast()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
 </div>
 
-</body></html>
+<script>
+// ========================================
+// SISTEMA DE TEMA
+// ========================================
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+function toggleTheme() {
+    htmlElement.classList.toggle('dark');
+    const icon = themeToggle.querySelector('.material-symbols-outlined');
+    icon.textContent = htmlElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+    
+    themeToggle.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        themeToggle.style.transform = 'rotate(0deg)';
+    }, 300);
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+
+// Cargar tema guardado
+if (localStorage.getItem('theme') === 'dark') {
+    htmlElement.classList.add('dark');
+    themeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
+}
+
+// ========================================
+// SISTEMA DE NOTIFICACIONES
+// ========================================
+function showToast(title, message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toastIcon');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMessage = document.getElementById('toastMessage');
+    const toastContent = document.getElementById('toastContent');
+    
+    const types = {
+        success: { icon: 'check_circle', color: 'text-green-600', border: 'border-green-600' },
+        error: { icon: 'error', color: 'text-red-600', border: 'border-red-600' },
+        warning: { icon: 'warning', color: 'text-yellow-600', border: 'border-yellow-600' },
+        info: { icon: 'info', color: 'text-blue-600', border: 'border-blue-600' }
+    };
+    
+    toastIcon.textContent = types[type].icon;
+    toastIcon.className = `material-symbols-outlined text-2xl ${types[type].color}`;
+    toastContent.className = `bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm ${types[type].border}`;
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+    
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+        hideToast();
+    }, 5000);
+}
+
+function hideToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('translate-y-20', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+}
+
+// ========================================
+// TOGGLE PASSWORD VISIBILITY
+// ========================================
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('password');
+
+togglePassword.addEventListener('click', () => {
+    const type = passwordInput.type === 'password' ? 'text' : 'password';
+    passwordInput.type = type;
+    
+    const icon = togglePassword.querySelector('.material-symbols-outlined');
+    icon.textContent = type === 'password' ? 'visibility_off' : 'visibility';
+});
+
+// ========================================
+// GUARDAR CAMBIOS
+// ========================================
+const saveBtn = document.getElementById('saveBtn');
+const saveBtnText = document.getElementById('saveBtnText');
+const cancelBtn = document.getElementById('cancelBtn');
+
+saveBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    // Deshabilitar botón
+    saveBtn.disabled = true;
+    saveBtnText.textContent = 'Guardando...';
+    saveBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">progress_activity</span><span>Guardando...</span>';
+    
+    // Simular guardado
+    setTimeout(() => {
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-base">save</span><span>Guardar Cambios</span>';
+        showToast('¡Cambios guardados!', 'Tu configuración se ha actualizado correctamente', 'success');
+    }, 1500);
+});
+
+cancelBtn.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
+
+// ========================================
+// FEEDBACK EN TOGGLES
+// ========================================
+const emailNotif = document.getElementById('emailNotif');
+const pushNotif = document.getElementById('pushNotif');
+
+emailNotif.addEventListener('change', (e) => {
+    const status = e.target.checked ? 'activadas' : 'desactivadas';
+    showToast('Notificaciones actualizadas', `Las notificaciones por email han sido ${status}`, 'info');
+});
+
+pushNotif.addEventListener('change', (e) => {
+    const status = e.target.checked ? 'activadas' : 'desactivadas';
+    showToast('Notificaciones actualizadas', `Las notificaciones push han sido ${status}`, 'info');
+});
+</script>
+
+</body>
+</html>

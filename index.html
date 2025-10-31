@@ -46,6 +46,7 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+    
     .material-symbols-outlined {
       font-variation-settings:
       'FILL' 0,
@@ -53,9 +54,49 @@
       'GRAD' 0,
       'opsz' 24
     }
+    
+    #themeToggle {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .slide-in {
+      animation: slideIn 0.5s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .scale-in {
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
 </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark transition-colors duration-300">
 <div class="flex flex-col min-h-screen">
 <header class="bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark sticky top-0 z-10 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,9 +116,12 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Servicios</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#contacto">Contacto</a>
 </nav>
-<div class="flex items-center">
+<div class="flex items-center gap-3">
+<button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
 <a href="login.html">
-<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all hover:scale-105">
 Iniciar Sesión
 </button>
 </a>
@@ -87,7 +131,7 @@ Iniciar Sesión
 </header>
 
 <main class="flex-grow">
-<section class="relative bg-gradient-to-br from-background-light to-subtle-light dark:from-background-dark dark:to-subtle-dark py-20 md:py-32">
+<section class="relative bg-gradient-to-br from-background-light to-subtle-light dark:from-background-dark dark:to-subtle-dark py-20 md:py-32 fade-in">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="max-w-4xl mx-auto text-center">
 <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
@@ -97,11 +141,11 @@ Sistema Avanzado de <span class="text-primary">Análisis Parasitológico</span>
 Optimiza y agiliza el diagnóstico de parásitos mediante inteligencia artificial y análisis de imágenes microscópicas, respaldado por una base de conocimientos clínicos.
 </p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-<a href="carga_muestra.html" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-lg text-base font-bold hover:bg-primary/90 transition-colors shadow-lg">
+<a href="carga_muestra.html" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-lg text-base font-bold hover:bg-primary/90 transition-all shadow-lg hover:scale-105">
 <span class="material-symbols-outlined">science</span>
 Iniciar Análisis
 </a>
-<a href="#acerca" class="inline-flex items-center justify-center gap-2 bg-card-light dark:bg-card-dark text-foreground-light dark:text-foreground-dark px-8 py-3 rounded-lg text-base font-bold hover:bg-opacity-80 transition-colors shadow-lg border border-border-light dark:border-border-dark">
+<a href="#acerca" class="inline-flex items-center justify-center gap-2 bg-card-light dark:bg-card-dark text-foreground-light dark:text-foreground-dark px-8 py-3 rounded-lg text-base font-bold hover:bg-opacity-80 transition-all shadow-lg border border-border-light dark:border-border-dark hover:scale-105">
 <span class="material-symbols-outlined">info</span>
 Conocer Más
 </a>
@@ -113,11 +157,11 @@ Conocer Más
 <section id="acerca" class="py-16 md:py-24 bg-background-light dark:bg-background-dark">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="max-w-5xl mx-auto">
-<div class="text-center mb-12">
+<div class="text-center mb-12 slide-in">
 <h3 class="text-3xl md:text-4xl font-bold mb-4">¿Qué es ProtoScan?</h3>
 <p class="text-lg text-muted-light dark:text-muted-dark">Una herramienta diseñada para profesionales y estudiantes del sector salud</p>
 </div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm p-8 md:p-12">
+<div class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm p-8 md:p-12 hover-lift scale-in">
 <p class="text-base md:text-lg leading-relaxed mb-6">
 ProtoScan es un sistema innovador que combina <strong>análisis de imágenes microscópicas</strong> con <strong>evaluación clínica integral</strong> para proporcionar diagnósticos parasitológicos precisos y rápidos. Nuestro software está especialmente diseñado para mejorar el flujo de trabajo en laboratorios clínicos y entornos educativos.
 </p>
@@ -135,12 +179,12 @@ Además, integramos un <strong>cuestionario clínico detallado</strong> que perm
 <section id="servicios" class="py-16 md:py-24 bg-subtle-light dark:bg-subtle-dark">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="max-w-6xl mx-auto">
-<div class="text-center mb-12">
+<div class="text-center mb-12 slide-in">
 <h3 class="text-3xl md:text-4xl font-bold mb-4">Características Principales</h3>
 <p class="text-lg text-muted-light dark:text-muted-dark">Tecnología al servicio del diagnóstico clínico</p>
 </div>
 <div class="grid md:grid-cols-3 gap-8">
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.1s">
 <div class="text-primary mb-4">
 <span class="material-symbols-outlined text-5xl">photo_camera</span>
 </div>
@@ -150,7 +194,7 @@ Carga fotografías microscópicas de muestras siguiendo estándares profesionale
 </p>
 </div>
 
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.2s">
 <div class="text-primary mb-4">
 <span class="material-symbols-outlined text-5xl">quiz</span>
 </div>
@@ -160,7 +204,7 @@ Sistema de evaluación integral que correlaciona síntomas, antecedentes y facto
 </p>
 </div>
 
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.3s">
 <div class="text-primary mb-4">
 <span class="material-symbols-outlined text-5xl">analytics</span>
 </div>
@@ -170,7 +214,7 @@ Algoritmos avanzados que comparan resultados con una amplia base de conocimiento
 </p>
 </div>
 
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.4s">
 <div class="text-primary mb-4">
 <span class="material-symbols-outlined text-5xl">verified</span>
 </div>
@@ -180,7 +224,7 @@ Resultados con porcentaje de certeza calculado en base a múltiples parámetros 
 </p>
 </div>
 
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.5s">
 <div class="text-primary mb-4">
 <span class="material-symbols-outlined text-5xl">speed</span>
 </div>
@@ -190,7 +234,7 @@ Reduce significativamente el tiempo de análisis, permitiendo diagnósticos más
 </p>
 </div>
 
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.6s">
 <div class="text-primary mb-4">
 <span class="material-symbols-outlined text-5xl">school</span>
 </div>
@@ -207,22 +251,22 @@ Ideal para estudiantes y profesionales en formación que buscan mejorar sus habi
 <section class="py-16 md:py-24 bg-background-light dark:bg-background-dark">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="max-w-5xl mx-auto">
-<div class="text-center mb-12">
+<div class="text-center mb-12 slide-in">
 <h3 class="text-3xl md:text-4xl font-bold mb-4">Proceso de Análisis</h3>
 <p class="text-lg text-muted-light dark:text-muted-dark">Simple, eficiente y profesional</p>
 </div>
 <div class="grid md:grid-cols-3 gap-6">
-<div class="text-center">
+<div class="text-center scale-in" style="animation-delay: 0.1s">
 <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/20 dark:bg-primary/30 text-primary rounded-full text-2xl font-bold mb-4">1</div>
 <h4 class="text-lg font-bold mb-2">Captura de Muestra</h4>
 <p class="text-muted-light dark:text-muted-dark text-sm">Toma una fotografía microscópica siguiendo los estándares de calidad establecidos</p>
 </div>
-<div class="text-center">
+<div class="text-center scale-in" style="animation-delay: 0.2s">
 <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/20 dark:bg-primary/30 text-primary rounded-full text-2xl font-bold mb-4">2</div>
 <h4 class="text-lg font-bold mb-2">Cuestionario Clínico</h4>
 <p class="text-muted-light dark:text-muted-dark text-sm">Completa la evaluación con datos del paciente, síntomas y antecedentes relevantes</p>
 </div>
-<div class="text-center">
+<div class="text-center scale-in" style="animation-delay: 0.3s">
 <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/20 dark:bg-primary/30 text-primary rounded-full text-2xl font-bold mb-4">3</div>
 <h4 class="text-lg font-bold mb-2">Obtén Resultados</h4>
 <p class="text-muted-light dark:text-muted-dark text-sm">Recibe un diagnóstico detallado con porcentaje de certeza y justificación clínica</p>
@@ -235,38 +279,38 @@ Ideal para estudiantes y profesionales en formación que buscan mejorar sus habi
 <section id="contacto" class="py-16 md:py-24 bg-subtle-light dark:bg-subtle-dark">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="max-w-4xl mx-auto">
-<div class="text-center mb-12">
+<div class="text-center mb-12 slide-in">
 <h3 class="text-3xl md:text-4xl font-bold mb-4">Contacto</h3>
 <p class="text-lg text-muted-light dark:text-muted-dark">¿Tienes alguna pregunta? Estamos aquí para ayudarte</p>
 </div>
 <div class="grid md:grid-cols-2 gap-8">
-<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-8 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.1s">
 <h4 class="text-xl font-bold mb-6">Envíanos un mensaje</h4>
 <form class="space-y-4">
 <div>
 <label class="block text-sm font-medium mb-1" for="name">Nombre Completo</label>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="name" placeholder="Tu nombre" type="text"/>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-all" id="name" placeholder="Tu nombre" type="text"/>
 </div>
 <div>
 <label class="block text-sm font-medium mb-1" for="email">Correo Electrónico</label>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="email" placeholder="correo@ejemplo.com" type="email"/>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-all" id="email" placeholder="correo@ejemplo.com" type="email"/>
 </div>
 <div>
 <label class="block text-sm font-medium mb-1" for="subject">Asunto</label>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="subject" placeholder="¿En qué podemos ayudarte?" type="text"/>
+<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-all" id="subject" placeholder="¿En qué podemos ayudarte?" type="text"/>
 </div>
 <div>
 <label class="block text-sm font-medium mb-1" for="message">Mensaje</label>
-<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-primary focus:border-primary" id="message" placeholder="Describe tu consulta o comentario" rows="4"></textarea>
+<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-all" id="message" placeholder="Describe tu consulta o comentario" rows="4"></textarea>
 </div>
-<button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-primary/90 transition-colors shadow-lg">
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-primary/90 transition-all shadow-lg hover:scale-105">
 Enviar Mensaje
 </button>
 </form>
 </div>
 
 <div class="space-y-6">
-<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.2s">
 <div class="flex items-start gap-4">
 <div class="text-primary">
 <span class="material-symbols-outlined text-3xl">location_on</span>
@@ -278,7 +322,7 @@ Enviar Mensaje
 </div>
 </div>
 
-<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.3s">
 <div class="flex items-start gap-4">
 <div class="text-primary">
 <span class="material-symbols-outlined text-3xl">mail</span>
@@ -290,7 +334,7 @@ Enviar Mensaje
 </div>
 </div>
 
-<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
+<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm hover-lift scale-in" style="animation-delay: 0.4s">
 <div class="flex items-start gap-4">
 <div class="text-primary">
 <span class="material-symbols-outlined text-3xl">schedule</span>
@@ -356,5 +400,50 @@ Enviar Mensaje
 </div>
 </footer>
 </div>
+
+<script>
+// ========================================
+// SISTEMA DE TEMA
+// ========================================
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+function toggleTheme() {
+    htmlElement.classList.toggle('dark');
+    const icon = themeToggle.querySelector('.material-symbols-outlined');
+    icon.textContent = htmlElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+    
+    themeToggle.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        themeToggle.style.transform = 'rotate(0deg)';
+    }, 300);
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+
+// Cargar tema guardado
+if (localStorage.getItem('theme') === 'dark') {
+    htmlElement.classList.add('dark');
+    themeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
+}
+
+// ========================================
+// SMOOTH SCROLL PARA ENLACES INTERNOS
+// ========================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
 </body>
 </html>

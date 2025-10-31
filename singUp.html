@@ -1,117 +1,558 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="es">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ProtoScan Registro</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>ProtoScan - Crear Cuenta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#11a4d4",
-                        "background-light": "#f6f8f8",
-                        "background-dark": "#101d22",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#11a4d4",
+            "background-light": "#f6f8f8",
+            "background-dark": "#101d22",
+            "foreground-light": "#101d22",
+            "foreground-dark": "#f6f8f8",
+            "card-light": "#ffffff",
+            "card-dark": "#182c34",
+            "border-light": "#e5e7eb",
+            "border-dark": "#374151",
+            "muted-light": "#6b7280",
+            "muted-dark": "#9ca3af",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
-        }
-    </style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    #themeToggle {
+      transition: transform 0.3s ease;
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .scale-in {
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .slide-in {
+      animation: slideIn 0.5s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .password-strength {
+      height: 4px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    
+    .input-icon {
+      transition: all 0.3s ease;
+    }
+    
+    input:focus + .input-icon {
+      color: #11a4d4;
+    }
+</style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark transition-colors duration-300">
 <div class="flex flex-col min-h-screen">
-<header class="w-full">
+<!-- Header -->
+<header class="bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-700">
-<div class="flex items-center gap-3">
-<div class="text-primary">
-<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.29 16.29C15.9 16.68 15.27 16.68 14.88 16.29L12 13.41L9.12 16.29C8.73 16.68 8.1 16.68 7.71 16.29C7.32 15.9 7.32 15.27 7.71 14.88L10.59 12L7.71 9.12C7.32 8.73 7.32 8.1 7.71 7.71C8.1 7.32 8.73 7.32 9.12 7.71L12 10.59L14.88 7.71C15.27 7.32 15.9 7.32 16.29 7.71C16.68 8.1 16.68 8.73 16.29 9.12L13.41 12L16.29 14.88C16.68 15.27 16.68 15.9 16.29 16.29Z"></path>
+<div class="flex items-center justify-between h-16">
+<a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
 </svg>
-</div>
-<h1 class="text-2xl font-bold text-gray-900 dark:text-white">ProtoScan</h1>
-</div>
+<h1 class="text-xl font-bold">ProtoScan</h1>
+</a>
+<button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
 </div>
 </div>
 </header>
+
+<!-- Main Content -->
 <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-<div class="max-w-md w-full space-y-8 bg-white dark:bg-gray-800/20 p-8 rounded-xl shadow-lg">
+<div class="max-w-md w-full space-y-8">
+<!-- Card Principal -->
+<div class="bg-card-light dark:bg-card-dark rounded-2xl shadow-xl p-8 md:p-10 scale-in">
+<!-- Encabezado -->
+<div class="text-center mb-8 fade-in">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary/20 rounded-full mb-4">
+<span class="material-symbols-outlined text-primary text-4xl">person_add</span>
+</div>
+<h2 class="text-3xl font-bold mb-2">Crea tu Cuenta</h2>
+<p class="text-muted-light dark:text-muted-dark">Regístrate para acceder a todas las funcionalidades de ProtoScan</p>
+</div>
+
+<!-- Formulario -->
+<form id="registerForm" class="space-y-5 slide-in">
+<!-- Nombre Completo -->
 <div>
-<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
-                        Crea tu cuenta
-                    </h2>
-<p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-                        Regístrate para acceder a la plataforma
-                    </p>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="full-name">
+<span class="material-symbols-outlined text-sm text-primary">badge</span>
+Nombre Completo
+</label>
+<div class="relative">
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg pl-11 pr-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" 
+  id="full-name" 
+  type="text" 
+  placeholder="Ingresa tu nombre completo"
+  required
+/>
+<span class="material-symbols-outlined input-icon absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-light dark:text-muted-dark">person</span>
 </div>
-<form action="login.html" class="mt-8 space-y-6" method="GET">
-<input name="remember" type="hidden" value="true"/>
-<div class="space-y-4">
+</div>
+
+<!-- Correo Electrónico -->
 <div>
-<label class="sr-only" for="full-name">Nombre completo</label>
-<input autocomplete="name" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="full-name" name="name" placeholder="Nombre completo" required="" type="text"/>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="email">
+<span class="material-symbols-outlined text-sm text-primary">mail</span>
+Correo Electrónico
+</label>
+<div class="relative">
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg pl-11 pr-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" 
+  id="email" 
+  type="email" 
+  placeholder="correo@ejemplo.com"
+  required
+/>
+<span class="material-symbols-outlined input-icon absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-light dark:text-muted-dark">mail</span>
 </div>
+<p id="emailError" class="mt-1 text-xs text-red-500 hidden flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">error</span>
+<span>Por favor, ingresa un correo válido</span>
+</p>
+</div>
+
+<!-- Contraseña -->
 <div>
-<label class="sr-only" for="email-address">Correo electrónico</label>
-<input autocomplete="email" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="email-address" name="email" placeholder="Correo electrónico" required="" type="email"/>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="password">
+<span class="material-symbols-outlined text-sm text-primary">lock</span>
+Contraseña
+</label>
+<div class="relative">
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg pl-11 pr-12 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" 
+  id="password" 
+  type="password" 
+  placeholder="Mínimo 8 caracteres"
+  required
+/>
+<span class="material-symbols-outlined input-icon absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-light dark:text-muted-dark">lock</span>
+<button 
+  type="button"
+  id="togglePassword" 
+  class="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-light dark:text-muted-dark hover:text-primary transition-colors"
+>
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
 </div>
+<!-- Indicador de Fuerza -->
+<div class="mt-2 space-y-1">
+<div class="flex gap-1">
+<div id="strength1" class="password-strength flex-1 bg-gray-200 dark:bg-gray-700"></div>
+<div id="strength2" class="password-strength flex-1 bg-gray-200 dark:bg-gray-700"></div>
+<div id="strength3" class="password-strength flex-1 bg-gray-200 dark:bg-gray-700"></div>
+<div id="strength4" class="password-strength flex-1 bg-gray-200 dark:bg-gray-700"></div>
+</div>
+<p id="strengthText" class="text-xs text-muted-light dark:text-muted-dark">La contraseña debe tener al menos 8 caracteres</p>
+</div>
+</div>
+
+<!-- Confirmar Contraseña -->
 <div>
-<label class="sr-only" for="password">Contraseña</label>
-<input autocomplete="new-password" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="password" name="password" placeholder="Contraseña" required="" type="password"/>
+<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="confirm-password">
+<span class="material-symbols-outlined text-sm text-primary">verified_user</span>
+Confirmar Contraseña
+</label>
+<div class="relative">
+<input 
+  class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg pl-11 pr-12 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all" 
+  id="confirm-password" 
+  type="password" 
+  placeholder="Repite tu contraseña"
+  required
+/>
+<span class="material-symbols-outlined input-icon absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-light dark:text-muted-dark">lock</span>
+<button 
+  type="button"
+  id="toggleConfirmPassword" 
+  class="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-light dark:text-muted-dark hover:text-primary transition-colors"
+>
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
 </div>
-<div>
-<label class="sr-only" for="confirm-password">Confirmar contraseña</label>
-<input autocomplete="new-password" class="appearance-none rounded-lg relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña" required="" type="password"/>
+<p id="confirmError" class="mt-1 text-xs text-red-500 hidden flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">error</span>
+<span>Las contraseñas no coinciden</span>
+</p>
+<p id="confirmSuccess" class="mt-1 text-xs text-green-500 hidden flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">check_circle</span>
+<span>Las contraseñas coinciden</span>
+</p>
 </div>
+
+<!-- Términos y Condiciones -->
+<div class="flex items-start gap-3 py-3">
+<input 
+  class="mt-1 h-4 w-4 text-primary focus:ring-2 focus:ring-primary border-gray-300 dark:border-gray-600 rounded" 
+  id="terms" 
+  type="checkbox"
+  required
+/>
+<label class="text-sm text-muted-light dark:text-muted-dark" for="terms">
+Acepto los <a class="font-medium text-primary hover:text-primary/80 transition-colors" href="#">Términos y Condiciones</a> y la <a class="font-medium text-primary hover:text-primary/80 transition-colors" href="#">Política de Privacidad</a>
+</label>
 </div>
-<div class="flex items-center justify-between">
-<div class="flex items-start">
-<div class="flex items-center h-5">
-<input class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" id="terms" name="terms" type="checkbox"/>
-</div>
-<div class="ml-3 text-sm">
-<label class="text-gray-500 dark:text-gray-400" for="terms">Acepto los <a class="font-medium text-primary hover:text-primary/80" href="#">Términos y Condiciones</a></label>
-</div>
-</div>
-</div>
-<div>
-<button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
-                            Crear Cuenta
-                        </button>
-</div>
+
+<!-- Botón de Registro -->
+<button 
+  type="submit"
+  id="submitBtn"
+  class="w-full bg-primary text-white py-3 px-6 rounded-lg text-base font-bold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2"
+>
+<span class="material-symbols-outlined">person_add</span>
+<span id="submitText">Crear Cuenta</span>
+</button>
 </form>
-<div class="text-center text-sm text-gray-600 dark:text-gray-400">
-<p>
-                        ¿Ya tienes una cuenta?
-                        <a class="font-medium text-primary hover:text-primary/80" href="#">
-                            Inicia sesión
-                        </a>
+
+<!-- Divisor -->
+<div class="relative my-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-light dark:border-border-dark"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-4 bg-card-light dark:bg-card-dark text-muted-light dark:text-muted-dark">O regístrate con</span>
+</div>
+</div>
+
+<!-- Botones de Redes Sociales -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg py-2.5 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all hover:scale-105">
+<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+</svg>
+<span class="text-sm font-medium">Google</span>
+</button>
+
+<button class="flex items-center justify-center gap-2 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg py-2.5 px-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all hover:scale-105">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M9.198 21.5h4v-8.01h3.604l.396-3.98h-4V7.5a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2.01h-2l-.396 3.98h2.396v8.01Z"/>
+</svg>
+<span class="text-sm font-medium">Facebook</span>
+</button>
+</div>
+
+<!-- Link a Login -->
+<div class="text-center pt-4">
+<p class="text-sm text-muted-light dark:text-muted-dark">
+¿Ya tienes una cuenta?
+<a class="font-medium text-primary hover:text-primary/80 transition-colors" href="login.html">
+Inicia sesión aquí
+</a>
 </p>
 </div>
 </div>
-</main>
 </div>
-</body></html>
+</main>
+
+<!-- Footer -->
+<footer class="bg-card-light dark:bg-card-dark border-t border-border-light dark:border-border-dark py-6">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<p class="text-center text-sm text-muted-light dark:text-muted-dark">
+© 2025 ProtoScan - Universidad de Guadalajara. Todos los derechos reservados.
+</p>
+</div>
+</footer>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-4 right-4 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+<div id="toastContent" class="bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm">
+<div class="flex items-center gap-3">
+<span id="toastIcon" class="material-symbols-outlined text-2xl"></span>
+<div class="flex-1">
+<p id="toastTitle" class="text-sm font-bold"></p>
+<p id="toastMessage" class="text-xs text-gray-600 dark:text-gray-400"></p>
+</div>
+<button onclick="hideToast()" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+</div>
+
+<script>
+// ========================================
+// SISTEMA DE TEMA
+// ========================================
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+function toggleTheme() {
+    htmlElement.classList.toggle('dark');
+    const icon = themeToggle.querySelector('.material-symbols-outlined');
+    icon.textContent = htmlElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+    
+    themeToggle.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        themeToggle.style.transform = 'rotate(0deg)';
+    }, 300);
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+
+// Cargar tema guardado
+if (localStorage.getItem('theme') === 'dark') {
+    htmlElement.classList.add('dark');
+    themeToggle.querySelector('.material-symbols-outlined').textContent = 'light_mode';
+}
+
+// ========================================
+// SISTEMA DE NOTIFICACIONES
+// ========================================
+function showToast(title, message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastIcon = document.getElementById('toastIcon');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMessage = document.getElementById('toastMessage');
+    const toastContent = document.getElementById('toastContent');
+    
+    const types = {
+        success: { icon: 'check_circle', color: 'text-green-600', border: 'border-green-600' },
+        error: { icon: 'error', color: 'text-red-600', border: 'border-red-600' },
+        warning: { icon: 'warning', color: 'text-yellow-600', border: 'border-yellow-600' },
+        info: { icon: 'info', color: 'text-blue-600', border: 'border-blue-600' }
+    };
+    
+    toastIcon.textContent = types[type].icon;
+    toastIcon.className = `material-symbols-outlined text-2xl ${types[type].color}`;
+    toastContent.className = `bg-white dark:bg-gray-800 border-l-4 rounded-lg shadow-xl p-4 max-w-sm ${types[type].border}`;
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+    
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+        hideToast();
+    }, 5000);
+}
+
+function hideToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('translate-y-20', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+}
+
+// ========================================
+// TOGGLE PASSWORD VISIBILITY
+// ========================================
+const togglePassword = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('password');
+
+togglePassword.addEventListener('click', () => {
+    const type = passwordInput.type === 'password' ? 'text' : 'password';
+    passwordInput.type = type;
+    togglePassword.querySelector('.material-symbols-outlined').textContent = 
+        type === 'password' ? 'visibility_off' : 'visibility';
+});
+
+const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+const confirmPasswordInput = document.getElementById('confirm-password');
+
+toggleConfirmPassword.addEventListener('click', () => {
+    const type = confirmPasswordInput.type === 'password' ? 'text' : 'password';
+    confirmPasswordInput.type = type;
+    toggleConfirmPassword.querySelector('.material-symbols-outlined').textContent = 
+        type === 'password' ? 'visibility_off' : 'visibility';
+});
+
+// ========================================
+// VALIDACIÓN DE FUERZA DE CONTRASEÑA
+// ========================================
+const strengthBars = [
+    document.getElementById('strength1'),
+    document.getElementById('strength2'),
+    document.getElementById('strength3'),
+    document.getElementById('strength4')
+];
+const strengthText = document.getElementById('strengthText');
+
+passwordInput.addEventListener('input', (e) => {
+    const password = e.target.value;
+    let strength = 0;
+    
+    // Criterios de fuerza
+    if (password.length >= 8) strength++;
+    if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+    if (password.match(/[0-9]/)) strength++;
+    if (password.match(/[^a-zA-Z0-9]/)) strength++;
+    
+    // Resetear barras
+    strengthBars.forEach(bar => {
+        bar.style.backgroundColor = '';
+        bar.classList.remove('bg-red-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500');
+    });
+    
+    // Aplicar colores según fuerza
+    const colors = ['bg-red-500', 'bg-yellow-500', 'bg-blue-500', 'bg-green-500'];
+    const texts = ['Muy débil', 'Débil', 'Buena', 'Excelente'];
+    
+    for (let i = 0; i < strength; i++) {
+        strengthBars[i].classList.add(colors[strength - 1]);
+    }
+    
+    if (password.length > 0) {
+        strengthText.textContent = `Contraseña: ${texts[strength - 1] || 'Muy débil'}`;
+    } else {
+        strengthText.textContent = 'La contraseña debe tener al menos 8 caracteres';
+    }
+    
+    checkPasswordMatch();
+});
+
+// ========================================
+// VALIDACIÓN DE COINCIDENCIA DE CONTRASEÑAS
+// ========================================
+const confirmError = document.getElementById('confirmError');
+const confirmSuccess = document.getElementById('confirmSuccess');
+
+function checkPasswordMatch() {
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+    
+    if (confirmPassword.length > 0) {
+        if (password === confirmPassword) {
+            confirmError.classList.add('hidden');
+            confirmSuccess.classList.remove('hidden');
+            confirmPasswordInput.classList.remove('border-red-500');
+            confirmPasswordInput.classList.add('border-green-500');
+        } else {
+            confirmError.classList.remove('hidden');
+            confirmSuccess.classList.add('hidden');
+            confirmPasswordInput.classList.add('border-red-500');
+            confirmPasswordInput.classList.remove('border-green-500');
+        }
+    } else {
+        confirmError.classList.add('hidden');
+        confirmSuccess.classList.add('hidden');
+        confirmPasswordInput.classList.remove('border-red-500', 'border-green-500');
+    }
+}
+
+confirmPasswordInput.addEventListener('input', checkPasswordMatch);
+
+// ========================================
+// VALIDACIÓN DE EMAIL
+// ========================================
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+
+emailInput.addEventListener('blur', () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailInput.value && !emailRegex.test(emailInput.value)) {
+        emailError.classList.remove('hidden');
+        emailInput.classList.add('border-red-500');
+    } else {
+        emailError.classList.add('hidden');
+        emailInput.classList.remove('border-red-500');
+    }
+});
+
+// ========================================
+// ENVÍO DEL FORMULARIO
+// ========================================
+const registerForm = document.getElementById('registerForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitText = document.getElementById('submitText');
+
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Validaciones finales
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+    const terms = document.getElementById('terms').checked;
+    
+    if (password !== confirmPassword) {
+        showToast('Error', 'Las contraseñas no coinciden', 'error');
+        return;
+    }
+    
+    if (!terms) {
+        showToast('Error', 'Debes aceptar los términos y condiciones', 'error');
+        return;
+    }
+    
+    if (password.length < 8) {
+        showToast('Error', 'La contraseña debe tener al menos 8 caracteres', 'error');
+        return;
+    }
+    
+    // Simular registro
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span><span>Creando cuenta...</span>';
+    
+    setTimeout(() => {
+        showToast('¡Cuenta creada!', 'Redirigiendo a inicio de sesión...', 'success');
+        
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1500);
+    }, 2000);
+});
+</script>
+
+</body>
+</html>
