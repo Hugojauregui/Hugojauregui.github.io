@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ProtoScan - Análisis Parasitológico</title>
+<title>BioScanDX - Análisis Parasitológico</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -118,10 +118,10 @@
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-16">
 <div class="flex items-center gap-4">
-<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
-</svg>
-<h1 class="text-xl font-bold">ProtoScan</h1>
+<div class="text-primary w-20 h-20">
+  <img src="/11a4da.png" alt="Logo" class="w-full h-full object-contain">
+</div>
+<h1 class="text-xl font-bold">BioScanDX</h1>
 </div>
 <nav class="hidden md:flex items-center gap-8">
 <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#inicio">Inicio</a>
@@ -270,23 +270,153 @@ Género
 </div>
 </div>
 <div>
-<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="symptoms">
+<label class="block text-sm font-medium mb-2 flex items-center gap-2">
 <span class="material-symbols-outlined text-sm text-primary">medical_services</span>
-Síntomas
+Síntomas (Seleccione todos los que apliquen)
 </label>
-<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-all" id="symptoms" placeholder="Describe los síntomas del paciente" rows="4" required></textarea>
-<p class="mt-1 text-xs text-muted-light dark:text-muted-dark">
-<span id="symptomsCount">0</span> caracteres
+<div class="space-y-2 max-h-96 overflow-y-auto bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg p-4">
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="dolor_abdominal" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Dolor abdominal</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="diarrea" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Diarrea (persistente, líquida, blanda)</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="heces_sangre" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Heces sanguinolentas o con moco</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="nauseas" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Náuseas</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="vomitos" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Vómitos</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="perdida_peso" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Pérdida de peso</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="perdida_apetito" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Pérdida de apetito / Anorexia</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="aumento_apetito" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Aumento de apetito / Sensación de hambre</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="fatiga" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Fatiga / Debilidad</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="picazon_anal" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Picazón anal / Prurito anal</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="picazon_nasal" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Picazón nasal / Prurito nasal</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="flatulencia" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Flatulencia / Exceso de gases</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="hinchazón" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Hinchazón / Meteorismo</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="eructos" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Eructos</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="insomnio" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Insomnio</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="bruxismo" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Bruxismo (rechinamiento de dientes)</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="dermatitis_anal" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Dermatitis en zona anal</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="prurito_genital" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Prurito o malestar genital (mujeres)</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="deshidratacion" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Deshidratación</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="desnutricion" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Desnutrición</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="anemia" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Anemia</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="indigestion" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Indigestión</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="irritabilidad" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Irritabilidad / Intranquilidad</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="somnolencia" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Somnolencia</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="symptoms" value="asintomatico" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Asintomático / Sin síntomas</span>
+</label>
+</div>
+<p class="mt-2 text-xs text-muted-light dark:text-muted-dark">
+<span id="symptomsCount">0</span> síntomas seleccionados
 </p>
 </div>
 <div>
-<label class="block text-sm font-medium mb-2 flex items-center gap-2" for="history">
+<label class="block text-sm font-medium mb-2 flex items-center gap-2">
 <span class="material-symbols-outlined text-sm text-primary">history_edu</span>
-Antecedentes Clínicos
+Factores de Riesgo / Exposición (Seleccione todos los que apliquen)
 </label>
-<textarea class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-primary transition-all" id="history" placeholder="Detalla los antecedentes clínicos relevantes (opcional)" rows="4"></textarea>
-<p class="mt-1 text-xs text-muted-light dark:text-muted-dark">
-<span id="historyCount">0</span> caracteres
+<div class="space-y-2 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg p-4">
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="risk_factors" value="agua_contaminada" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Ingesta de agua o comida contaminada</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="risk_factors" value="convive_perros" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Convive con perros u otros animales</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="risk_factors" value="muchos_insectos" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Presencia de muchos insectos en el hogar</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="risk_factors" value="carne_cerdo" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Consumo de carne de cerdo cruda o mal cocida</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="risk_factors" value="carne_vaca" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Consumo de carne de vaca cruda o mal cocida</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="risk_factors" value="pescado_crudo" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Consumo de pescado de agua dulce crudo o mal cocido</span>
+</label>
+<label class="flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded cursor-pointer">
+<input type="checkbox" name="risk_factors" value="ninguno" class="rounded border-gray-300 text-primary focus:ring-primary">
+<span class="text-sm">Ninguno de los anteriores</span>
+</label>
+</div>
+<p class="mt-2 text-xs text-muted-light dark:text-muted-dark">
+<span id="riskCount">0</span> factores seleccionados
 </p>
 </div>
 </form>
@@ -396,19 +526,24 @@ function updateProgress() {
     const progressBar = document.getElementById('progressBar');
     const progressText = document.getElementById('progressText');
     
-    // Imagen cargada: 50%
-    if (uploadedFile) progress += 50;
+    // Imagen cargada: 40%
+    if (uploadedFile) progress += 40;
     
-    // Campos del formulario completados
-    const form = document.getElementById('clinicalForm');
-    const requiredFields = form.querySelectorAll('[required]');
-    let completedFields = 0;
+    // Nombre del paciente: 15%
+    const patientName = document.getElementById('patient-name');
+    if (patientName && patientName.value.trim()) progress += 15;
     
-    requiredFields.forEach(field => {
-        if (field.value.trim()) completedFields++;
-    });
+    // Edad: 10%
+    const age = document.getElementById('age');
+    if (age && age.value.trim()) progress += 10;
     
-    progress += (completedFields / requiredFields.length) * 50;
+    // Género: 10%
+    const gender = document.getElementById('gender');
+    if (gender && gender.value) progress += 10;
+    
+    // Al menos un síntoma seleccionado: 25%
+    const symptomsChecked = document.querySelectorAll('input[name="symptoms"]:checked').length;
+    if (symptomsChecked > 0) progress += 25;
     
     progressBar.style.width = progress + '%';
     progressText.textContent = Math.round(progress) + '% completado';
@@ -477,21 +612,35 @@ removeBtn.addEventListener('click', () => {
 });
 
 // ========================================
-// CONTADORES DE CARACTERES
+// CONTADORES DE SÍNTOMAS Y FACTORES
 // ========================================
-const symptomsTextarea = document.getElementById('symptoms');
-const historyTextarea = document.getElementById('history');
+const symptomsCheckboxes = document.querySelectorAll('input[name="symptoms"]');
+const riskCheckboxes = document.querySelectorAll('input[name="risk_factors"]');
 const symptomsCount = document.getElementById('symptomsCount');
-const historyCount = document.getElementById('historyCount');
+const riskCount = document.getElementById('riskCount');
 
-symptomsTextarea.addEventListener('input', () => {
-    symptomsCount.textContent = symptomsTextarea.value.length;
+function updateSymptomsCount() {
+    const checked = document.querySelectorAll('input[name="symptoms"]:checked').length;
+    symptomsCount.textContent = checked;
     updateProgress();
+}
+
+function updateRiskCount() {
+    const checked = document.querySelectorAll('input[name="risk_factors"]:checked').length;
+    if (riskCount) {
+        riskCount.textContent = checked;
+    }
+}
+
+symptomsCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateSymptomsCount);
 });
 
-historyTextarea.addEventListener('input', () => {
-    historyCount.textContent = historyTextarea.value.length;
-});
+if (riskCheckboxes.length > 0) {
+    riskCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateRiskCount);
+    });
+}
 
 // Actualizar progreso en todos los campos
 document.getElementById('clinicalForm').addEventListener('input', updateProgress);
@@ -514,9 +663,34 @@ submitBtn.addEventListener('click', (e) => {
         return;
     }
     
-    if (!clinicalForm.checkValidity()) {
-        clinicalForm.reportValidity();
-        showToast('Campos incompletos', 'Por favor, completa todos los campos requeridos', 'warning');
+    // Validar campos requeridos
+    const patientName = document.getElementById('patient-name');
+    const age = document.getElementById('age');
+    const gender = document.getElementById('gender');
+    
+    if (!patientName.value.trim()) {
+        showToast('Campos incompletos', 'Por favor, ingresa el nombre del paciente', 'warning');
+        patientName.focus();
+        return;
+    }
+    
+    if (!age.value.trim()) {
+        showToast('Campos incompletos', 'Por favor, ingresa la edad del paciente', 'warning');
+        age.focus();
+        return;
+    }
+    
+    if (!gender.value) {
+        showToast('Campos incompletos', 'Por favor, selecciona el género del paciente', 'warning');
+        gender.focus();
+        return;
+    }
+    
+    // Validar que al menos un síntoma esté seleccionado
+    const symptomsChecked = document.querySelectorAll('input[name="symptoms"]:checked').length;
+    if (symptomsChecked === 0) {
+        showToast('Síntomas requeridos', 'Por favor, selecciona al menos un síntoma', 'warning');
+        document.querySelector('input[name="symptoms"]').scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
     }
     

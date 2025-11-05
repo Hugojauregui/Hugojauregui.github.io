@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ProtoScan - Historial de Análisis</title>
+<title>BioScanDX - Historial de Análisis</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
@@ -87,10 +87,10 @@
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="flex h-16 items-center justify-between">
 <div class="flex items-center gap-4">
-<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
-</svg>
-<h1 class="text-xl font-bold text-slate-900 dark:text-white">ProtoScan</h1>
+<div class="text-primary w-20 h-20">
+  <img src="/11a4da.png" alt="Logo" class="w-full h-full object-contain">
+</div>
+<h1 class="text-xl font-bold text-slate-900 dark:text-white">BioScanDX</h1>
 </div>
 <nav class="hidden md:flex items-center gap-8">
 <a class="text-sm font-medium text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary transition-colors" href="index.html">Inicio</a>
@@ -513,7 +513,7 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-console.log('%c📊 ProtoScan History Dashboard', 'color: #11a4d4; font-size: 16px; font-weight: bold;');
+console.log('%c📊 BioScanDX History Dashboard', 'color: #11a4d4; font-size: 16px; font-weight: bold;');
 console.log('Total de análisis:', analysisData.length);
 console.log('Completados:', analysisData.filter(a => a.status === 'completed').length);
 console.log('En proceso:', analysisData.filter(a => a.status === 'in-progress').length);
